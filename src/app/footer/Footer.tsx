@@ -1,127 +1,130 @@
 import React from 'react'
 import Image from 'next/image'
 import logo from './img/bitstamp_logo-removebg-preview.png'
+import Link from 'next/link'
+
 
 function Footer() {
     return (
-        <div className='md:max-w-[95%] m-auto md:me-[2.5em] px-6'>
-            <div className=" grid grid-cols-2 md:grid-cols-6 gap-7 md:gap-1 ">
-                <div className='about'>
-                    <header className="my-5">
-                        <h1 className="text-[#fff] font-bold">About</h1>
-                    </header>
+        <div className='bg-[#003b2f]'>
+            <div className='md:max-w-[95%] m-auto md:me-[2.5em] px-6'>
+                <div className=" grid grid-cols-2 md:grid-cols-6 gap-7 md:gap-1 ">
+                    <div className='about'>
+                        <header className="my-5">
+                            <h1 className="text-[#fff] font-bold">About</h1>
+                        </header>
 
-                    <ul className="text-[12px] text-[#b1b4b6] flex flex-col gap-[.6em]">
-                        <li>Who We Are</li>
-                        <li>The Bitstamp Way</li>
-                        <li>Careers</li>
-                        <li>Legal & privacy</li>
-                        <li>Terms of Use - USA</li>
-                        <li>Free Schedule</li>
-                        <li>FAQ</li>
-                    </ul>
-                </div>
-                <div className='legal md:hidden'>
-                    <header className="my-5">
-                        <h1 className="text-[#fff] font-bold">Legal & privacy</h1>
-                    </header>
-
-                    <ul className="text-[12px] text-[#b1b4b6] flex flex-col gap-[.6em]">
-                        <li>Terms of Use: Bitstamp LTD</li>
-                        <li>Terms of Use: Bitstamp USA Inc</li>
-                        <li>BitGo customer terms</li>
-                        <li>Copper customer terms</li>
-                        <li>Privacy Policy</li>
-                        <li>AML Policy</li>
-                        <li>Complaint Resolution Procedure</li>
-                        <li>Referral Program</li>
-                        <li>Bitstamp Earn Terms</li>
-                        <li>Bitstamp OTC Terms</li>
-                        <li>Cookie Policy</li>
-                        <li>Risk Warning</li>
-                        <li>Digital Asset Listing Framework</li>
-                    </ul>
-                </div>
-                <div className='products'>
-                    <header className="my-5">
-                        <h1 className="text-[#fff] font-bold">Products</h1>
-                    </header>
-                    <ul className="text-[12px] text-[#b1b4b6] flex flex-col gap-[.6em]">
-                        <li>Mobile Apps</li>
-                        <li>Tradeview</li>
-                        <li>Earn Stake</li>
-                        <li>Earn Lend</li>
-                    </ul>
-                </div>
-                <div className='services'>
-                    <header className="my-5">
-                        <h1 className="text-[#fff] font-bold">Services</h1>
-                    </header>
-
-                    <ul className="text-[12px] text-[#b1b4b6] md:w-20 flex flex-col gap-[.6em]">
-                        <li>Institutions & Partners</li>
-                        <li>Bitstamp as a Service</li>
-                        <li>The Bitstamp Ecosystem</li>
-                        <li>Pro</li>
-                    </ul>
-                </div>
-                <div className='resources'>
-                    <header className="my-5">
-                        <h1 className="text-[#fff] font-bold">Resources</h1>
-                    </header>
-
-                    <ul className="text-[12px] text-[#b1b4b6] md:w-20 flex flex-col gap-[.6em]">
-                        <li>API Documentation</li>
-                        <li>PGP Key</li>
-                        <li>Lightning Network</li>
-                        <li>Crypto Pulse</li>
-                    </ul>
-                </div>
-                <div className='access'>
-                    <header className="my-5">
-                        <h1 className="text-[#fff] font-bold">Address</h1>
-                    </header>
-
-                    <ul className="text-[12px] text-[#b1b4b6] md:w-20 flex flex-col gap-[.6em]">
-                        <li>Bitstamp Ltd</li>
-                        <li>5 New Street Square</li>
-                        <li>London, EC4A 3TW</li>
-                        <li>United Kingdom</li>
-                    </ul>
-                </div>
-                <div className='contact'>
-                    <header className="my-5">
-                        <h1 className="text-[#fff] font-bold">Contact</h1>
-                    </header>
-
-                    <ul className="text-[12px] text-[#b1b4b6] flex flex-col gap-[.6em]">
-                        <li>Customer support</li>
-                        <li>info@bitstamp.net</li>
-                        <li>press@bitstamp.net</li>
-                        <li>support@bitstamp.net</li>
-                        <li>complaints@bitstamp.net</li>
-                        <li>&#43;44 20 3868 9628</li>
-                        <li>&#43;1 800 712 5702</li>
-                        <li>&#43;352 20 88 10 96</li>
-                        <li>Customer support will be provided:
-                            Mon - Sat: 6am
-                            CET to 10pm CET
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div className="socials flex flex-col md:flex-row justify-between items-center gap-7 my-[4.5em]">
-                <div className='flex flex-col smm:flex-row smm:justify-between items-center justify-center w-full md:gap-[4rem]'>
-                    <div className='flex gap-2 mb-6 sm:mb-0'>
-                        <span><svg className='text-white' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28" data-v-922e7ce6="" data-v-c7c354ae=""><path d="m6.52 6 8.97 12h2.03L8.55 6H6.52z"></path><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0Zm3.01 18.95-4.08-5.46-5.05 5.46h-1.3l5.77-6.24-5.74-7.67h4.42l3.76 5.03 4.65-5.03h1.3l-5.37 5.8 6.06 8.1h-4.42Z"></path></svg></span>
-                        <span><svg className='text-white' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" data-v-922e7ce6="" data-v-c7c354ae=""><path fill="currentColor" d="M12,0A12,12,0,1,0,24,12h0A12,12,0,0,0,12,0ZM8.64,17H6.3V9.52H8.64ZM7.41,8.6h0A1.31,1.31,0,0,1,7.15,6h.28a1.31,1.31,0,0,1,.28,2.6ZM18,17H15.35V13.15c0-1-.42-1.7-1.33-1.7a1.35,1.35,0,0,0-1.27.91,1.57,1.57,0,0,0-.06.61v4H10.07V9.52h2.62V10.7A2.41,2.41,0,0,1,15,9.46c1.67,0,3,1.08,3,3.39Z"></path></svg></span>
-                        <span><svg className='text-white' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" data-v-922e7ce6="" data-v-c7c354ae=""><path fill="currentColor" d="M12,0A12,12,0,1,0,24,12h0A12,12,0,0,0,12,0Zm2.65,10-.14,1.79H12.67V18H10.34V11.76H9.11V10h1.23V8.76A3.26,3.26,0,0,1,10.74,7a2.22,2.22,0,0,1,1.93-.9A8,8,0,0,1,15,6.23l-.31,1.83a4.24,4.24,0,0,0-1-.15c-.48,0-.91.17-.91.66V10Z"></path></svg></span>
-                        <span><svg className='text-white' data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="28" height="28" data-v-922e7ce6="" data-v-c7c354ae=""><path d="M19.772 8.403c-.984-.046-1.28-.054-3.772-.054s-2.787.01-3.771.054c-2.532.116-3.71 1.314-3.826 3.826-.044.984-.055 1.279-.055 3.771s.011 2.787.055 3.772c.116 2.505 1.289 3.711 3.826 3.827.983.044 1.279.054 3.771.054 2.493 0 2.788-.009 3.772-.054 2.532-.115 3.709-1.318 3.827-3.827.044-.984.053-1.28.053-3.772s-.009-2.787-.053-3.771c-.118-2.51-1.298-3.71-3.827-3.826zM16 20.793a4.792 4.792 0 1 1-.001-9.585A4.792 4.792 0 0 1 16 20.793zm4.983-8.654a1.12 1.12 0 1 1 0-2.24 1.12 1.12 0 0 1 0 2.24zM19.111 16a3.111 3.111 0 1 1-6.222 0 3.111 3.111 0 0 1 6.222 0zM16 0C7.164 0 0 7.164 0 16s7.164 16 16 16 16-7.164 16-16S24.836 0 16 0zm9.277 19.848c-.153 3.393-2.042 5.273-5.428 5.429-.996.046-1.314.056-3.849.056s-2.852-.01-3.848-.056c-3.392-.156-5.273-2.038-5.429-5.429-.046-.995-.056-1.313-.056-3.848s.01-2.852.056-3.848c.156-3.392 2.038-5.273 5.429-5.428.996-.047 1.313-.057 3.848-.057s2.853.01 3.849.057c3.394.156 5.276 2.043 5.428 5.428.046.996.056 1.313.056 3.848s-.01 2.853-.056 3.848z"></path></svg></span>
-                        <span><svg className='text-white' data-v-c7c354ae="" data-v-922e7ce6="" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="28" height="28"><path d="M16 0a16 16 0 1 0 16 16A16 16 0 0 0 16 0zm7.63 10.4c-.05.65-.42 2.92-.79 5.37L21.69 23s-.09 1.06-.88 1.25a3.85 3.85 0 0 1-2.31-.83c-.19-.14-3.47-2.22-4.67-3.24a.87.87 0 0 1 0-1.48c1.67-1.53 3.66-3.42 4.86-4.63.55-.55 1.11-1.85-1.2-.27L11 18.22a2.74 2.74 0 0 1-2.13.05c-1.39-.42-3-1-3-1s-1.11-.69.79-1.43l10.77-4.44c1.07-.4 4.67-1.92 4.67-1.92s1.67-.65 1.53.92z"></path></svg></span>
+                        <ul className="text-[12px] text-[#b1b4b6] flex flex-col gap-[.6em]">
+                            <li>Who We Are</li>
+                            <li>The Bitstamp Way</li>
+                            <li>Careers</li>
+                            <li>Legal & privacy</li>
+                            <li>Terms of Use - USA</li>
+                            <li>Free Schedule</li>
+                            <li>FAQ</li>
+                        </ul>
                     </div>
+                    <div className='legal md:hidden'>
+                        <header className="my-5">
+                            <h1 className="text-[#fff] font-bold">Legal & privacy</h1>
+                        </header>
 
-                    
+                        <ul className="text-[12px] text-[#b1b4b6] flex flex-col gap-[.6em]">
+                            <li>Terms of Use: Bitstamp LTD</li>
+                            <li>Terms of Use: Bitstamp USA Inc</li>
+                            <li>BitGo customer terms</li>
+                            <li>Copper customer terms</li>
+                            <li>Privacy Policy</li>
+                            <li>AML Policy</li>
+                            <li>Complaint Resolution Procedure</li>
+                            <li>Referral Program</li>
+                            <li>Bitstamp Earn Terms</li>
+                            <li>Bitstamp OTC Terms</li>
+                            <li>Cookie Policy</li>
+                            <li>Risk Warning</li>
+                            <li>Digital Asset Listing Framework</li>
+                        </ul>
+                    </div>
+                    <div className='products'>
+                        <header className="my-5">
+                            <h1 className="text-[#fff] font-bold">Products</h1>
+                        </header>
+                        <ul className="text-[12px] text-[#b1b4b6] flex flex-col gap-[.6em]">
+                            <li>Mobile Apps</li>
+                            <li>Tradeview</li>
+                            <Link href='/hero/staking'><li>Earn stake</li></Link>
+                            <li>Earn Lend</li>
+                        </ul>
+                    </div>
+                    <div className='services'>
+                        <header className="my-5">
+                            <h1 className="text-[#fff] font-bold">Services</h1>
+                        </header>
+
+                        <ul className="text-[12px] text-[#b1b4b6] md:w-20 flex flex-col gap-[.6em]">
+                            <li>Institutions & Partners</li>
+                            <li>Bitstamp as a Service</li>
+                            <li>The Bitstamp Ecosystem</li>
+                            <li>Pro</li>
+                        </ul>
+                    </div>
+                    <div className='resources'>
+                        <header className="my-5">
+                            <h1 className="text-[#fff] font-bold">Resources</h1>
+                        </header>
+
+                        <ul className="text-[12px] text-[#b1b4b6] md:w-20 flex flex-col gap-[.6em]">
+                            <li>API Documentation</li>
+                            <li>PGP Key</li>
+                            <li>Lightning Network</li>
+                            <li>Crypto Pulse</li>
+                        </ul>
+                    </div>
+                    <div className='access'>
+                        <header className="my-5">
+                            <h1 className="text-[#fff] font-bold">Address</h1>
+                        </header>
+
+                        <ul className="text-[12px] text-[#b1b4b6] md:w-20 flex flex-col gap-[.6em]">
+                            <li>Bitstamp Ltd</li>
+                            <li>5 New Street Square</li>
+                            <li>London, EC4A 3TW</li>
+                            <li>United Kingdom</li>
+                        </ul>
+                    </div>
+                    <div className='contact'>
+                        <header className="my-5">
+                            <h1 className="text-[#fff] font-bold">Contact</h1>
+                        </header>
+
+                        <ul className="text-[12px] text-[#b1b4b6] flex flex-col gap-[.6em]">
+                            <li>Customer support</li>
+                            <li>info@bitstamp.net</li>
+                            <li>press@bitstamp.net</li>
+                            <li>support@bitstamp.net</li>
+                            <li>complaints@bitstamp.net</li>
+                            <li>&#43;44 20 3868 9628</li>
+                            <li>&#43;1 800 712 5702</li>
+                            <li>&#43;352 20 88 10 96</li>
+                            <li>Customer support will be provided:
+                                Mon - Sat: 6am
+                                CET to 10pm CET
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div className="socials flex flex-col md:flex-row justify-between items-center gap-7 my-[4.5em]">
+                    <div className='flex flex-col smm:flex-row smm:justify-between items-center justify-center w-full md:gap-[4rem]'>
+                        <div className='flex gap-2 mb-6 sm:mb-0'>
+                            <span><svg className='text-white' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28" data-v-922e7ce6="" data-v-c7c354ae=""><path d="m6.52 6 8.97 12h2.03L8.55 6H6.52z"></path><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0Zm3.01 18.95-4.08-5.46-5.05 5.46h-1.3l5.77-6.24-5.74-7.67h4.42l3.76 5.03 4.65-5.03h1.3l-5.37 5.8 6.06 8.1h-4.42Z"></path></svg></span>
+                            <span><svg className='text-white' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" data-v-922e7ce6="" data-v-c7c354ae=""><path fill="currentColor" d="M12,0A12,12,0,1,0,24,12h0A12,12,0,0,0,12,0ZM8.64,17H6.3V9.52H8.64ZM7.41,8.6h0A1.31,1.31,0,0,1,7.15,6h.28a1.31,1.31,0,0,1,.28,2.6ZM18,17H15.35V13.15c0-1-.42-1.7-1.33-1.7a1.35,1.35,0,0,0-1.27.91,1.57,1.57,0,0,0-.06.61v4H10.07V9.52h2.62V10.7A2.41,2.41,0,0,1,15,9.46c1.67,0,3,1.08,3,3.39Z"></path></svg></span>
+                            <span><svg className='text-white' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" data-v-922e7ce6="" data-v-c7c354ae=""><path fill="currentColor" d="M12,0A12,12,0,1,0,24,12h0A12,12,0,0,0,12,0Zm2.65,10-.14,1.79H12.67V18H10.34V11.76H9.11V10h1.23V8.76A3.26,3.26,0,0,1,10.74,7a2.22,2.22,0,0,1,1.93-.9A8,8,0,0,1,15,6.23l-.31,1.83a4.24,4.24,0,0,0-1-.15c-.48,0-.91.17-.91.66V10Z"></path></svg></span>
+                            <span><svg className='text-white' data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="28" height="28" data-v-922e7ce6="" data-v-c7c354ae=""><path d="M19.772 8.403c-.984-.046-1.28-.054-3.772-.054s-2.787.01-3.771.054c-2.532.116-3.71 1.314-3.826 3.826-.044.984-.055 1.279-.055 3.771s.011 2.787.055 3.772c.116 2.505 1.289 3.711 3.826 3.827.983.044 1.279.054 3.771.054 2.493 0 2.788-.009 3.772-.054 2.532-.115 3.709-1.318 3.827-3.827.044-.984.053-1.28.053-3.772s-.009-2.787-.053-3.771c-.118-2.51-1.298-3.71-3.827-3.826zM16 20.793a4.792 4.792 0 1 1-.001-9.585A4.792 4.792 0 0 1 16 20.793zm4.983-8.654a1.12 1.12 0 1 1 0-2.24 1.12 1.12 0 0 1 0 2.24zM19.111 16a3.111 3.111 0 1 1-6.222 0 3.111 3.111 0 0 1 6.222 0zM16 0C7.164 0 0 7.164 0 16s7.164 16 16 16 16-7.164 16-16S24.836 0 16 0zm9.277 19.848c-.153 3.393-2.042 5.273-5.428 5.429-.996.046-1.314.056-3.849.056s-2.852-.01-3.848-.056c-3.392-.156-5.273-2.038-5.429-5.429-.046-.995-.056-1.313-.056-3.848s.01-2.852.056-3.848c.156-3.392 2.038-5.273 5.429-5.428.996-.047 1.313-.057 3.848-.057s2.853.01 3.849.057c3.394.156 5.276 2.043 5.428 5.428.046.996.056 1.313.056 3.848s-.01 2.853-.056 3.848z"></path></svg></span>
+                            <span><svg className='text-white' data-v-c7c354ae="" data-v-922e7ce6="" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="28" height="28"><path d="M16 0a16 16 0 1 0 16 16A16 16 0 0 0 16 0zm7.63 10.4c-.05.65-.42 2.92-.79 5.37L21.69 23s-.09 1.06-.88 1.25a3.85 3.85 0 0 1-2.31-.83c-.19-.14-3.47-2.22-4.67-3.24a.87.87 0 0 1 0-1.48c1.67-1.53 3.66-3.42 4.86-4.63.55-.55 1.11-1.85-1.2-.27L11 18.22a2.74 2.74 0 0 1-2.13.05c-1.39-.42-3-1-3-1s-1.11-.69.79-1.43l10.77-4.44c1.07-.4 4.67-1.92 4.67-1.92s1.67-.65 1.53.92z"></path></svg></span>
+                        </div>
+
+
                         <div className='payment-logo flex justify-center lg:justify-between items-center gap-2 smm:flex-col smm:gap-0 sm:flex-row lg:gap-4'>
                             <div className='flex gap-2 justify-end md:flex-col lg:flex-row lg:gap-3'>
                                 <div className='flex gap-2'>
@@ -150,25 +153,26 @@ function Footer() {
                             </span>
                         </div>
 
-                    
-                </div>
 
-                <div className="bitstamp-license text-[12px] text-center smm:text-left mt-3 lg:w-[50%] lg:ms-[5rem]">
-                    <div className='flex justify-center smm:justify-start'>
-                        <svg className='text-[#fff] my-4' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 20" width="88px" height="20px" fill="currentColor" data-v-922e7ce6="" data-v-fca198d0=""><path d="M13.58,11.49c0-1.63-.95-2.94-2.48-3.47,1.16-.53,1.97-1.63,1.97-3.05,0-2.22-1.87-3.77-4.51-3.77H1v1.89c1.19,0,2.15,.96,2.15,2.15s-.96,2.15-2.15,2.15v1.7c1.19,0,2.15,.96,2.15,2.15s-.96,2.15-2.15,2.15v2.06h7.89c2.71,0,4.68-1.61,4.68-3.94M5.06,3.25h3.11c1.27,0,2.18,.83,2.18,1.99s-.91,1.97-2.18,1.97h-3.11V3.25Zm0,10.13v-4.3h3.39c1.4,0,2.35,.87,2.35,2.14s-.95,2.16-2.35,2.16h-3.39Z"></path><path d="M16.65,.46c.95,0,1.63,.68,1.63,1.63s-.68,1.63-1.63,1.63-1.61-.68-1.61-1.63,.68-1.63,1.61-1.63m-1.36,4.6h2.71V15.44h-2.71V5.05Z"></path><path d="M23.25,5.05h2.88v2.06h-2.88v4.96c0,.79,.63,1.45,1.42,1.46,.41,0,.87-.06,1.38-.19l.36,2.03c-.83,.21-1.61,.32-2.35,.32-2.08,0-3.52-1.36-3.52-3.35V2.68c0-.37,.3-.67,.67-.67h2.04v3.05Z"></path><path d="M31.62,4.8c1.21,0,2.5,.25,3.81,.72l-.59,1.95c-1.04-.4-2.08-.66-3.01-.66s-1.61,.44-1.61,1.12c0,1.88,5.55,.51,5.55,4.53,0,1.89-1.7,3.22-4.15,3.22-1.27,0-2.67-.28-4.13-.83l.57-1.93c1.21,.49,2.35,.74,3.35,.74s1.7-.49,1.7-1.21c0-1.97-5.53-.59-5.53-4.53,0-1.82,1.65-3.14,4.05-3.14"></path><path d="M40.09,5.05h2.88v2.06h-2.88v4.96c0,.79,.63,1.45,1.42,1.46,.41,0,.87-.06,1.38-.19l.36,2.03c-.83,.21-1.61,.32-2.35,.32-2.08,0-3.52-1.36-3.52-3.35V2.68c0-.38,.31-.68,.68-.68h2.03v3.05Z"></path><path d="M57.3,5.05h2.16l.34,1.42c.83-1.08,2.03-1.67,3.41-1.67,1.5,0,2.73,.72,3.33,1.91,.95-1.23,2.25-1.91,3.75-1.91,2.27,0,3.88,1.57,3.88,3.79v6.84h-2.71v-6.42c0-1.16-.83-1.99-2.01-1.99-1.38,0-2.35,1.04-2.35,2.52v5.89h-2.71v-6.42c0-1.16-.83-1.99-1.99-1.99-1.4,0-2.37,1.04-2.37,2.52v5.89h-2.71V5.05Z"></path><path d="M76.41,5.05h2.16l.34,1.34c.76-1.02,1.95-1.59,3.33-1.59,2.8,0,4.77,2.25,4.77,5.45s-1.97,5.44-4.77,5.44c-1.27,0-2.37-.51-3.12-1.44v4.62c0,.37-.3,.68-.68,.68h-2.04V5.05Zm5.13,1.89c-1.44,0-2.46,1.08-2.46,2.61v1.4c0,1.5,1.02,2.61,2.46,2.61,1.59,0,2.71-1.38,2.71-3.3s-1.12-3.31-2.71-3.31"></path><path d="M52.19,10.94c0,1.5-1.02,2.61-2.46,2.61-1.59,0-2.71-1.38-2.71-3.3s1.12-3.31,2.71-3.31c1.44,0,2.46,1.08,2.46,2.61v1.4Zm2.67-.6h0V5.05h-2.16l-.34,1.34c-.76-1.02-1.95-1.59-3.33-1.59-2.8,0-4.77,2.25-4.77,5.45s1.97,5.44,4.77,5.44c.16,0,.32,0,.48-.03,1.17-.12,2.17-.67,2.85-1.56l.34,1.34h2.16v-5.09Z"></path></svg>
                     </div>
-                    <p className='text-[#b1b4b6]'>
-                        Bitstamp USA, Inc. is licensed to engage in
-                        Virtual Currency Business Activity by the New 
-                        York State Department of Financial Services. 
-                        Licensed as a Money Transmitter by the New York 
-                        State Department of Financial Services.
-                    </p>
 
-                    <p className='text-[#b1b4b6] text-[12px] my-2'>
-                        All rights reserved © 2024 Bitstamp. 
-                        <a className=' transition-all duration-5000 hover:underline' href="https://www.nmlsconsumeraccess.org/EntityDetails.aspx/COMPANY/1905429" target="_blank" rel="noopener noreferrer nofollow">NMLS #1905429</a>
-                    </p>
+                    <div className="bitstamp-license text-[12px] text-center smm:text-left mt-3 lg:w-[50%] lg:ms-[5rem]">
+                        <div className='flex justify-center smm:justify-start'>
+                            <svg className='text-[#fff] my-4' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 20" width="88px" height="20px" fill="currentColor" data-v-922e7ce6="" data-v-fca198d0=""><path d="M13.58,11.49c0-1.63-.95-2.94-2.48-3.47,1.16-.53,1.97-1.63,1.97-3.05,0-2.22-1.87-3.77-4.51-3.77H1v1.89c1.19,0,2.15,.96,2.15,2.15s-.96,2.15-2.15,2.15v1.7c1.19,0,2.15,.96,2.15,2.15s-.96,2.15-2.15,2.15v2.06h7.89c2.71,0,4.68-1.61,4.68-3.94M5.06,3.25h3.11c1.27,0,2.18,.83,2.18,1.99s-.91,1.97-2.18,1.97h-3.11V3.25Zm0,10.13v-4.3h3.39c1.4,0,2.35,.87,2.35,2.14s-.95,2.16-2.35,2.16h-3.39Z"></path><path d="M16.65,.46c.95,0,1.63,.68,1.63,1.63s-.68,1.63-1.63,1.63-1.61-.68-1.61-1.63,.68-1.63,1.61-1.63m-1.36,4.6h2.71V15.44h-2.71V5.05Z"></path><path d="M23.25,5.05h2.88v2.06h-2.88v4.96c0,.79,.63,1.45,1.42,1.46,.41,0,.87-.06,1.38-.19l.36,2.03c-.83,.21-1.61,.32-2.35,.32-2.08,0-3.52-1.36-3.52-3.35V2.68c0-.37,.3-.67,.67-.67h2.04v3.05Z"></path><path d="M31.62,4.8c1.21,0,2.5,.25,3.81,.72l-.59,1.95c-1.04-.4-2.08-.66-3.01-.66s-1.61,.44-1.61,1.12c0,1.88,5.55,.51,5.55,4.53,0,1.89-1.7,3.22-4.15,3.22-1.27,0-2.67-.28-4.13-.83l.57-1.93c1.21,.49,2.35,.74,3.35,.74s1.7-.49,1.7-1.21c0-1.97-5.53-.59-5.53-4.53,0-1.82,1.65-3.14,4.05-3.14"></path><path d="M40.09,5.05h2.88v2.06h-2.88v4.96c0,.79,.63,1.45,1.42,1.46,.41,0,.87-.06,1.38-.19l.36,2.03c-.83,.21-1.61,.32-2.35,.32-2.08,0-3.52-1.36-3.52-3.35V2.68c0-.38,.31-.68,.68-.68h2.03v3.05Z"></path><path d="M57.3,5.05h2.16l.34,1.42c.83-1.08,2.03-1.67,3.41-1.67,1.5,0,2.73,.72,3.33,1.91,.95-1.23,2.25-1.91,3.75-1.91,2.27,0,3.88,1.57,3.88,3.79v6.84h-2.71v-6.42c0-1.16-.83-1.99-2.01-1.99-1.38,0-2.35,1.04-2.35,2.52v5.89h-2.71v-6.42c0-1.16-.83-1.99-1.99-1.99-1.4,0-2.37,1.04-2.37,2.52v5.89h-2.71V5.05Z"></path><path d="M76.41,5.05h2.16l.34,1.34c.76-1.02,1.95-1.59,3.33-1.59,2.8,0,4.77,2.25,4.77,5.45s-1.97,5.44-4.77,5.44c-1.27,0-2.37-.51-3.12-1.44v4.62c0,.37-.3,.68-.68,.68h-2.04V5.05Zm5.13,1.89c-1.44,0-2.46,1.08-2.46,2.61v1.4c0,1.5,1.02,2.61,2.46,2.61,1.59,0,2.71-1.38,2.71-3.3s-1.12-3.31-2.71-3.31"></path><path d="M52.19,10.94c0,1.5-1.02,2.61-2.46,2.61-1.59,0-2.71-1.38-2.71-3.3s1.12-3.31,2.71-3.31c1.44,0,2.46,1.08,2.46,2.61v1.4Zm2.67-.6h0V5.05h-2.16l-.34,1.34c-.76-1.02-1.95-1.59-3.33-1.59-2.8,0-4.77,2.25-4.77,5.45s1.97,5.44,4.77,5.44c.16,0,.32,0,.48-.03,1.17-.12,2.17-.67,2.85-1.56l.34,1.34h2.16v-5.09Z"></path></svg>
+                        </div>
+                        <p className='text-[#b1b4b6]'>
+                            Bitstamp USA, Inc. is licensed to engage in
+                            Virtual Currency Business Activity by the New
+                            York State Department of Financial Services.
+                            Licensed as a Money Transmitter by the New York
+                            State Department of Financial Services.
+                        </p>
+
+                        <p className='text-[#b1b4b6] text-[12px] my-2'>
+                            All rights reserved © 2024 Bitstamp.
+                            <a className=' transition-all duration-5000 hover:underline' href="https://www.nmlsconsumeraccess.org/EntityDetails.aspx/COMPANY/1905429" target="_blank" rel="noopener noreferrer nofollow">NMLS #1905429</a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
