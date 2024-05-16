@@ -27,7 +27,7 @@ function NavBar() {
                         <li>Institutions <span className='hidden'>& Partners</span></li>
                         <li>Pro</li>
                         <li>Mobile</li>
-                        <li>Earn Stake</li>
+                        <Link href='/hero/staking'><li>Earn Stake</li></Link>
                         <li>Earn Lend</li>
                         <li>Markets</li>
                         <li>Tradeview</li>
@@ -55,7 +55,7 @@ function NavBar() {
                             <li>Institutions <span className='hidden'>& Partners</span></li>
                             <li>Pro</li>
                             <li>Mobile</li>
-                            <li>Earn Stake</li>
+                            <Link href='/hero/staking'><li>Earn Stake</li></Link>
                             <li>Earn Lend</li>
                             <li>Markets</li>
                             <li>Tradeview</li>
