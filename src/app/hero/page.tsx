@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Video from 'next-video'
 import vidFrame from './img/mobile.png'
-import heroVid from '../../../videos/simple_app_798e07c086.mp4'
+import heroVid from '../videos/simple_app_798e07c086.mp4'
 import newImg from './img/recurring_payments_d103b6b8fb.png'
 import easeImg from './img/ease_of_trading_e2d0069e0b.webp'
 import provenImg from './img/proven_reliability_3643ecefba.webp'
@@ -16,9 +16,11 @@ import swissImage from './img/Swissquote_5fc90c4cef.webp'
 import registerImg from './img/register_a0962b5bb3.webp'
 import fundImg from './img/fund_43d0a9aed3.webp'
 import tradeImg from './img/trade_777dbac7e3.webp'
+import NavBar from '../nav/NavBar'
+import Footer from '../footer/Footer'
 
 
-function Hero() {
+function page() {
   return (
     <div className='mt-24 md:mt-60 overflow-x-hidden'>
       <section className='md:flex px-6 md:max-w-[95%] m-auto'>
@@ -331,7 +333,7 @@ function Hero() {
 
           <div className="steps grid grid-cols-1 smm:grid-cols-2 md:grid-cols-3 justify-center items-center text-center w-[95%] m-auto gap-[2.3rem] md:gap-[6.1rem] md:my-[6rem]">
             <div className="register flex flex-col items-center smm:items-start gap-4">
-              <Image src={registerImg} alt="alt"/>
+              <Image src={registerImg} alt="alt" />
 
               <div className='smm:text-left'>
                 <h3 className='text-[#003b2f] text-[20px] smm:text-[23px] font-GT font-bold'>1. Register</h3>
@@ -342,7 +344,7 @@ function Hero() {
             </div>
 
             <div className="fund flex flex-col items-center smm:items-start gap-4 md:mt-[44px]">
-              <Image src={fundImg} alt="alt"/>
+              <Image src={fundImg} alt="alt" />
 
               <div className='smm:text-left'>
                 <h3 className='text-[#003b2f] text-[20px] smm:text-[23px] font-GT font-bold'>2. Fund</h3>
@@ -353,7 +355,7 @@ function Hero() {
             </div>
 
             <div className="trade flex flex-col items-center smm:items-start gap-4">
-              <Image src={tradeImg} alt="alt"/>
+              <Image src={tradeImg} alt="alt" />
 
               <div className='smm:text-left'>
                 <h3 className='text-[#003b2f] text-[20px] smm:text-[23px] font-GT font-bold'>3. Trade</h3>
@@ -369,4 +371,4 @@ function Hero() {
   )
 }
 
-export default Hero
+export default page

@@ -169,7 +169,7 @@ function page() {
                     <p className='text-[#003b2f] text-[17px] my-4 w-full'>To find out more about Bitstamp Staking <strong className='underline'>click here to read our FAQ</strong></p>
                 </div>
             </section>
-            <Footer />
+            
         </div>
     )
 }
