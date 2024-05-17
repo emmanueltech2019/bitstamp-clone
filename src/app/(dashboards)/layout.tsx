@@ -1,19 +1,10 @@
 
-// export 
-
-// export default function DashboardLayout({
-//     children,
-// }: {
-//     children: React.ReactNode
-//   }) {
-//     return <section>{children}</section>
-// }
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-// import "./globals.css";
-// import "./font.css";
-// import NavBar from "./nav/NavBar";
+import "../globals.css";
+import "../font.css";
+import NavBar from "./navbar/Navbar";
 // import Footer from "./footer/Footer"
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -30,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-      {/* <NavBar/> */}
+      <NavBar/>
         {children}
       {/* <Footer/> */}
         </body>
