@@ -1,6 +1,6 @@
 import React from 'react'
-import NavBar from './nav/NavBar'
-import Footer from './footer/Footer'
+import NavBar from '../nav/NavBar'
+import Footer from '../footer/Footer'
 import Hero from './hero/page'
 
 
