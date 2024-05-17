@@ -15,7 +15,7 @@ function Footer() {
                         </header>
 
                         <ul className="text-[12px] text-[#b1b4b6] flex flex-col gap-[.6em]">
-                            <Link href='/Hero/about'><li>Who We Are</li></Link>
+                            <Link href='/hero/about'><li>Who We Are</li></Link>
                             <li>The Bitstamp Way</li>
                             <li>Careers</li>
                             <li>Legal & privacy</li>
