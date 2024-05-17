@@ -1,5 +1,4 @@
-// components/Navbar.tsx
-
+'use client'
 import { useState } from 'react';
 import Link from 'next/link';
 
@@ -65,17 +64,17 @@ const Navbar = () => {
             </div>
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
-                <Link href="/">
+                <Link href="/" legacyBehavior>
                   <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                     Home
                   </a>
                 </Link>
-                <Link href="/about">
+                <Link href="/about" legacyBehavior>
                   <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                     About
                   </a>
                 </Link>
-                <Link href="/contact">
+                <Link href="/contact" legacyBehavior>
                   <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                     Contact
                   </a>
@@ -88,17 +87,17 @@ const Navbar = () => {
 
       <div className={`${isOpen ? 'block' : 'hidden'} sm:hidden`} id="mobile-menu">
         <div className="px-2 pt-2 pb-3 space-y-1">
-          <Link href="/">
+          <Link href="/" legacyBehavior>
             <a className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
               Home
             </a>
           </Link>
-          <Link href="/about">
+          <Link href="/about" legacyBehavior>
             <a className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
               About
             </a>
           </Link>
-          <Link href="/contact">
+          <Link href="/contact" legacyBehavior>
             <a className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
               Contact
             </a>
