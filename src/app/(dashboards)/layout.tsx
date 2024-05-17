@@ -1,18 +1,9 @@
 
-// export 
-
-// export default function DashboardLayout({
-//     children,
-// }: {
-//     children: React.ReactNode
-//   }) {
-//     return <section>{children}</section>
-// }
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-// import "./globals.css";
-// import "./font.css";
+import "../globals.css";
+import "../font.css";
 import NavBar from "./navbar/Navbar";
 // import Footer from "./footer/Footer"
 // const inter = Inter({ subsets: ["latin"] });
