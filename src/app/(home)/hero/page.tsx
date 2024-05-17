@@ -21,7 +21,7 @@ import tradeImg from './img/trade_777dbac7e3.webp'
 
 function page() {
   return (
-    <div className='mt-24 md:mt-60 overflow-x-hidden'>
+    <div className='bg-[#003b2f] pt-24 md:pt-60 overflow-x-hidden'>
       <section className='md:flex px-6 md:max-w-[95%] m-auto'>
         <div>
           <div className="head-text sm:w-[90%] md:w-[83%] lg:w-[70%]">
