@@ -47,7 +47,7 @@ function page() {
         </div>
 
 
-        <div className="relative w-full h-full -z-50 left-[7px] top-0 md:top-[-24px] overflow-x-hidden md:overflow-x-visible">
+        <div className="relative w-full h-full left-[7px] top-0 md:top-[-24px] overflow-x-hidden md:overflow-x-visible">
           <div className=" relative w-[400px] lg:w-[500px] z-10 mx-auto overflow-x-hidden">
             <Image src={vidFrame} alt="Phone Frame" className="w-[400px] lg:w-[500px] h-full object-contain ms-3" />
             <div className="absolute inset-0 overflow-x-hidden -z-20 w-[243px] lg:w-[290px] h-[496px] lg:h-[620px] top-[30px] left-[9%] rounded-[30px]">

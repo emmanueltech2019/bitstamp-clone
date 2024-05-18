@@ -21,7 +21,7 @@ function Footer() {
                             <li>Legal & privacy</li>
                             <li>Terms of Use - USA</li>
                             <li>Free Schedule</li>
-                            <li>FAQ</li>
+                            <Link href='./hero/faq'><li>FAQ</li></Link>
                         </ul>
                     </div>
                     <div className='legal md:hidden'>
@@ -114,7 +114,7 @@ function Footer() {
                     </div>
                 </div>
 
-                <div className="socials flex flex-col md:flex-row justify-between items-center gap-7 my-[4.5em]">
+                <div className="socials flex flex-col md:flex-row justify-between items-center gap-7 mt-[4.5em]">
                     <div className='flex flex-col smm:flex-row smm:justify-between items-center justify-center w-full md:gap-[4rem]'>
                         <div className='flex gap-2 mb-6 sm:mb-0'>
                             <span><svg className='text-white' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28" data-v-922e7ce6="" data-v-c7c354ae=""><path d="m6.52 6 8.97 12h2.03L8.55 6H6.52z"></path><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0Zm3.01 18.95-4.08-5.46-5.05 5.46h-1.3l5.77-6.24-5.74-7.67h4.42l3.76 5.03 4.65-5.03h1.3l-5.37 5.8 6.06 8.1h-4.42Z"></path></svg></span>

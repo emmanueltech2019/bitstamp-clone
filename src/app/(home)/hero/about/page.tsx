@@ -256,7 +256,7 @@ function page() {
                 </div>
             </section>
 
-            <section>
+            <section className='bg-[#003b2f]'>
                 <div className='md:max-w-[97%] m-auto p-7 pb-[5rem]'>
                     <header className='mb-[3rem] mt-[3rem]'>
                         <h2 className='text-[#fff] text-[30px] smm:text-[48px] font-GT font-bold mb-[2rem]'>

@@ -8,10 +8,10 @@ import Footer from '@/app/footer/Footer'
 function page() {
     return (
 
-        <div className=''>
-            <NavBar />
-            <section className='bg-[#f2f2f2] sm:flex sm:items-center'>
-                <div className='px-6 md:max-w-[95%] m-auto pt-24 md:pt-60 overflow-x-hidden'>
+        <div className='bg-[#f2f2f2]'>
+
+            <section className='md:max-w-[95%] m-auto sm:flex sm:items-center'>
+                <div className='px-6 pt-24 md:pt-60 overflow-x-hidden'>
                     <div className="head-text sm:w-[90%] md:w-[83%] lg:w-[70%]">
                         <h1 className='hero-text text-[#003b2f] font-bold text-[48px] vsm:text-[50px] lg:text-[65px] text-pretty leading-[15mm] vsm:leading-[18mm] lg:leading-[22mm]'>
                             <span>Bitstamp</span>
