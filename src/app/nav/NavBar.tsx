@@ -16,7 +16,7 @@ function NavBar() {
 
     return (
         <div className=''>
-            <header className='flex justify-between lg:px-[3.5rem] p-3 px-6 items-center fixed top-0 w-[100%] bg-[#fff] shadow z-40'>
+            <header className='flex justify-between lg:px-[3.5rem] p-3 px-6 items-center fixed top-0 w-[100%] bg-[#f2f2f2] z-40'>
                 <div className="logo">
                     <Link href="/hero">
                         <Image src={logo} alt="alt" className='w-[120px]' />
