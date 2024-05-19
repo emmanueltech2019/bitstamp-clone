@@ -26,7 +26,7 @@ const columns: GridColDef[] = [
   },
 ];
 
-const rows = [
+const rows: any = [
   // Replace with your actual transaction data 
 ];
 
