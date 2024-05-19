@@ -187,7 +187,7 @@ function Deposit() {
                 Coming Soon
             </Typography>
             <Typography variant="body1" className="text-gray-600">
-                We're working hard to bring you something amazing. Stay tuned!
+                We&lsquo;re working hard to bring you something amazing. Stay tuned!
             </Typography>
             </Box>
         </Container>
@@ -212,7 +212,7 @@ function Deposit() {
       <Divider />
 
       <Typography className="mt-4 mb-2 pt-5 ">
-        Don't have cryptocurrency?
+        Don&lsquo;t have cryptocurrency?
       </Typography>
       {/* <Button variant="outlined" color="error" fullWidth className="mb-5">
         Buy Now

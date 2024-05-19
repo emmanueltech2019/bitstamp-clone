@@ -24,7 +24,7 @@ const WalletManagement: React.FC = () => {
   return (
     <div className="p-4">
       <Alert severity="warning" className="mb-4">
-        We won't be held accountable for any losses incurred as a result of the wrong input of wallet address, please make sure your wallet is correct.
+        We won&lsquo;t be held accountable for any losses incurred as a result of the wrong input of wallet address, please make sure your wallet is correct.
       </Alert>
       <TableContainer component={Paper}>
         <Table>

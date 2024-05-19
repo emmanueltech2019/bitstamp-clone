@@ -31,10 +31,10 @@ const SupportForm: React.FC = () => {
             Do you need help?
           </Typography>
           <Typography variant="body1" className="mb-6">
-            We're here to help you with any issues or questions you may have. Whether you need technical support,
-            customer service, or just some general advice, we're always happy to assist. Please fill out the form below
+            We&lsquo;re here to help you with any issues or questions you may have. Whether you need technical support,
+            customer service, or just some general advice, we&lsquo;re always happy to assist. Please fill out the form below
             to let us know how we can help, and one of our agents will get in touch with you within 24 hours. We
-            understand that you may be feeling frustrated or overwhelmed, and we want to reassure you that we'll do
+            understand that you may be feeling frustrated or overwhelmed, and we want to reassure you that we&lsquo;ll do
             everything we can to resolve your issue quickly and efficiently.
           </Typography>
           <form>
