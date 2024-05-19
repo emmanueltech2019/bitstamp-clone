@@ -60,10 +60,10 @@ export default function Transactions() {
         <DataGrid
           rows={rows}
           columns={columns}
-          pageSize={5}
-          rowsPerPageOptions={[5]}
+          // pageSize={5}
+          // rowsPerPageOptions={[5]}
           checkboxSelection
-          disableSelectionOnClick
+          // disableSelectionOnClick
         />
       </div>
     </Box>
