@@ -164,7 +164,7 @@ function Deposit() {
                 }
                 label={
                     <Box className="flex items-center space-x-2">
-                    <Image src={option.icon} alt={option.label} className='w-10' sx={{ width: 10, height: 10, mr: 1 }} />
+                    <Image src={option.icon} alt={option.label} className='w-10' />
                     <Typography className='text-[11px]'>{option.label}</Typography>
                     </Box>
                 }
@@ -223,15 +223,15 @@ function Deposit() {
       </Typography>
       <Box className="flex flex-col space-y-2">
         <Link href="https://www.paxful.com" className="flex items-center space-x-3 text-[#1a1a1a]">
-          <Image src={Paxful} className="w-10 h-10" />
+          <Image src={Paxful} className="w-10 h-10" alt="" />
           <p>Paxful</p>
         </Link>
         <Link href="https://www.binance.com" className="flex items-center space-x-3 text-[#1a1a1a]">
-        <Image src={Binance} className="w-10 h-10" />
+        <Image src={Binance} className="w-10 h-10" alt="" />
           <p>Binance</p>
         </Link>
         <Link href="https://www.crypto.com" className="flex items-center space-x-3 text-[#1a1a1a]">
-        <Image src={Cryptocom} className="w-10 h-10" />
+        <Image src={Cryptocom} className="w-10 h-10" alt="" />
           <p>Crypto.com</p>
           
         </Link>

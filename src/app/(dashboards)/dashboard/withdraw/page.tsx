@@ -28,7 +28,7 @@ function WithdrawalOptions() {
         {options.map((option) => (
           <Grid item xs={12} sm={6} md={2.4} key={option.label}>
             <Paper elevation={3} className="p-4 rounded-lg flex flex-col items-center justify-center h-full">
-              <Image src={option.Icon} className="text-4xl mb-2 h-30" /> {/* Make icon larger */}
+              <Image src={option.Icon} className="text-4xl mb-2 h-30" alt=""/> {/* Make icon larger */}
               <Typography variant="body1" align="center" className="mb-2 text-[12px] px-2">
                 {option.label}
               </Typography>
