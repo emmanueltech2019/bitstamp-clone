@@ -19,7 +19,7 @@ const initialContextValue: NavBarContextValue = {
 export const NavBarContext = createContext<NavBarContextValue>(initialContextValue)
 
 
-export const NavBarContextProvider: React.FC = ({ children }) => {
+export const NavBarContextProvider: React.FC = ({ children }: any) => {
     const [isCollapsed, setIsCollapsed] = useState(true);
     console.log(isCollapsed)
 
