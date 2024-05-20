@@ -13,8 +13,8 @@ const Accordion: React.FC<AccordionProps> = ({ title, answer }) => {
     };
 
     return (
-        <div>
-            <div className="question py-[2rem] border-b-[0.5px] border-[#003b2f8e]">
+        <div className=''>
+            <div className="question py-[2rem] border-b-[0.5px] border-[#003b2f8e] ">
                 <header onClick={handleClick} className='cursor-pointer'>
                     {title}
                 </header>
