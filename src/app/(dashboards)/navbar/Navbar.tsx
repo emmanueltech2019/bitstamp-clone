@@ -1,11 +1,13 @@
 
 'use client'
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import Link from 'next/link';
 import Logo from "../../nav/img/Bitstamp-Logo-PNG-Image.png";
 import SmallLogo from "../../nav/img/small-logo.png"; // Add a smaller version of the logo
 import UserIcon from "../../nav/img/elon.jpeg";
 import Image from 'next/image';
+import axios from '../../../utils/axios';
+
 import {
   AppBar,
   Toolbar,
@@ -70,6 +72,46 @@ const Navbar:React.FC = () => {
   const buttonRef = React.useRef<HTMLButtonElement>(null);
   const { isCollapsed, toggleSidebar } = useContext(NavBarContext); 
 
+
+
+  interface ProfileData {
+    name: string;
+    email: string;
+    // Add more profile fields as needed
+  }
+const [profileData, setProfileData] = useState<ProfileData | null>(null);
+const [isLoading, setIsLoading] = useState(true);
+const [error, setError] = useState<string | null>(null);
+
+
+
+
+useEffect(() => {
+    const fetchProfileData = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        console.log(token);
+        const response = await axios.get('/user/profile', {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+        });         
+        setProfileData(response.data);
+      } catch (error: any) {
+        setError(error.response?.data.message || 'An error occurred fetching profile data.');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchProfileData();
+  }, []); // Empty dependency array ensures this runs only once on mount
+
+  if (isLoading) {
+    return <div>Loading profile...</div>;
+  }
+
+  if (error) {
+    return <div className="error">Error: {error}</div>;
+  }
   return (
 
                 
@@ -104,7 +146,7 @@ const Navbar:React.FC = () => {
                     endIcon={<KeyboardArrowDownOutlinedIcon />}
                   >
                     <Image src={UserIcon} alt="alt" className="rounded-full w-10 h-10" />
-                    <p>Hi, Emmanuel</p>
+                    <p>Hi, {profileData.name}</p>
                   </Button>
                   <Menu
                     id="basic-menu"
