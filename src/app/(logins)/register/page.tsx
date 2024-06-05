@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, FormEvent, useEffect } from 'react'
+import React, { useState, FormEvent, useEffect, Suspense } from 'react'
 import './bg.css'
 import Image from 'next/image'
 import logo from '../img/bitstamp_logo-removebg-preview.png'
@@ -27,7 +27,7 @@ function Page() {
 
     const [error, setError] = useState<string | null>(null);
 
-    
+
     useEffect(() => {
         const value = searchParams.get('referrer');
         setFormData((prevData) => ({ ...prevData, refferalEmail: value || '' }));
@@ -36,7 +36,7 @@ function Page() {
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
-    };
+    };  
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -59,6 +59,8 @@ function Page() {
 
 
     return (
+        <Suspense fallback={<div>Loading...</div>}>
+
         <div className='bg-[#f2f2f2] px-5 py-6'>
             <header className='flex justify-between items-center'>
                 <div className="logo">
@@ -121,6 +123,7 @@ function Page() {
 
 
         </div>
+        </Suspense>
     )
 }
 
