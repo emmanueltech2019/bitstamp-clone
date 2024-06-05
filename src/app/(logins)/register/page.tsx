@@ -57,7 +57,7 @@ function Page() {
         const value = searchParams.get('referrer');
         setFormData({ ...formData, ["refferalEmail"]: value });
         // setRefferalEmail(value);
-    }, [searchParams]);
+    },[]);
 
     return (
         <div className='bg-[#f2f2f2] px-5 py-6'>
