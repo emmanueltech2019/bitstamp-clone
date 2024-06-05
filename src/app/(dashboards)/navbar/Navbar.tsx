@@ -102,7 +102,7 @@ const handleLogout = () =>{
       }).then(()=>{
         localStorage.clear()
         setTimeout(() => {
-          window.location="/login"
+          window.location.href="/login"
         }, 3000);
       })
     }
@@ -170,7 +170,7 @@ useEffect(() => {
                     endIcon={<KeyboardArrowDownOutlinedIcon />}
                   >
                     <Image src={UserIcon} alt="alt" className="rounded-full w-10 h-10" />
-                    <p>Hi, {profileData.name}</p>
+                    <p>Hi, {profileData?.name}</p>
                   </Button>
                   <Menu
                     id="basic-menu"
