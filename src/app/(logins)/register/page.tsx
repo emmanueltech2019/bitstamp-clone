@@ -8,7 +8,7 @@ import axios from '../../../utils/axios';
 import { useRouter } from 'next/router';
 import { useSearchParams } from 'next/navigation'
 
-function page() {
+function Page() {
     const router = useRouter();
 
     interface RegisterData {
@@ -125,4 +125,4 @@ function page() {
     )
 }
 
-export default page
+export default Page
