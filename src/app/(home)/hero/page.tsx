@@ -48,7 +48,6 @@ function page() {
             src="https://widget.coinlib.io/widget?type=full_v2&theme=dark&cnt=10&pref_coin_id=1505&graph=yes"
             width="100%"
             height="645px"
-            border="0"
             style={{ border: '0', margin: '0', padding: '0' }}
           ></iframe>
         </div>
