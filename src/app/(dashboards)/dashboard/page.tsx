@@ -102,7 +102,7 @@ const [profileData, setProfileData] = useState<ProfileData | null>(null);
     }
   }
     fetchWithdrawals()
-  }, []); // Empty dependency array ensures this runs only once on mount
+  }, [profileData]); // Empty dependency array ensures this runs only once on mount
 
   return (
     <Box className="p-6">

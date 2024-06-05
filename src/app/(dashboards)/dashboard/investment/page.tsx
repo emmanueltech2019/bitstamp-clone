@@ -58,8 +58,8 @@ const [investments, setInvestments] = useState<Investments[]>([]);
       {investments ? 
       <>
       <Box className="flex flex-col items-center justify-center h-full bg-gray-100 overflow-y-auto">
-      {investments.map((investment: Investments) =>(
-        <Card className="bg-white rounded-lg p-4 my-2 w-[400px] py-0 shadow-md border-l border-spacing-2 border-[#003b2f]">
+      {investments.map((investment: Investments, index:number) =>(
+        <Card key={index} className="bg-white rounded-lg p-4 my-2 w-[400px] py-0 shadow-md border-l border-spacing-2 border-[#003b2f]">
           <CardContent>
             <Typography variant="h6" className='font-semibold my-1'>ASSET: {investment.asset}</Typography>
             <Typography variant="h6" className="font-semibold my-1">AMOUNT: ${investment.amount}.00</Typography>
