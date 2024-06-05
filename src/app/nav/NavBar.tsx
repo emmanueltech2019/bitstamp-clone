@@ -26,44 +26,52 @@ function NavBar() {
 
                 <div className="navList">
                     <ul className='gap-4 hidden text-[13px] font-light sm:hidden md:hidden lg:flex'>
-                        <li>Institutions <span className='hidden'>& Partners</span></li>
+                        {/* <li>Institutions <span className='hidden'>& Partners</span></li>
                         <li>Pro</li>
-                        <li>Mobile</li>
-                        <Link href='/hero/staking'><li>Earn Stake</li></Link>
-                        <li>Earn Lend</li>
+                        <li>Mobile</li> */}
+                        <Link href='/hero/about'><li>About</li></Link>
+                            <Link href='/hero/staking'><li>Earn Stake</li></Link>
+                
+                            <Link href='/hero/faq'><li>Faq</li></Link>
+                        {/* <li>Earn Lend</li>
                         <li>Markets</li>
                         <li>Tradeview</li>
                         <li>Blog</li>
-                        <li>Learn</li>
-                        <li className='lg:hidden'>Get Bitstamp app</li>
+                        <li>Learn</li> */}
+                        {/* <li className='lg:hidden'>Get Bitstamp app</li> */}
                     </ul>
                 </div>
                 {
                     toggleNav ? <div className="navList-mobile absolute right-0 top-[61px] w-full h-[100vh] bg-[#fff] -z-50 p-5 md:w-[45%] transition-all animate__animated animate__bounce animate__delay-4s">
                         <ul className='flex flex-col gap-4 lg:text-[14px] text-[20px] font-light'>
-                            <li>Institutions <span className='hidden'>& Partners</span></li>
+                            {/* <li>Institutions <span className='hidden'>& Partners</span></li>
                             <li>Pro</li>
-                            <li>Mobile</li>
+                            <li>Mobile</li> */}
+                            <Link href='/hero/about'><li>About</li></Link>
                             <Link href='/hero/staking'><li>Earn Stake</li></Link>
-                            <li>Earn Lend</li>
-                            <li>Markets</li>
-                            <li>Tradeview</li>
+                
+                            <Link href='/hero/faq'><li>Faq</li></Link>
+                            {/* <li>Tradeview</li>
                             <li>Blog</li>
-                            <li>Learn</li>
-                            <li className='lg:hidden'>Get Bitstamp app</li>
+                            <li>Learn</li> */}
+                            {/* <li className='lg:hidden'>Get Bitstamp app</li> */}
                         </ul>
                     </div> : <div className="navList-mobile absolute right-[-100%] top-[61px] w-full h-[100vh] bg-[#fff] -z-50 p-5 md:w-[45%] transition-all animate__animated animate__bounce animate__delay-4s">
                         <ul className='flex flex-col lg:flex-row gap-4 lg:text-[14px] text-[20px] font-light'>
-                            <li>Institutions <span className='hidden'>& Partners</span></li>
-                            <li>Pro</li>
-                            <li>Mobile</li>
+                            {/* <li>Institutions <span className='hidden'>& Partners</span></li> */}
+                            {/* <li>Pro</li> */}
+                            {/* <li>Mobile</li> */}
+                            {/* <Link href='/hero/staking'><li>Earn Stake</li></Link> */}
+                            {/* <li>Earn Lend</li> */}
+                            <Link href='/hero/about'><li>About</li></Link>
                             <Link href='/hero/staking'><li>Earn Stake</li></Link>
-                            <li>Earn Lend</li>
-                            <li>Markets</li>
-                            <li>Tradeview</li>
-                            <li>Blog</li>
-                            <li>Learn</li>
-                            <li className='lg:hidden'>Get Bitstamp app</li>
+                
+                            <Link href='/hero/faq'><li>Faq</li></Link>
+                            {/* <li>Markets</li> */}
+                            {/* <li>Tradeview</li> */}
+                            {/* <li>Blog</li> */}
+                            {/* <li>Learn</li> */}
+                            {/* <li className='lg:hidden'>Get Bitstamp app</li> */}
                         </ul>
                     </div>
                 }
@@ -73,11 +81,9 @@ function NavBar() {
                         <Link href='/login' className=' cursor-pointer'><p className='underline'>Log in</p></Link>
                     </div>
                     <div className="get-started">
-                        <button className='text-[#03fc9d]  bg-[#003b2f] p-[6px] px-5 rounded'>Get started</button>
+                    <Link href='/register' className='text-[#03fc9d]  bg-[#003b2f] p-[6px] px-5 rounded'>Get started</Link>
                     </div>
-                    <div className="download hidden md:block">
-                        <svg className='text-[#0000005e]' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24" data-v-a6e51c6b="" data-v-c7c354ae=""><path d="M19 22H5c-.8 0-1.55-.31-2.12-.88C2.31 20.55 2 19.8 2 19v-4c0-.55.45-1 1-1s1 .45 1 1v4c0 .26.11.52.29.71.19.19.44.29.71.29h14c.26 0 .52-.11.71-.29s.29-.44.29-.71v-4c0-.55.45-1 1-1s1 .45 1 1v4c0 .8-.31 1.55-.88 2.12S19.8 22 19 22Z"></path><path d="M12 16c-.13 0-.26-.03-.38-.08s-.23-.12-.33-.22l-5-5A.996.996 0 1 1 7.7 9.29l3.29 3.29V3c0-.55.45-1 1-1s1 .45 1 1v9.59l3.29-3.29a.996.996 0 1 1 1.41 1.41l-5 5c-.1.1-.21.17-.33.22-.12.05-.24.08-.38.08Z"></path></svg>
-                    </div>
+                   
                     <div className='lg:hidden'>
                         <CloseIcon onClick={handleClick} />
                     </div>

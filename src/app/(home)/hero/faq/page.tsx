@@ -2,7 +2,6 @@
 import React from 'react'
 import { useState } from 'react'
 import Accordion from './Components/Accordion'
-import Link from 'next/link'
 
 function page() {
 
@@ -24,22 +23,18 @@ function page() {
                         <div>
                             <Accordion title={<h2 className='font-GT font-bold text-[20px] text-[#003b2f]'>How to disable the Two-Factor Authentication code on your Bitstamp account?</h2>} answer={<div className='my-[2rem] text-[17px] text-[#003b2f] flex flex-col gap-5'>
                                 <p>
-                                    If you have issues with your Two-Factor Authentication code&#44; you can disable it on the following link&#58;<Link href=" https://www.bitstamp.net/onboarding/login/ " className='text-[#217cf2]'> https://www.bitstamp.net/onboarding/login/ </Link>where you proceed with your customer ID/email address and password login.
+                                    If you have issues with your Two-Factor Authentication code&#44; you can disable by contacting us where you proceed with your customer ID/email address and password login.
                                 </p>
                                 <p>
                                     When prompted to enter your 6-digit two-factor code, simply click the &#34;here&#34; link, below the code entry bar and follow the instructions.
                                 </p>
-                                <p>
-                                    Should you require assistance with the procedure, feel free to send us an email with your issue, to the following address&#58;<Link href="support@bitstamp.net" className='text-[#217cf2]'> support@bitstamp.net </Link>
-                                    or call us on the phone numbers that are listed at the bottom of this page. We are here for you with live customer support.
-                                </p>
+
                             </div>
 
                             } />
                             <Accordion title={<h2 className='font-GT font-bold text-[20px] text-[#003b2f]'>Can you prepare a Statement for my account balance and transactions?</h2>} answer={<div className="my-[2rem] text-[17px] text-[#003b2f] flex flex-col gap-5">
                                 <p>
                                     We can issue a User Confirmation Statement for you, which declares that you are one of Bitstamp&#39;s verified users and includes the information stated below. If you wish us to prepare this statement for you, feel free to contact us via our ticket system&#58;
-                                    <Link href="https://www.bitstamp.net/support/" className='text-[#217cf2]'> https://www.bitstamp.net/support/</Link>
                                 </p>
                                 <p>
                                     We can also include the following information in the document&#58;
@@ -53,8 +48,8 @@ function page() {
                                     </li>
                                 </ul>
                                 <p>
-                                    In case you only need transactions and do not require UCS, you may also download them via our website. Login to your account first and follow this link&#58;<br />
-                                    <Link href="https://www.bitstamp.net/account/transactions/" className='text-[#217cf2]'>https://www.bitstamp.net/account/transactions/</Link>, then click on Open export options. There you will be able to choose a specific date range, currencies and transaction types.
+                                    In case you only need transactions and do not require UCS, you may also download them via our website. 
+                                     then click on Open export options. There you will be able to choose a specific date range, currencies and transaction types.
                                 </p>
                                 <p>
                                     <strong>Disclaimer&#58;</strong> Please note that Bitstamp does not provide tax advice. You should consult a tax advisor for your own specific tax obligations.
@@ -64,7 +59,7 @@ function page() {
                                 <div className="my-[2rem] text-[17px] text-[#003b2f] flex flex-col gap-5">
                                     <div>
                                         <p>
-                                            If you wish to change any of your personal information on your Bitstamp account (your name, address, email, phone number, etc.) we will need to assist you with that. Please contact us by <Link href="opening a support ticket" className='text-[#217cf2]'>opening a support ticket</Link> or via our email address&#58;<Link href="support@bitstamp.net." className='text-[#217cf2]'>support@bitstamp.net.</Link>
+                                            If you wish to change any of your personal information on your Bitstamp account (your name, address, email, phone number, etc.) we will need to assist you with that. 
                                         </p>
                                         <p>
                                             We can confirm that&#58;
@@ -72,7 +67,6 @@ function page() {
                                         <ul className=' list-disc px-[1.3rem] text-[#003b2f]'>
                                             <li>We have no material exposure to Silvergate Bank.</li>
                                             <li>We had no connection to Silicon Valley Bank whatsoever.</li>
-                                            <li>All Signature Bank customers are now customers of Signature Bridge Bank, which has the full backing of the US Government, and is operating as normal as of opening of business Monday 13th March. The corporate and customer deposits that we have with Signature Bridge Bank are safe and remain accessible to customers. You can read the FDIC announcement on Sunday 12th March <Link href="href" className='text-[#217cf2]'>here</Link></li>
                                         </ul>
                                     </div>
                                     <p>

@@ -1,44 +1,110 @@
 "use client"
-import * as React from 'react';
+import React, {useState, useEffect, MouseEvent} from 'react';
 import { Box, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import axios2 from '../../../../utils/axios';
+import { v4 as uuidv4 } from 'uuid';
 
 
 const columns: GridColDef[] = [
-  { field: 'refId', headerName: 'Reference ID', width: 150 },
-  { field: 'amount', headerName: 'Amount', width: 120 },
-  { field: 'worth', headerName: 'Worth', width: 120 },
+  { field: 'amount', headerName: 'Amount', flex: 1,},
+  
   {
-    field: 'paymentMethod',
+    field: 'currency',
     headerName: 'Payment Method',
-    width: 180,
+    flex: 1,
   },
   {
     field: 'status',
     headerName: 'Status',
-    width: 130,
+    flex: 1,
   },
   {
     field: 'date',
     headerName: 'Date',
-    width: 150,
-    type: 'date',
+    flex: 1,
+    type: 'string',
+    // valueGetter: (params: GridValueGetterParams) => new Date(params.value),
   },
 ];
 
-const rows: any = [
-  // Replace with your actual transaction data 
-];
+
+
+
+
 
 export default function Transactions() {
-  const [alignment, setAlignment] = React.useState('all');
+  const [alignment, setAlignment] = useState('deposits');
 
+  interface Row {
+    amount: number;
+    currency: string;
+    date: string; // Use a specific date type if needed, e.g., Date
+  }
+
+  interface Deposit { // Define the structure of a single deposit
+    refId: string;
+    amount: number;
+    worth: number;
+    currency: string;
+    status: string;
+    date: string;
+  }
+  const [rows, setRows] = useState<Row[]>([]);
+  const [deposits, setDeposits] = useState<Deposit[]>([]); // Use Deposit interface
+  const [withdrawals, setWithdrawals] = useState<Deposit[]>([]);
+  
   const handleChange = (
-    event: React.MouseEvent<HTMLElement>,
+    event: MouseEvent<HTMLElement>,
     newAlignment: string,
   ) => {
     setAlignment(newAlignment);
+    if (newAlignment === 'deposit') {
+      setRows(deposits);
+    } else if (newAlignment === 'withdrawal') {
+      alert("Please")
+      console.log(withdrawals)
+      setRows(withdrawals);
+    }
   };
+
+  useEffect(() => {
+    const fetchDeposits = async () => { 
+      try {
+        // const response = await axios2.get(`/user/deposits`, {
+        //   headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+        // });
+        // console.log(response.data);
+        // setDeposits(response.data);
+        // // const addRow = (newRow: Row) => {
+        //   setRows([...rows,response.data]);
+        // // };
+  
+        const depositsResponse = await axios2.get(`/user/deposits`, {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        });
+        const withdrawalsResponse = await axios2.get(`/user/withdrawals`, {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        });
+
+        setDeposits(depositsResponse.data);
+        setWithdrawals(withdrawalsResponse.data);
+
+        // Initially set to deposits
+        setRows(depositsResponse.data);
+
+      
+      } catch (error) {
+        console.error("Error fetching deposits:", error);
+      }
+    };
+  
+    fetchDeposits();
+  
+    return () => {
+      // Cleanup logic (if needed)
+    };
+  }, []); // Empty dependency array means this runs once after initial render
 
   return (
     <Box className="p-4"> {/* Add padding around the component */}
@@ -52,17 +118,18 @@ export default function Transactions() {
         className="mb-4"
       >
         <ToggleButton value="deposit" className="px-4 py-2 rounded-md text-sm font-medium">Deposit History</ToggleButton>
-        {/* <ToggleButton value="all" className="px-4 py-2 rounded-md text-sm font-medium">Focus</ToggleButton> */}
         <ToggleButton value="withdrawal" className="px-4 py-2 rounded-md text-sm font-medium">Withdrawal History</ToggleButton>
       </ToggleButtonGroup>
 
       <div style={{ height: 400, width: '100%' }}>
+        
         <DataGrid
           rows={rows}
           columns={columns}
-          // pageSize={5}
-          // rowsPerPageOptions={[5]}
-          checkboxSelection
+          pageSize={5}
+          rowsPerPageOptions={[5]}
+          // checkboxSelection
+          getRowId={() => uuidv4()} 
           // disableSelectionOnClick
         />
       </div>

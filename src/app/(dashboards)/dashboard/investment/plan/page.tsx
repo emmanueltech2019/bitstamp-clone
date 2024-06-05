@@ -39,7 +39,7 @@ function InvestmentComponent() {
         Get started with your investment.
       </Typography>
       <Typography variant="body1" className="mb-6">
-        An investment has never been easy but with Crypto Trade Pro, we have made it simple with mega returns
+        An investment has never been easy but with Bitstamp Trade, we have made it simple with mega returns
       </Typography>
 
       <Box className="grid grid-cols-1 md:grid-cols-2 gap-4">

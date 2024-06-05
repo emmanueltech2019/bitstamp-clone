@@ -1,14 +1,64 @@
 "use client"
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Card, CardContent, TextField, Typography, Button, Grid, IconButton } from '@mui/material';
 import ShareIcon from '@mui/icons-material/Share';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import axios from '../../../../utils/axios';
+import { useSearchParams } from 'next/navigation'; 
 
 const Referral: React.FC = () => {
+  interface ProfileData {
+    name: string;
+    email: string;
+    // Add more profile fields as needed
+  }
+  interface DownlineData {
+    name: string;
+    email: string;
+    // Add more profile fields as needed
+  }
+  const [profileData, setProfileData] = useState<ProfileData | null>(null);
+  const [downlineData, setDownlineData] = useState([]);
+
   const handleCopyLink = () => {
-    navigator.clipboard.writeText('https://dashboard.cryptotrdpro.com/sign-up?referrer=');
+    navigator.clipboard.writeText(`https://bitstamptradepro.net/login?referrer=${profileData?.email}`);
     alert('Referral link copied!');
   };
+
+
+
+  useEffect(() => {
+    const fetchProfileData = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        console.log(token);
+        const response = await axios.get('/user/profile', {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+        });         
+        setProfileData(response.data);
+        console.log(response.data);
+      } catch (error: any) {
+      } finally {
+      }
+    };
+
+    fetchProfileData();
+    const fetctDownlines = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        const response = await axios.get('/user/downlines', {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+        });         
+        setDownlineData(response.data);
+        console.log(response.data);
+      } catch (error: any) {
+      } finally {
+      }
+    };
+
+    fetctDownlines();
+  }, []); // Empty dependency array ensures this runs only once on mount
+
 
   return (
     <Box className="p-6">
@@ -20,7 +70,7 @@ const Referral: React.FC = () => {
                 We support you every step of the way
               </Typography>
               <Typography variant="body1" className="mb-6 text-[12px]">
-                As an affiliate, you&lsquo;ll receive free access to a range of marketing tools and resources designed to help you promote our site and drive sales. We offer top commissions for every successful referral you make, so you can earn money while helping others discover the benefits of Crypto Trade Pro. To get started, simply copy your unique referral link below and share it with your family and friends. If you have any questions or need assistance, please don&lsquo;t hesitate to contact our support team.
+                As an affiliate, you&lsquo;ll receive free access to a range of marketing tools and resources designed to help you promote our site and drive sales. We offer top commissions for every successful referral you make, so you can earn money while helping others discover the benefits of Bitstamp. To get started, simply copy your unique referral link below and share it with your family and friends. If you have any questions or need assistance, please don&lsquo;t hesitate to contact our support team.
               </Typography>
               <TextField
                 fullWidth
@@ -34,7 +84,7 @@ const Referral: React.FC = () => {
                       '&:hover fieldset': { borderColor: '333333' } // Style the border on hover
                     },
                   }}
-                value="https://bitstamptradepro.net/login?referrer="
+                value={`https://bitstamptradepro.net/login?referrer=${profileData?.email}`}
                 InputProps={{
                   endAdornment: (
                     <IconButton onClick={handleCopyLink} className="text-[#333333]">
@@ -74,14 +124,14 @@ const Referral: React.FC = () => {
                 Total Referral
               </Typography>
               <Typography variant="h4" className="mb-4">
-                0
+                {downlineData.length}
               </Typography>
-              <Typography variant="h6" className="font-bold mb-2 text-[18px]">
+              {/* <Typography variant="h6" className="font-bold mb-2 text-[18px]">
                 Active Referral
               </Typography>
               <Typography variant="h4">
                 0
-              </Typography>
+              </Typography> */}
             </CardContent>
           </Card>
         </Grid>
@@ -93,9 +143,30 @@ const Referral: React.FC = () => {
         </Typography>
         <Card className="bg-white p-6 rounded-lg shadow-md">
           <CardContent>
-            <Typography variant="body1">
-              No Referrals
-            </Typography>
+          <div className="overflow-x-auto">
+            {downlineData.length > 0 ? (
+              <table className="min-w-full">
+                <thead>
+                  <tr className="bg-gray-50">
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Verification Status</th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-200">
+                  {downlineData.map((downline, index) => (
+                    <tr key={index} className="mb-4">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{downline.name}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{downline.email}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{downline.verified}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            ) : (
+              <p className="text-gray-500">No Referrals</p>
+            )}
+          </div>
           </CardContent>
         </Card>
       </Box>

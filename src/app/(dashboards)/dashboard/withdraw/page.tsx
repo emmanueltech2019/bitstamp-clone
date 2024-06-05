@@ -1,3 +1,4 @@
+"use client"
 import * as React from 'react';
 import { Grid, Paper, Typography, Button, Box } from '@mui/material';
 import BankIcon from '../../../nav/img/bank.jpeg';
@@ -8,6 +9,20 @@ import LitecoinIcon from '../../../nav/img/digital.png'; // Custom icon componen
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import Image from 'next/image';
+import axios2 from "../../../../utils/axios"
+import Swal from 'sweetalert2';
+
+const Toast = Swal.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.onmouseenter = Swal.stopTimer;
+    toast.onmouseleave = Swal.resumeTimer;
+  }
+});
 function WithdrawalOptions() {
   const options = [
     { label: 'Withdraw via Bank', Icon: BankIcon },
@@ -17,6 +32,25 @@ function WithdrawalOptions() {
     { label: 'Withdraw via Litecoin', Icon: LitecoinIcon },
   ];
 
+  const handleClick = async () => {
+    try {
+      const token = localStorage.getItem("token");
+      const response = await axios2.get('/user/profile', {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+      });         
+      if(response.data.verified != "verified"){
+        Toast.fire({
+          icon: "error",
+          title:"Please verify your account"
+        }).then(() => {
+          window.location.href = "/dashboard/kyc/"
+        })
+      }
+      console.log(response.data.verified);
+    } catch (error: any) {
+    } finally {
+    }
+  }
   return (
     <Box className="p-4"> {/* Add padding for spacing */}
       <Grid container spacing={2}>
@@ -32,7 +66,7 @@ function WithdrawalOptions() {
               <Typography variant="body1" align="center" className="mb-2 text-[12px] px-2">
                 {option.label}
               </Typography>
-              <Button variant="contained" fullWidth className='bg-[#003b2f] hover:bg-[#003b2f] text-[10px] px-2'>
+              <Button variant="contained" onClick={handleClick} fullWidth className='bg-[#003b2f] hover:bg-[#003b2f] text-[10px] px-2'>
                 + {option.label}
               </Button>
             </Paper>

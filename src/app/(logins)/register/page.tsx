@@ -1,11 +1,11 @@
 "use client"
-import React, { useState, FormEvent } from 'react'
+import React, { useState, FormEvent, useEffect } from 'react'
 import './bg.css'
 import Image from 'next/image'
 import logo from '../img/bitstamp_logo-removebg-preview.png'
 import Link from 'next/link'
 import axios from '../../../utils/axios';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 function page() {
     const router = useRouter();
@@ -14,12 +14,14 @@ function page() {
         email: string;
         password: string;
         name: string;
+        refferalEmail: string;
     }
 
     const [formData, setFormData] = useState<RegisterData>({
         email: '',
         password: '',
         name: '',
+        refferalEmail: '',
     });
 
     const [error, setError] = useState<string | null>(null);
@@ -46,6 +48,16 @@ function page() {
             setError(error.response?.data.message || 'An error occurred.');
         }
     };
+
+    const searchParams = useSearchParams();
+    // const [refferalEmail, setRefferalEmail] = useState<string | null>(null);
+
+    useEffect(() => {
+        const value = searchParams.get('referrer');
+        setFormData({ ...formData, ["refferalEmail"]: value });
+        // setRefferalEmail(value);
+    }, [searchParams]);
+
     return (
         <div className='bg-[#f2f2f2] px-5 py-6'>
             <header className='flex justify-between items-center'>
@@ -69,26 +81,40 @@ function page() {
                     <form className='flex flex-col w-[510px] gap-[2.4rem]' onSubmit={handleSubmit}>
                         <div className="">
                             <div className='relative w-full'>
-                                <input id='first-name' onChange={handleChange} name='name' type="text" className='border-b border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
+                                <input id='first-name' required onChange={handleChange} name='name' type="text" className='border-b border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
                                 <label htmlFor="first-name" className='absolute text-[18px] text-[#6d6e71] font-light left-0 -top-1 peer-focus:text-[12px] peer-focus:-top-4 transition-all'>First name</label>
                             </div>
-
+                        </div>
+                        <div className="">
+                            {
+                                formData.refferalEmail == "" ? <div className='relative w-full'>
+                                    <input id='refferalEmail' value={formData.refferalEmail} onChange={handleChange} name='refferalEmail' type="text" className='border-b border-[#a0a0a0] py-1 disabled:bg-[#b7b5b5] focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
+                                    <label htmlFor="refferalEmail" className='absolute text-[18px] text-[#6d6e71] font-light left-0 -top-1 peer-focus:text-[12px] peer-focus:-top-4 transition-all'>Refferal Email (optional)</label>
+                                </div> : <div className='relative w-full'>
+                                    <input id='refferalEmail' value={formData.refferalEmail} disabled onChange={handleChange} InputLabelProps={{ shrink: !!refferalEmail }} name='refferalEmail' type="text" className='border-b disabled:bg-[#ddd] border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
+                                    <label htmlFor="refferalEmail" className='absolute text-[18px] text-[#6d6e71] font-light left-0 -top-1 peer-focus:text-[12px] transition-all'>Refferal Email (optional)</label>
+                                </div>
+                            }
+                            {/* <div className='relative w-full'>
+                                <input id='refferal-email' onChange={handleChange} name='refferal-email' type="text" className='border-b border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
+                                <label htmlFor="refferal-email" className='absolute text-[18px] text-[#6d6e71] font-light left-0 -top-1 peer-focus:text-[12px] peer-focus:-top-4 transition-all'>Refferal Email (optional)</label>
+                            </div> */}
                         </div>
 
                         <div className='grid gap-[2.4rem] md:grid-cols-1'>
                             <div className='relative'>
-                                <input id='email' onChange={handleChange} name='email' type="email" className='border-b border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
+                                <input id='email' required onChange={handleChange} name='email' type="email" className='border-b border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
                                 <label htmlFor="email" className='absolute text-[18px] text-[#6d6e71] font-light left-0 -top-1 peer-focus:text-[12px] peer-focus:-top-4 transition-all'>Enter your email</label>
                             </div>
                             <div className='relative md:w-[100%]'>
-                                <input id='password' type="password" onChange={handleChange} name='password' className='border-b border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
+                                <input id='password' required type="password" onChange={handleChange} name='password' className='border-b border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
                                 <label htmlFor="date" className='absolute text-[18px] text-[#6d6e71] font-light left-0 -top-1 peer-focus:text-[12px] peer-focus:-top-4 transition-all'>Password</label>
                             </div>
                         </div>
                         <div className='terms'>
                             <small className='text-[10px] text-[#6d6e71]'>This site is protected by hCaptcha and its <span className='text-[#217cf2]'>Privacy Policy</span> and <span className='text-[#217cf2]'>Terms of Service</span> apply</small>
                         </div>
-                        <button type='submit' className='bg-[#003b2f] text-[#03fc9d] p-2 rounded w-[300px] m-auto'>Log in</button>
+                        <button type='submit' className='bg-[#003b2f] text-[#03fc9d] p-2 rounded w-[300px] m-auto'>Register</button>
                     </form>
                 </div>
             </section>

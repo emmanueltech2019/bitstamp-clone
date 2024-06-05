@@ -121,7 +121,7 @@ const Dashboard = () => {
           <Card className="bg-white rounded-lg p-4 py-1 shadow-md border-l border-spacing-2 border-[#1f5f4b]">
             <CardContent>
               <Typography variant="h6" className='text-[12px]'>Total Profit</Typography>
-              <Typography variant="h4" className="font-bold my-2">$0.00</Typography>
+              <Typography variant="h4" className="font-bold my-2">$93,450</Typography>
             </CardContent>
           </Card>
         </Grid>
@@ -129,7 +129,7 @@ const Dashboard = () => {
           <Card className="bg-white rounded-lg p-4 py-1 shadow-md border-l border-spacing-2 border-[#003b2f]">
             <CardContent>
               <Typography variant="h6" className='text-[12px]'>Total Deposit</Typography>
-              <Typography variant="h4" className="font-bold my-2">$0.00</Typography>
+              <Typography variant="h4" className="font-bold my-2">$5,000</Typography>
             </CardContent>
           </Card>
         </Grid>
@@ -137,7 +137,7 @@ const Dashboard = () => {
           <Card className="bg-white rounded-lg p-4 py-1 shadow-md border-l border-spacing-2 border-[#88f5df]">
             <CardContent>
               <Typography variant="h6" className='text-[12px]'>Total Bonus</Typography>
-              <Typography variant="h4" className="font-bold my-2">$0.00</Typography>
+              <Typography variant="h4" className="font-bold my-2">$500</Typography>
             </CardContent>
           </Card>
         </Grid>
@@ -145,7 +145,7 @@ const Dashboard = () => {
           <Card className="bg-white rounded-lg p-4 py-1 shadow-md border-l border-spacing-2 border-[#378bad]">
             <CardContent>
               <Typography variant="h6" className='text-[12px]'>Refferal</Typography>
-              <Typography variant="h4" className="font-bold my-2">$0.00</Typography>
+              <Typography variant="h4" className="font-bold my-2">$500</Typography>
             </CardContent>
           </Card>
         </Grid>
@@ -153,7 +153,7 @@ const Dashboard = () => {
           <Card className="bg-white rounded-lg p-4 py-1 shadow-md border-l border-spacing-2 border-[#caad46]">
             <CardContent>
               <Typography variant="h6" className='text-[12px]'>Total Withdrawal</Typography>
-              <Typography variant="h4" className="font-bold my-2">$0.00</Typography>
+              <Typography variant="h4" className="font-bold my-2">$57,000</Typography>
             </CardContent>
           </Card>
         </Grid>

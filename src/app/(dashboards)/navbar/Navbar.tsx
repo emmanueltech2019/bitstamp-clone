@@ -37,6 +37,7 @@ import {
   ReceiptOutlined as ReceiptOutlinedIcon
 } from '@mui/icons-material';
 import { NavBarContext } from '../../context/NavBar';
+import Swal from 'sweetalert2';
 
 const Navbar:React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -83,7 +84,30 @@ const [profileData, setProfileData] = useState<ProfileData | null>(null);
 const [isLoading, setIsLoading] = useState(true);
 const [error, setError] = useState<string | null>(null);
 
-
+const handleLogout = () =>{
+  Swal.fire({
+    title: "Are you sure you want to logout?",
+    text: "You would have to login to access your dashboard again.",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, logout!"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        title: "Success!",
+        text: "You have been logout successfully.",
+        icon: "success"
+      }).then(()=>{
+        localStorage.clear()
+        setTimeout(() => {
+          window.location="/login"
+        }, 3000);
+      })
+    }
+  });
+}
 
 
 useEffect(() => {
@@ -163,9 +187,11 @@ useEffect(() => {
                         <AccountCircleOutlinedIcon /> <p>Profile</p>
                       </MenuItem>
                     </Link>
-                    <MenuItem onClick={handleClose} className="flex space-x-2 text-[13px]">
-                      <AccountBalanceWalletOutlinedIcon /> <p>My Wallet</p>
-                    </MenuItem>
+                    <Link href={"/dashboard/wallets"}>
+                      <MenuItem onClick={handleClose} className="flex space-x-2 text-[13px]">
+                        <AccountBalanceWalletOutlinedIcon /> <p>My Wallet</p>
+                      </MenuItem>
+                    </Link>
                     <Link href={"/dashboard/kyc"}>
                     <MenuItem onClick={handleClose} className="flex space-x-2 text-[13px]">
                       <PersonPinOutlinedIcon /> <p>Kyc Verification</p>
@@ -177,7 +203,7 @@ useEffect(() => {
                       </MenuItem>
                     </Link>
                     <hr />
-                    <MenuItem onClick={handleClose} className="flex space-x-2 text-red-600 text-[13px]">
+                    <MenuItem onClick={handleLogout} className="flex space-x-2 text-red-600 text-[13px]">
                       <LogoutOutlinedIcon /> <p>Logout</p>
                     </MenuItem>
                   </Menu>
