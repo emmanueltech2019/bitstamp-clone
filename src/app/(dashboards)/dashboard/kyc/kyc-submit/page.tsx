@@ -6,6 +6,7 @@ import { useDropzone } from 'react-dropzone';
 import axios2 from "../../../../../utils/axios"
 
 import Swal from "sweetalert2"
+import Image from 'next/image';
 const Toast = Swal.mixin({
   toast: true,
   position: "top-end",
@@ -123,10 +124,10 @@ const TierTwoVerification: React.FC = () => {
                 {frontImage ? (
   // Display image if frontImage is a File
   typeof frontImage === 'object' ? (
-    <img src={URL.createObjectURL(frontImage)} alt="Front ID" className="w-full h-auto" />
+    <Image src={URL.createObjectURL(frontImage)} alt="Front ID" className="w-full h-auto" />
   ) : (
     // Display image directly if frontImage is a URL
-    <img src={frontImage} alt="Front ID" className="w-full h-auto" />
+    <Image src={frontImage} alt="Front ID" className="w-full h-auto" />
   )
 ) : (
   // Display the upload prompt if no image
@@ -145,10 +146,10 @@ const TierTwoVerification: React.FC = () => {
                 {backImage ? (
   // Display image if backImage is a File
   typeof backImage === 'object' ? (
-    <img src={URL.createObjectURL(backImage)} alt="Front ID" className="w-full h-auto" />
+    <Image src={URL.createObjectURL(backImage)} alt="Front ID" className="w-full h-auto" />
   ) : (
     // Display image directly if backImage is a URL
-    <img src={backImage} alt="Back ID" className="w-full h-auto" />
+    <Image src={backImage} alt="Back ID" className="w-full h-auto" />
   )
 ) : (
   // Display the upload prompt if no image
