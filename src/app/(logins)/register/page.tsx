@@ -5,21 +5,10 @@ import Image from 'next/image'
 import logo from '../img/bitstamp_logo-removebg-preview.png'
 import Link from 'next/link'
 import axios from '../../../utils/axios';
-import { useRouter } from 'next/router';
 import { useSearchParams } from 'next/navigation'
 
 function Page() {
-    // const [isMounted, setIsMounted] = useState(false);
 
-    // useEffect(() => {
-    //     setIsMounted(true);
-    // }, []);
-
-    // if (!isMounted) {
-    //     return null; // Prevents SSR issues by rendering nothing on the server
-    // }
-
-    const router = useRouter();
     const searchParams = useSearchParams();
 
     interface RegisterData {
@@ -37,10 +26,8 @@ function Page() {
     });
 
     const [error, setError] = useState<string | null>(null);
-    const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
-        setIsMounted(true);
         const value = searchParams.get('referrer');
         setFormData((prevData) => ({ ...prevData, refferalEmail: value || '' }));
     }, [searchParams]);
@@ -60,7 +47,7 @@ function Page() {
             // Handle successful login (e.g., store token, redirect)
             console.log('Register successful:', response.data);
             localStorage.setItem('token', response.data.token); // Example token storage
-            router.push('/dashboard'); // Redirect example (replace with your route)
+            window.location.href='/dashboard' // Redirect example (replace with your route)
         } catch (error: any) {
             // Handle login errors (e.g., invalid credentials)
             console.error('Login error:', error.response?.data);
@@ -68,11 +55,7 @@ function Page() {
         }
     };
 
-    
 
-    if (!isMounted) {
-        return null; // Prevents SSR issues by rendering nothing on the server
-    }
 
     return (
         <div className='bg-[#f2f2f2] px-5 py-6'>

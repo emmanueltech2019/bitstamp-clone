@@ -5,11 +5,10 @@ import Image from 'next/image'
 import logo from '../img/bitstamp_logo-removebg-preview.png'
 import Link from 'next/link'
 import axios from '../../../utils/axios';
-import { useRouter } from 'next/router';
 
 
 function Page() {
-  const router = useRouter();
+
 
 interface LoginData {
   email: string;
@@ -39,7 +38,7 @@ interface LoginData {
       // Handle successful login (e.g., store token, redirect)
       console.log('Login successful:', response.data);
       localStorage.setItem('token', response.data.token); // Example token storage
-      router.push('/dashboard'); // Redirect example (replace with your route)
+      window.location.href='/dashboard' // Redirect example (replace with your route)
     } catch (error: any) {
       // Handle login errors (e.g., invalid credentials)
       console.error('Login error:', error.response?.data); 
