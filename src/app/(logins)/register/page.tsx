@@ -55,7 +55,7 @@ function Page() {
 
     useEffect(() => {
         const value = searchParams.get('referrer');
-        setFormData({ ...formData, ["refferalEmail"]: value });
+        setFormData({ ...formData, refferalEmail: value ?? '' });
         // setRefferalEmail(value);
     },[]);
 
@@ -92,7 +92,7 @@ function Page() {
                                     <input id='refferalEmail' value={formData.refferalEmail} onChange={handleChange} name='refferalEmail' type="text" className='border-b border-[#a0a0a0] py-1 disabled:bg-[#b7b5b5] focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
                                     <label htmlFor="refferalEmail" className='absolute text-[18px] text-[#6d6e71] font-light left-0 -top-1 peer-focus:text-[12px] peer-focus:-top-4 transition-all'>Refferal Email (optional)</label>
                                 </div> : <div className='relative w-full'>
-                                    <input id='refferalEmail' value={formData.refferalEmail} disabled onChange={handleChange} InputLabelProps={{ shrink: !!refferalEmail }} name='refferalEmail' type="text" className='border-b disabled:bg-[#ddd] border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
+                                    <input id='refferalEmail' value={formData.refferalEmail} disabled onChange={handleChange} name='refferalEmail' type="text" className='border-b disabled:bg-[#ddd] border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
                                     <label htmlFor="refferalEmail" className='absolute text-[18px] text-[#6d6e71] font-light left-0 -top-1 peer-focus:text-[12px] transition-all'>Refferal Email (optional)</label>
                                 </div>
                             }
