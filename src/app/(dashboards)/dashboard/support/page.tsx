@@ -48,7 +48,7 @@ const SupportForm: React.FC = () => {
          Toast.fire({
           icon: "success",
           text: "Your deposit was successful",
-          time: 2000
+          timer: 2000
         }).then(()=>window.location.reload())
     
         // router.refresh();
@@ -59,7 +59,7 @@ const SupportForm: React.FC = () => {
       Toast.fire({
         icon: "error",
         text:"Your deposit was unsuccessful",
-        time: 2000
+        timer: 2000
       })
       .then(()=>{})
       // Handle login errors (e.g., invalid credentials)

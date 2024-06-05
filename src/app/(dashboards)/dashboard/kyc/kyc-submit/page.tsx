@@ -68,8 +68,8 @@ const TierTwoVerification: React.FC = () => {
       if (response.status === 200 ){
         Toast.fire({
           icon: "success",
-          message:"Please await verification"
-        }).then((response)=>windows.location.reload())
+          text:"Please await verification"
+        }).then((response)=>window.location.reload())
       }
       // Handle the API response (success/error)
     } catch (error) {

@@ -18,7 +18,7 @@ const Referral: React.FC = () => {
     // Add more profile fields as needed
   }
   const [profileData, setProfileData] = useState<ProfileData | null>(null);
-  const [downlineData, setDownlineData] = useState([]);
+  const [downlineData, setDownlineData] = useState<any>([]);
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(`https://bitstamptradepro.net/login?referrer=${profileData?.email}`);
@@ -154,7 +154,7 @@ const Referral: React.FC = () => {
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                  {downlineData.map((downline, index) => (
+                  {downlineData.map((downline: any, index: number) => (
                     <tr key={index} className="mb-4">
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{downline.name}</td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{downline.email}</td>

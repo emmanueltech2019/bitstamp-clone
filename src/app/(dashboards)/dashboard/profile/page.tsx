@@ -120,7 +120,7 @@ const [confirmPassword,setConfirmPassword]= useState("")
     if(response.status==200){
       Toast.fire({
         icon:"success",
-        message:"passwords updated successfully"
+        text:"passwords updated successfully"
       })
       .then(()=>{
         window.location.reload();
