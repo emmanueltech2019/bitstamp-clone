@@ -4,12 +4,11 @@ import './bg.css'
 import Image from 'next/image'
 import logo from '../img/bitstamp_logo-removebg-preview.png'
 import Link from 'next/link'
-// import { useNavigate } from 'react-router-dom'; // If you're using routing
 import axios from '../../../utils/axios';
 import { useRouter } from 'next/router';
 
 
-function page() {
+function Page() {
   const router = useRouter();
 
 interface LoginData {
@@ -95,4 +94,4 @@ interface LoginData {
   )
 }
 
-export default page
+export default Page
