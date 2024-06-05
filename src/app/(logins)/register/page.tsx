@@ -27,6 +27,7 @@ function Page() {
 
     const [error, setError] = useState<string | null>(null);
 
+    
     useEffect(() => {
         const value = searchParams.get('referrer');
         setFormData((prevData) => ({ ...prevData, refferalEmail: value || '' }));
