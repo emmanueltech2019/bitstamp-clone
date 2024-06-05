@@ -6,7 +6,7 @@ import logo from '../img/bitstamp_logo-removebg-preview.png'
 import Link from 'next/link'
 // import { useNavigate } from 'react-router-dom'; // If you're using routing
 import axios from '../../../utils/axios';
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/router';
 
 
 function page() {

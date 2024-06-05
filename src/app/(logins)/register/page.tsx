@@ -5,7 +5,8 @@ import Image from 'next/image'
 import logo from '../img/bitstamp_logo-removebg-preview.png'
 import Link from 'next/link'
 import axios from '../../../utils/axios';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/router';
+import { useSearchParams } from 'next/navigation'
 
 function page() {
     const router = useRouter();
