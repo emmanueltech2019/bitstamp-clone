@@ -379,7 +379,7 @@ function Deposit() {
                 startAdornment={<InputAdornment position="start">$</InputAdornment>}
                 label="Amount"
                 value={amount}
-                onChange={(e)=>parseInt(setAmount(e.target.value))}
+                onChange={(e)=>setAmount(parseInt(e.target.value))}
             />
             </FormControl>
             </Box>
