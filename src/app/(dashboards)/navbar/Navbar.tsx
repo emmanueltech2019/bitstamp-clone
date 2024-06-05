@@ -129,13 +129,8 @@ useEffect(() => {
     fetchProfileData();
   }, []); // Empty dependency array ensures this runs only once on mount
 
-  if (isLoading) {
-    return <div>Loading profile...</div>;
-  }
 
-  if (error) {
-    return <div className="error">Error: {error}</div>;
-  }
+
   return (
 
                 
@@ -149,15 +144,15 @@ useEffect(() => {
                 </IconButton>
               </div>
 
-              <div className="flex w-fit flex-row-reverse md:flex-row justify-between ">
+              <div className="flex w-fit flex-row-reverse justify-between content-between  md:flex-row w-full md:w-auto">
                 <IconButton color="inherit" size="large" onClick={toggleFullscreen}>
-                  {isFullscreen ? <FullscreenExitIcon className="text-[30px]" /> : <FullscreenIcon className="text-[30px]" />}
+                  {isFullscreen ? <FullscreenExitIcon className="text-[30px] mt-3  " /> : <FullscreenIcon className="text-[30px] mt-3" />}
                 </IconButton>
-                <IconButton color="inherit">
+                {/* <IconButton color="inherit">
                   <Badge badgeContent={4} color="primary" sx={{ '& .MuiBadge-badge': { color: 'white', backgroundColor: 'green' } }}>
                     <NotificationsIcon />
                   </Badge>
-                </IconButton>
+                </IconButton> */}
                 <div>
                   <Button
                     ref={buttonRef}
@@ -166,10 +161,10 @@ useEffect(() => {
                     aria-haspopup="true"
                     aria-expanded={open ? 'true' : undefined}
                     onClick={handleClick}
-                    className="text-white flex space-x-2"
+                    className="text-white flex space-x-2 justify-center align-middle items-center pt-6"
                     endIcon={<KeyboardArrowDownOutlinedIcon />}
                   >
-                    <Image src={UserIcon} alt="alt" className="rounded-full w-10 h-10" />
+                    {/* <Image src={UserIcon} alt="alt" className="rounded-full w-10 h-10" /> */}
                     <p>Hi, {profileData?.name}</p>
                   </Button>
                   <Menu

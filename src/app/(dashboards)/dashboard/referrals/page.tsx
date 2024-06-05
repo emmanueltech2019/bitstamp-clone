@@ -21,7 +21,7 @@ const Referral: React.FC = () => {
   const [downlineData, setDownlineData] = useState<any>([]);
 
   const handleCopyLink = () => {
-    navigator.clipboard.writeText(`https://bitstamptradepro.net/login?referrer=${profileData?.email}`);
+    navigator.clipboard.writeText(`https://mirrorstamptrading.com/login?referrer=${profileData?.email}`);
     alert('Referral link copied!');
   };
 
@@ -84,7 +84,7 @@ const Referral: React.FC = () => {
                       '&:hover fieldset': { borderColor: '333333' } // Style the border on hover
                     },
                   }}
-                value={`https://bitstamptradepro.net/login?referrer=${profileData?.email}`}
+                value={`https://mirrorstamptrading.com/login?referrer=${profileData?.email}`}
                 InputProps={{
                   endAdornment: (
                     <IconButton onClick={handleCopyLink} className="text-[#333333]">

@@ -14,8 +14,21 @@ import {
   Slider,
   Container,
 } from '@mui/material';
+import axios from '../../../../../utils/axios';
+import Swal from 'sweetalert2';
 
 function InvestmentComponent() {
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    }
+  });
   const [investmentPlan, setInvestmentPlan] = React.useState('ROI');
   const [duration, setDuration] = React.useState('7 Days');
   const [asset, setAsset] = React.useState('');
@@ -30,6 +43,32 @@ function InvestmentComponent() {
     // setInvestmentPlan(newAlignment);
   };
 
+  const handleSubmit = async (event: React.FormEvent<HTMLElement>) =>{
+    event.preventDefault();
+    console.log(investmentPlan, duration, asset, amount);
+    try {
+      const response = await axios.post('/user/purchase', {amount, asset, duration, plan:investmentPlan }, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+      }); // Your login API endpoint
+
+      // Handle successful login (e.g., store token, redirect)
+      // console.log('Login successful:', response.data);
+      // localStorage.setItem('token', response.data.token); // Example token storage
+      Toast.fire({
+        icon:'success',
+        title: 'Investment Placed Successfully'
+      }).then(()=>window.location.href='/dashboard/investment')
+      // window.location.href='/dashboard' // Redirect example (replace with your route)
+    } catch (error: any) {
+      // Handle login errors (e.g., invalid credentials)
+      Toast.fire({
+        icon: 'error',
+        title: error.response?.data.message
+      })
+      console.error('Login error:', error.response?.data); 
+      // setError(error.response?.data.message || 'An error occurred.');
+    }
+  }
 
   return (
     <Container maxWidth="lg" className="h-fit flex flex-col justify-center items-center text-center">
@@ -41,7 +80,7 @@ function InvestmentComponent() {
       <Typography variant="body1" className="mb-6">
         An investment has never been easy but with Bitstamp Trade, we have made it simple with mega returns
       </Typography>
-
+    <form onSubmit={handleSubmit}>
       <Box className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Left Section */}
         <Box className="p-4 bg-white rounded-md shadow-md">
@@ -68,7 +107,7 @@ function InvestmentComponent() {
             className="mb-4 grid grid-cols-5 gap-2"
           >
             {quickAmounts.map((amount) => (
-              <ToggleButton key={amount} value={amount} className="text-[#fff] bg-[#003b2f]">
+              <ToggleButton key={amount} value={amount} className="text-[#fff] bg-[#003b2f] hover:bg-[#215248]">
                 ${amount}
               </ToggleButton>
             ))}
@@ -120,11 +159,13 @@ function InvestmentComponent() {
           </Box>
 
           <Typography className="mb-2">Amount to Invest: ${amount}</Typography> 
-          <Button variant="contained" color="primary" fullWidth className="mt-4 bg-[#003b2f] hover:bg-[#003b2f]">
+          <Button variant="contained" color="primary" type='submit' fullWidth className="mt-4 bg-[#003b2f] hover:bg-[#003b2f]">
             Confirm & Invest
           </Button>
         </Box>
       </Box>
+
+    </form>
     </Box>
     </Box>
     </Container>

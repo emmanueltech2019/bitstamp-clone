@@ -226,7 +226,7 @@ const [confirmPassword,setConfirmPassword]= useState("")
               <Button variant="contained" color="primary" className="mr-2" onClick={handleOpen2}>
                 Update profile
               </Button>
-              <Box className="mt-4">
+              {/* <Box className="mt-4">
                 <Box className="relative pt-1">
                   <div className="flex mb-2 items-center justify-between">
                     <div>
@@ -244,7 +244,7 @@ const [confirmPassword,setConfirmPassword]= useState("")
                     <div style={{ width: '50%' }} className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500"></div>
                   </div>
                 </Box>
-              </Box>
+              </Box> */}
             </CardContent>
           </Card>
         </Grid>

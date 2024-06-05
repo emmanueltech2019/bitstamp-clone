@@ -7,7 +7,7 @@ import StackedLineChartOutlinedIcon from '@mui/icons-material/StackedLineChartOu
 import CompareArrowsOutlinedIcon from '@mui/icons-material/CompareArrowsOutlined';
 import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
 import Link from 'next/link';
-
+import axios from "../../../utils/axios"
 
 const LiveCoinWatchWidget = () => {
   useEffect(() => {
@@ -40,10 +40,70 @@ const LiveCoinWatchWidget = () => {
 
 const Dashboard = () => {
   const [showBalance, setShowBalance] = useState(true);
+  const [downlineData, setDownlineData] = useState<any>([]);
+  const [totalAmount, setTotalAmount] = useState(0.00);
 
+  interface ProfileData {
+    name: string;
+    email: string;
+    balance: number;
+    profit: number;
+    deposited: number;
+    // Add more profile fields as needed
+  }
+const [profileData, setProfileData] = useState<ProfileData | null>(null);
   const toggleBalanceVisibility = () => {
     setShowBalance(!showBalance);
   };
+
+  useEffect(() => {
+    const fetchProfileData = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        console.log(token);
+        const response = await axios.get('/user/profile', {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+        });         
+        setProfileData(response.data);
+        console.log(profileData)
+      } catch (error: any) {
+      } finally {
+      }
+    };
+
+    fetchProfileData();
+
+    const fetctDownlines = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        const response = await axios.get('/user/downlines', {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+        });         
+        setDownlineData(response.data);
+        console.log(response.data);
+      } catch (error: any) {
+      } finally {
+      }
+    };
+
+    fetctDownlines();
+
+    const fetchWithdrawals = async () => {
+      const response = await axios.get(`/user/withdrawals`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+      });
+
+      if (response.data && response.data.length > 0) { // Assuming response.data is an array
+        const newTotalAmount = response.data.reduce(
+          (sum: number, item: { amount: number }) => sum + item.amount, 
+          0
+      );          
+      setTotalAmount(newTotalAmount)
+    }
+  }
+    fetchWithdrawals()
+  }, []); // Empty dependency array ensures this runs only once on mount
+
   return (
     <Box className="p-6">
       <Grid container spacing={2}>
@@ -65,11 +125,7 @@ const Dashboard = () => {
               </Box>
 
               <Typography variant="h4" className="font-bold my-2 text-[20px]">
-                {showBalance ?
-                  "$0.00"
-
-                  : "***"}
-
+                {showBalance ? `$${profileData?.balance}.00` : "***"}
               </Typography>
 
               <Grid container spacing={2}>
@@ -77,7 +133,6 @@ const Dashboard = () => {
                 <Link href={"/dashboard/deposit"} >
                   <Button variant="contained" className="text-[12px] bg-white text-[#003b2f] w-full hover:bg-[#005b49] hover:text-white px-1">
                     <AddCircleOutlineOutlinedIcon />
-
                   </Button>
                   </Link>
                   <span className='text-[10px]'>Top up Balance</span>
@@ -109,7 +164,7 @@ const Dashboard = () => {
               <Typography variant="body2" className="my-2">
                 Earn up to $100 when your friend joins and invests with us.
               </Typography>
-              <Link href={"/dashboard/transactions"} >
+              <Link href={"/dashboard/refferals"} >
                 <Button variant="outlined" className="border-[#003b2f] text-[#003b2f] w-full hover:bg-[#005b49] hover:text-white">
                   Get Started
                 </Button>
@@ -121,7 +176,7 @@ const Dashboard = () => {
           <Card className="bg-white rounded-lg p-4 py-1 shadow-md border-l border-spacing-2 border-[#1f5f4b]">
             <CardContent>
               <Typography variant="h6" className='text-[12px]'>Total Profit</Typography>
-              <Typography variant="h4" className="font-bold my-2">$93,450</Typography>
+              <Typography variant="h4" className="font-bold my-2">${profileData?.profit}.00</Typography>
             </CardContent>
           </Card>
         </Grid>
@@ -129,7 +184,7 @@ const Dashboard = () => {
           <Card className="bg-white rounded-lg p-4 py-1 shadow-md border-l border-spacing-2 border-[#003b2f]">
             <CardContent>
               <Typography variant="h6" className='text-[12px]'>Total Deposit</Typography>
-              <Typography variant="h4" className="font-bold my-2">$5,000</Typography>
+              <Typography variant="h4" className="font-bold my-2">${profileData?.deposited}.00</Typography>
             </CardContent>
           </Card>
         </Grid>
@@ -137,7 +192,7 @@ const Dashboard = () => {
           <Card className="bg-white rounded-lg p-4 py-1 shadow-md border-l border-spacing-2 border-[#88f5df]">
             <CardContent>
               <Typography variant="h6" className='text-[12px]'>Total Bonus</Typography>
-              <Typography variant="h4" className="font-bold my-2">$500</Typography>
+              <Typography variant="h4" className="font-bold my-2">$0.00</Typography>
             </CardContent>
           </Card>
         </Grid>
@@ -145,7 +200,7 @@ const Dashboard = () => {
           <Card className="bg-white rounded-lg p-4 py-1 shadow-md border-l border-spacing-2 border-[#378bad]">
             <CardContent>
               <Typography variant="h6" className='text-[12px]'>Refferal</Typography>
-              <Typography variant="h4" className="font-bold my-2">$500</Typography>
+              <Typography variant="h4" className="font-bold my-2">{downlineData.length}</Typography>
             </CardContent>
           </Card>
         </Grid>
@@ -153,7 +208,7 @@ const Dashboard = () => {
           <Card className="bg-white rounded-lg p-4 py-1 shadow-md border-l border-spacing-2 border-[#caad46]">
             <CardContent>
               <Typography variant="h6" className='text-[12px]'>Total Withdrawal</Typography>
-              <Typography variant="h4" className="font-bold my-2">$57,000</Typography>
+              <Typography variant="h4" className="font-bold my-2">${totalAmount}.00 </Typography>
             </CardContent>
           </Card>
         </Grid>
