@@ -8,6 +8,15 @@ import axios from '../../../utils/axios';
 import { useSearchParams } from 'next/navigation'
 
 function Page() {
+    // Moved useSearchParams() inside Suspense 
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <RegisterContent /> 
+        </Suspense>
+    );
+}
+
+function RegisterContent() {
 
     const searchParams = useSearchParams();
 
@@ -59,7 +68,6 @@ function Page() {
 
 
     return (
-        <Suspense fallback={<div>Loading...</div>}>
 
         <div className='bg-[#f2f2f2] px-5 py-6'>
             <header className='flex justify-between items-center'>
@@ -123,7 +131,6 @@ function Page() {
 
 
         </div>
-        </Suspense>
     )
 }
 
