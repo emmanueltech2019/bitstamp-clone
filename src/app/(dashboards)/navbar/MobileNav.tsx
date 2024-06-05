@@ -25,23 +25,23 @@ function MobileBottomNavBar() {
           setValue(newValue);
         }}
       >
-        <Link href={"/support"}>
+        <Link href={"/dashboard/support"}>
           
         <BottomNavigationAction label="Help?" icon={<HelpOutlineIcon className='text-[#003b2f] !important' />} />
         </Link>
-        <Link href={"/referrals"}>
+        <Link href={"/dashboard/referrals"}>
         <BottomNavigationAction label="Referral" icon={<PeopleAltIcon className='text-[#003b2f] !important'/>} />
 
         </Link>
-        <Link href={"/dashboard"}>
+        <Link href={"/dashboard/"}>
         <BottomNavigationAction label="Home" icon={<HomeOutlinedIcon className='bg-[#003b2f] rounded w-16 h-10 text-white' />}  />
 
         </Link>
-        <Link href={"/investment"}>
+        <Link href={"/dashboard/investment"}>
 
         <BottomNavigationAction label="Invest" icon={<AddCircleOutlineIcon className='text-[#003b2f]' />} />
         </Link>
-        <Link href={"/profile"}>
+        <Link href={"/dashboard/profile"}>
         <BottomNavigationAction label="Profile" icon={<PersonIcon className='text-[#003b2f]' />} />
         </Link>
       </BottomNavigation>
