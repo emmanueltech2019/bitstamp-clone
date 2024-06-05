@@ -160,7 +160,7 @@ function Deposit() {
          Toast.fire({
           icon: "success",
           text: "Your deposit was successful",
-          time: 2000
+          timer: 2000
         });
     
         router.refresh();
@@ -171,7 +171,7 @@ function Deposit() {
       Toast.fire({
         icon: "error",
         text:"Your deposit was unsuccessful",
-        time: 2000
+        timer: 2000
       })
       .then(()=>router.refresh())
       // Handle login errors (e.g., invalid credentials)
