@@ -8,6 +8,7 @@ import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import PersonIcon from '@mui/icons-material/Person';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import Link from 'next/link';
 function MobileBottomNavBar() {
   const [value, setValue] = React.useState(0);
 
@@ -24,11 +25,25 @@ function MobileBottomNavBar() {
           setValue(newValue);
         }}
       >
+        <Link href={"/support"}>
+          
         <BottomNavigationAction label="Help?" icon={<HelpOutlineIcon className='text-[#003b2f] !important' />} />
+        </Link>
+        <Link href={"/referrals"}>
         <BottomNavigationAction label="Referral" icon={<PeopleAltIcon className='text-[#003b2f] !important'/>} />
+
+        </Link>
+        <Link href={"/dashboard"}>
         <BottomNavigationAction label="Home" icon={<HomeOutlinedIcon className='bg-[#003b2f] rounded w-16 h-10 text-white' />}  />
+
+        </Link>
+        <Link href={"/investment"}>
+
         <BottomNavigationAction label="Invest" icon={<AddCircleOutlineIcon className='text-[#003b2f]' />} />
+        </Link>
+        <Link href={"/profile"}>
         <BottomNavigationAction label="Profile" icon={<PersonIcon className='text-[#003b2f]' />} />
+        </Link>
       </BottomNavigation>
     </Paper>
   );
