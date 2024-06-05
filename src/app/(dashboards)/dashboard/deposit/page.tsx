@@ -76,7 +76,7 @@ function Deposit() {
 
   const [selectedCryptos, setSelectedCryptos] = useState<string | null>(null)
   const [selectedWallet, setSelectedWallet] = useState<string | null>(null)
-  const [crptoEquivalent, setCrptoEquivalent]  = useState<string | null>(null)
+  const [crptoEquivalent, setCrptoEquivalent]  = useState<number>(null)
   // const handleCryptoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
   //   const crypto = event.target.name;
   //   setSelectedCryptos(prevCryptos => {
