@@ -9,6 +9,16 @@ import { useRouter } from 'next/router';
 import { useSearchParams } from 'next/navigation'
 
 function Page() {
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return null; // Prevents SSR issues by rendering nothing on the server
+    }
+
     const router = useRouter();
 
     interface RegisterData {
