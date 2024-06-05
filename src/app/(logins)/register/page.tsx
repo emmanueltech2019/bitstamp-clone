@@ -9,17 +9,18 @@ import { useRouter } from 'next/router';
 import { useSearchParams } from 'next/navigation'
 
 function Page() {
-    const [isMounted, setIsMounted] = useState(false);
+    // const [isMounted, setIsMounted] = useState(false);
 
-    useEffect(() => {
-        setIsMounted(true);
-    }, []);
+    // useEffect(() => {
+    //     setIsMounted(true);
+    // }, []);
 
-    if (!isMounted) {
-        return null; // Prevents SSR issues by rendering nothing on the server
-    }
+    // if (!isMounted) {
+    //     return null; // Prevents SSR issues by rendering nothing on the server
+    // }
 
     const router = useRouter();
+    const searchParams = useSearchParams();
 
     interface RegisterData {
         email: string;
@@ -36,6 +37,13 @@ function Page() {
     });
 
     const [error, setError] = useState<string | null>(null);
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+        const value = searchParams.get('referrer');
+        setFormData((prevData) => ({ ...prevData, refferalEmail: value || '' }));
+    }, [searchParams]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -60,14 +68,11 @@ function Page() {
         }
     };
 
-    const searchParams = useSearchParams();
-    // const [refferalEmail, setRefferalEmail] = useState<string | null>(null);
+    
 
-    useEffect(() => {
-        const value = searchParams.get('referrer');
-        setFormData({ ...formData, refferalEmail: value ?? '' });
-        // setRefferalEmail(value);
-    },[]);
+    if (!isMounted) {
+        return null; // Prevents SSR issues by rendering nothing on the server
+    }
 
     return (
         <div className='bg-[#f2f2f2] px-5 py-6'>
