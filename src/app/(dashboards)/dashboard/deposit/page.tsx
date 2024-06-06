@@ -247,7 +247,7 @@ function Deposit() {
             /> 
           </div>
 
-          <p className="mb-2">Hey Emmanuel 👋 Kindly upload your proof of payment when you&apos;ve made payment</p>
+          <p className="mb-2">Hey 👋 Kindly upload your proof of payment when you&apos;ve made payment</p>
 
           <div className="flex space-x-4 mb-4">
             <div className='flex flex-col'>
