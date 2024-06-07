@@ -147,7 +147,20 @@ import logo from '../img/bitstamp_logo-removebg-preview.png'
 import Link from 'next/link'
 import axios from '../../../utils/axios';
 import { useSearchParams } from 'next/navigation'
+import Swal from 'sweetalert2'
+import ReCaptcha from './Recap'
 
+const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    }
+  });
 function Page() {
     return (
         <Suspense fallback={<div>Loading...</div>}>
@@ -158,14 +171,18 @@ function Page() {
 
 function RegisterContent() {
     const searchParams = useSearchParams();
+    const siteKey = '6LdbWvEpAAAAAOC_iD8sPQYEZj701EZ0oLFH1LAV';
+    const [captchaToken, setCaptchaToken] = useState<string>('');
 
     interface RegisterData {
         firstName: string;
         lastName: string;
         email: string;
         password: string;
+        cpassword: string;
         refferalEmail: string;
         recaptchaToken?: string;
+        token?: string;
     }
 
     const [formData, setFormData] = useState<RegisterData>({
@@ -174,6 +191,8 @@ function RegisterContent() {
         email: '',
         password: '',
         refferalEmail: '',
+        cpassword: "",
+        token: ""
     });
 
     const [error, setError] = useState<string | null>(null);
@@ -192,21 +211,23 @@ function RegisterContent() {
         e.preventDefault();
         setError(null); // Clear any previous errors
 
-        if (!window.grecaptcha) {
-            setError("Please complete the reCAPTCHA");
-            return;
-        }
-
-        const recaptchaToken = await window.grecaptcha.execute('6LdbWvEpAAAAAOC_iD8sPQYEZj701EZ0oLFH1LAV', { action: 'register' });
-
-        try {
-            const response = await axios.post('/user/register', { ...formData, recaptchaToken }); // Your login API endpoint
-            console.log('Register successful:', response.data);
-            localStorage.setItem('token', response.data.token); // Example token storage
-            window.location.href='/dashboard' // Redirect example (replace with your route)
-        } catch (error: any) {
-            console.error('Register error:', error.response?.data);
-            setError(error.response?.data.message || 'An error occurred.');
+        if(formData.password !== formData.cpassword){
+            Toast.fire({
+                icon: 'error',
+                title: 'Passwords do not match'
+            })
+        }else{
+        
+            try {
+                console.log(formData)
+                const response = await axios.post('/user/register', { ...formData }); // Your login API endpoint
+                console.log('Register successful:', response.data);
+                localStorage.setItem('token', response.data.token); // Example token storage
+                window.location.href='/dashboard' // Redirect example (replace with your route)
+            } catch (error: any) {
+                console.error('Register error:', error.response?.data);
+                setError(error.response?.data.message || 'An error occurred.');
+            }
         }
     };
 
@@ -237,21 +258,31 @@ function RegisterContent() {
                 </header>
                 <div className='flex justify-center text-center my-[3rem] w-full'>
                     <form className='flex flex-col w-[510px] gap-[2.4rem]' onSubmit={handleSubmit}>
-                        <div className='relative w-full'>
-                            <input id='first-name' required onChange={handleChange} name='firstName' type="text" className='border-b border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
-                            <label htmlFor="first-name" className='absolute text-[18px] text-[#6d6e71] font-light left-0 -top-1 peer-focus:text-[12px] peer-focus:-top-4 transition-all'>First Name</label>
-                        </div>
-                        <div className='relative w-full'>
-                            <input id='last-name' required onChange={handleChange} name='lastName' type="text" className='border-b border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
-                            <label htmlFor="last-name" className='absolute text-[18px] text-[#6d6e71] font-light left-0 -top-1 peer-focus:text-[12px] peer-focus:-top-4 transition-all'>Last Name</label>
+                        <div className='flex flex-row'>
+                            <div className='relative w-full'>
+                                <input id='first-name' required onChange={handleChange} name='firstName' type="text" className='border-b border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
+                                <label htmlFor="first-name" className='absolute text-[18px] text-[#6d6e71] font-light left-0 -top-1 peer-focus:text-[12px] peer-focus:-top-4 transition-all'>First Name</label>
+                            </div>
+                            <div className='relative w-full'>
+                                <input id='last-name' required onChange={handleChange} name='lastName' type="text" className='border-b border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
+                                <label htmlFor="last-name" className='absolute text-[18px] text-[#6d6e71] font-light left-0 -top-1 peer-focus:text-[12px] peer-focus:-top-4 transition-all'>Last Name</label>
+                            </div>
+
                         </div>
                         <div className='relative w-full'>
                             <input id='email' required onChange={handleChange} name='email' type="email" className='border-b border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
                             <label htmlFor="email" className='absolute text-[18px] text-[#6d6e71] font-light left-0 -top-1 peer-focus:text-[12px] peer-focus:-top-4 transition-all'>Enter your email</label>
                         </div>
-                        <div className='relative w-full'>
-                            <input id='password' required type="password" onChange={handleChange} name='password' className='border-b border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
-                            <label htmlFor="password" className='absolute text-[18px] text-[#6d6e71] font-light left-0 -top-1 peer-focus:text-[12px] peer-focus:-top-4 transition-all'>Password</label>
+                        <div className='flex flex-row'>
+                            <div className='relative w-full'>
+                                <input id='password' required type="password" onChange={handleChange} name='password' className='border-b border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
+                                <label htmlFor="password" className='absolute text-[18px] text-[#6d6e71] font-light left-0 -top-1 peer-focus:text-[12px] peer-focus:-top-4 transition-all'>Password</label>
+                            </div>
+                            <div className='relative w-full'>
+                                <input id='cpassword' required type="password" onChange={handleChange} name='cpassword' className='border-b border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
+                                <label htmlFor="cpassword" className='absolute text-[18px] text-[#6d6e71] font-light left-0 -top-1 peer-focus:text-[12px] peer-focus:-top-4 transition-all'>Confirm Password</label>
+                            </div>
+
                         </div>
                         <div className="relative w-full">
                             <input id='refferalEmail' value={formData.refferalEmail} onChange={handleChange} name='refferalEmail' type="text" className={`border-b border-[#a0a0a0] py-1 ${formData.refferalEmail ? 'bg-[#ddd] disabled' : 'bg-transparent'} focus:outline-none focus:border-[#000] w-full peer`} disabled={!!formData.refferalEmail} />
@@ -260,6 +291,7 @@ function RegisterContent() {
                         <div className='terms'>
                             <small className='text-[10px] text-[#6d6e71]'>This site is protected by reCAPTCHA and its <span className='text-[#217cf2]'>Privacy Policy</span> and <span className='text-[#217cf2]'>Terms of Service</span> apply</small>
                         </div>
+                        <ReCaptcha siteKey={siteKey}/>
                         <button type='submit' className='bg-[#003b2f] text-[#03fc9d] p-2 rounded w-[300px] m-auto'>Register</button>
                     </form>
                 </div>
