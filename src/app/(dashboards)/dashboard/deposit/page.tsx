@@ -378,8 +378,26 @@ function Deposit() {
                 id="outlined-adornment-amount"
                 startAdornment={<InputAdornment position="start">$</InputAdornment>}
                 label="Amount"
+                type='number'
                 value={amount}
-                onChange={(e)=>setAmount(parseInt(e.target.value))}
+                
+                onChange={(e) => {
+                  let inputValue = e.target.value;
+              
+                  // Check if the input is empty, then set it to 0
+                  if (inputValue === '') {
+                    setAmount(0);
+                  } else {
+                    let amount = parseInt(inputValue, 10);
+              
+                    // If amount is NaN or less than 0, set it to 0, otherwise set the parsed amount
+                    if (isNaN(amount) || amount < 0) {
+                      setAmount(0);
+                    } else {
+                      setAmount(amount);
+                    }
+                  }
+                }}
             />
             </FormControl>
             </Box>
