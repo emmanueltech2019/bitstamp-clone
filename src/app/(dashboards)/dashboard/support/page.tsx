@@ -47,7 +47,7 @@ const SupportForm: React.FC = () => {
         // setOpen(false)
          Toast.fire({
           icon: "success",
-          text: "Your deposit was successful",
+          text: "We will get back to you shortly",
           timer: 2000
         }).then(()=>window.location.reload())
     
