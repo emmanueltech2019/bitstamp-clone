@@ -62,7 +62,7 @@ const style = {
 
 function Deposit() {
   const [selectedOption, setSelectedOption] = useState('manual');
-  const [amount, setAmount] = useState(100);
+  const [amount, setAmount] = useState<number | string>(100);
   const [totalAmount, setTotalAmount] = useState(0.00);
 
   const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -386,16 +386,16 @@ function Deposit() {
               
                   // Check if the input is empty, then set it to 0
                   if (inputValue === '') {
-                    setAmount(0);
+                    setAmount('');
                   } else {
-                    let amount = parseInt(inputValue, 10);
-              
+                    let amount = inputValue;
+                    setAmount(amount);
                     // If amount is NaN or less than 0, set it to 0, otherwise set the parsed amount
-                    if (isNaN(amount) || amount < 0) {
-                      setAmount(0);
-                    } else {
-                      setAmount(amount);
-                    }
+                    // if (isNaN(amount) || amount < 0) {
+                    //   setAmount(0);
+                    // } else {
+                    //   setAmount(amount);
+                    // }
                   }
                 }}
             />
