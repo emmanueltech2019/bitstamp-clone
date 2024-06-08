@@ -273,7 +273,7 @@ function Deposit() {
               fullWidth
               label={paymentType === 'USD' ? ` Pay in ${selectedCryptos}` : 'Enter Bitcoin amount'}
               type={paymentType === 'USD' ? 'number' : 'text'}
-              value={Math.floor((amount/crptoEquivalent) * 1e6)/ 1e6}
+              value={Math.floor((amount as number /crptoEquivalent) * 1e6)/ 1e6}
               InputLabelProps={{ shrink: !!crptoEquivalent }}
             />
           </div>
@@ -357,7 +357,7 @@ function Deposit() {
             <Box className="mb-4">
             <Typography className="mb-2 ">Select Amount</Typography>
             <Slider
-                value={amount}
+                value={amount as number}
                 onChange={(event, newValue) => setAmount(newValue as number)}
                 valueLabelDisplay="auto"
                 step={100} // Set the step to 100
