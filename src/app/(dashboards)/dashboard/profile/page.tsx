@@ -28,6 +28,8 @@ const UserProfile: React.FC = () => {
 
   interface ProfileData {
     name: string;
+    firstName: string;
+    lastName: string;
     email: string;
     _id: string;
     phone: string;
@@ -78,7 +80,8 @@ const [confirmPassword,setConfirmPassword]= useState("")
     setOpen(false);
   };
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     phone: '',
     country: '',
     region: '',
@@ -362,7 +365,7 @@ const [confirmPassword,setConfirmPassword]= useState("")
                 </Avatar>
               )} */}
 
-{profileImage ? (
+{/* {profileImage ? (
   <>
     {
       typeof profileImage === "object" ? ( // Check if profileImage is a File
@@ -386,8 +389,8 @@ const [confirmPassword,setConfirmPassword]= useState("")
   <Avatar sx={{ width: 100, height: 100 }} className="rounded-full">
     <PhotoCamera /> 
   </Avatar>
-)}
-              <label htmlFor="profile-image-upload">
+)} */}
+              {/* <label htmlFor="profile-image-upload">
                 <Input
                   accept="image/*"
                   id="profile-image-upload"
@@ -400,22 +403,34 @@ const [confirmPassword,setConfirmPassword]= useState("")
                 >
                   Upload Now
                 </Button>
-              </label>
+              </label> */}
             </div>
               <form onSubmit={handleSubmit2}>
             <TextField
                 autoFocus
                 required
                 margin="dense"
-                name="name"
-                label="Full Name"
+                name="firstName"
+                label="First Name"
                 type="text"
                 fullWidth
                 variant="outlined"
                 className="mb-2"
                 onChange={handleChange}
-                value={profileData?.name}
-              />
+                value={profileData?.firstName}
+              /><TextField
+              autoFocus
+              required
+              margin="dense"
+              name="lastName"
+              label="Last Name"
+              type="text"
+              fullWidth
+              variant="outlined"
+              className="mb-2"
+              onChange={handleChange}
+              value={profileData?.lastName}
+            />
               <TextField
                 autoFocus
                 required
@@ -429,7 +444,7 @@ const [confirmPassword,setConfirmPassword]= useState("")
                 onChange={handleChange}
                 value={profileData?.gender}
               />
-              <TextField
+              {/* <TextField
                 autoFocus
                 required
                 margin="dense"
@@ -441,7 +456,7 @@ const [confirmPassword,setConfirmPassword]= useState("")
                 className="mb-2"
                 onChange={handleChange}
                 value={profileData?.email}
-              />
+              /> */}
               <TextField
                 autoFocus
                 required

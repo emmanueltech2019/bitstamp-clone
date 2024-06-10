@@ -55,7 +55,7 @@ const [investments, setInvestments] = useState<Investments[]>([]);
   
   return (
     <>
-      {investments ? 
+      {investments.length >0 ? 
       <>
       <Box className="flex flex-col items-center justify-center h-full bg-gray-100 overflow-y-auto">
       {investments.map((investment: Investments, index:number) =>(
@@ -77,14 +77,7 @@ const [investments, setInvestments] = useState<Investments[]>([]);
         </Button>
       </Link>
       </Box>
-        {/* <Grid item xs={12} md={4}>
-          <Card className="bg-white rounded-lg p-4 py-1 shadow-md border-l border-spacing-2 border-[#88f5df]">
-            <CardContent>
-              <Typography variant="h6" className='text-[12px]'>Total Bonus</Typography>
-              <Typography variant="h4" className="font-bold my-2">$0.00</Typography>
-            </CardContent>
-          </Card>
-        </Grid> */}
+
       </> : <>
       <Box className="flex flex-col items-center justify-center h-[84vh] bg-gray-100">
       <Image src={Img} alt="Person sitting on a stack of coins with a laptop"
