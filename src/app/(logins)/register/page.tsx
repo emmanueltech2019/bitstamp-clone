@@ -221,9 +221,13 @@ function RegisterContent() {
             try {
                 console.log(formData)
                 const response = await axios.post('/user/register', { ...formData }); // Your login API endpoint
-                console.log('Register successful:', response.data);
-                localStorage.setItem('token', response.data.token); // Example token storage
-                window.location.href='/dashboard' // Redirect example (replace with your route)
+                localStorage.setItem('token', response.data.token)
+                if (response.data.newUser.everified=="unverified") {
+                    window.location.href='/verification'
+                }else{
+                    localStorage.setItem('token', response.data.token); // Example token storage
+                    window.location.href='/dashboard' // Redirect example (replace with your route)
+                }
             } catch (error: any) {
                 console.error('Register error:', error.response?.data);
                 setError(error.response?.data.message || 'An error occurred.');
@@ -260,26 +264,26 @@ function RegisterContent() {
                     <form className='flex flex-col w-[510px] gap-[2.4rem]' onSubmit={handleSubmit}>
                         <div className='flex flex-row'>
                             <div className='relative w-full'>
-                                <input id='first-name' required onChange={handleChange} name='firstName' type="text" className='border-b border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
+                                <input id='first-name' required value={formData.firstName} onChange={handleChange} name='firstName' type="text" className='border-b border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
                                 <label htmlFor="first-name" className='absolute text-[18px] text-[#6d6e71] font-light left-0 -top-1 peer-focus:text-[12px] peer-focus:-top-4 transition-all'>First Name</label>
                             </div>
                             <div className='relative w-full'>
-                                <input id='last-name' required onChange={handleChange} name='lastName' type="text" className='border-b border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
+                                <input id='last-name' value={formData.lastName} required onChange={handleChange} name='lastName' type="text" className='border-b border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
                                 <label htmlFor="last-name" className='absolute text-[18px] text-[#6d6e71] font-light left-0 -top-1 peer-focus:text-[12px] peer-focus:-top-4 transition-all'>Last Name</label>
                             </div>
 
                         </div>
                         <div className='relative w-full'>
-                            <input id='email' required onChange={handleChange} name='email' type="email" className='border-b border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
+                            <input id='email' required value={formData.email} onChange={handleChange} name='email' type="email" className='border-b border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
                             <label htmlFor="email" className='absolute text-[18px] text-[#6d6e71] font-light left-0 -top-1 peer-focus:text-[12px] peer-focus:-top-4 transition-all'>Enter your email</label>
                         </div>
                         <div className='flex flex-row'>
                             <div className='relative w-full'>
-                                <input id='password' required type="password" onChange={handleChange} name='password' className='border-b border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
+                                <input id='password' required value={formData.password} type="password" onChange={handleChange} name='password' className='border-b border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
                                 <label htmlFor="password" className='absolute text-[18px] text-[#6d6e71] font-light left-0 -top-1 peer-focus:text-[12px] peer-focus:-top-4 transition-all'>Password</label>
                             </div>
                             <div className='relative w-full'>
-                                <input id='cpassword' required type="password" onChange={handleChange} name='cpassword' className='border-b border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
+                                <input id='cpassword' required value={formData.cpassword} type="password" onChange={handleChange} name='cpassword' className='border-b border-[#a0a0a0] py-1 focus:outline-none bg-transparent focus:border-[#000] w-full peer' />
                                 <label htmlFor="cpassword" className='absolute text-[18px] text-[#6d6e71] font-light left-0 -top-1 peer-focus:text-[12px] peer-focus:-top-4 transition-all'>Confirm Password</label>
                             </div>
 

@@ -34,11 +34,14 @@ interface LoginData {
     console.log(formData)
     try {
       const response = await axios.post('/user/login', formData); // Your login API endpoint
-
-      // Handle successful login (e.g., store token, redirect)
-      console.log('Login successful:', response.data);
       localStorage.setItem('token', response.data.token); // Example token storage
-      window.location.href='/dashboard' // Redirect example (replace with your route)
+      if (response.data.user.everified=="unverified") {
+        window.location.href='/verification'
+      }else{
+        console.log('Login successful:', response.data);
+        window.location.href='/dashboard' // Redirect example (replace with your route)
+      }
+      // Handle successful login (e.g., store token, redirect)
     } catch (error: any) {
       // Handle login errors (e.g., invalid credentials)
       console.error('Login error:', error.response?.data); 

@@ -58,7 +58,7 @@ const SupportForm: React.FC = () => {
     } catch (error: any) {
       Toast.fire({
         icon: "error",
-        text:"Your deposit was unsuccessful",
+        text:"unsuccessful, try again later",
         timer: 2000
       })
       .then(()=>{})
@@ -92,6 +92,7 @@ const SupportForm: React.FC = () => {
                   variant="outlined"
                   fullWidth
                   value={title}
+                  required
                   onChange={(e)=>setTitle(e.target.value)}
                   className="mb-4"
                   placeholder="Enter subject"
@@ -105,6 +106,7 @@ const SupportForm: React.FC = () => {
                   onChange={handleChange}
                   variant="outlined"
                   fullWidth
+                  required
                   className="mb-4"
                   placeholder="What is your reason?"
                 >
@@ -120,6 +122,7 @@ const SupportForm: React.FC = () => {
                   label="Message"
                   variant="outlined"
                   fullWidth
+                  required
                   multiline
                   onChange={(e)=>setMessage(e.target.value)}
                   value={message}

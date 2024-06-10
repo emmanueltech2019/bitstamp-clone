@@ -38,6 +38,7 @@ import {
 } from '@mui/icons-material';
 import { NavBarContext } from '../../context/NavBar';
 import Swal from 'sweetalert2';
+import GoogleTranslate from './TransLate';
 
 const Navbar:React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -135,13 +136,17 @@ useEffect(() => {
 
                 
         <>
+        <div className='fixed right-2 bottom-14 z-[100]'>
+        <GoogleTranslate/> 
+        </div>
         <AppBar position="fixed" sx={{ backgroundColor: '#003b2f', height: '80px', zIndex: '2',  }} className=''>
           <Toolbar>
             <div className={`sm:flex sm:flex-row flex-row-reverse sm:justify-between ${isCollapsed ? 'md:pl-16' : 'md:pl-60'} w-screen`}>
-              <div className="pt-5 hidden md:block">
-                <IconButton color="inherit" aria-label="toggle sidebar" onClick={()=>toggleSidebar()}>
+              <div className="pt-20 hidden md:block">
+                
+                {/* <IconButton color="inherit" aria-label="toggle sidebar" onClick={()=>toggleSidebar()}>
                   <MenuOutlinedIcon />
-                </IconButton>
+                </IconButton> */}
               </div>
 
               <div className="flex w-fit flex-row-reverse justify-between content-between  md:flex-row w-full md:w-auto">

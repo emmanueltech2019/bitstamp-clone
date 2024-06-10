@@ -173,7 +173,7 @@ const [profileData, setProfileData] = useState<ProfileData | null>(null);
             {walletData.map((row, index) => (
               <TableRow key={row.coin}>
                 <TableCell className="flex items-center">
-                  {row.icon}
+                  {/* {row.icon} */}
                   <span className="ml-2">{`${row.coin} (${row.symbol})`}</span>
                 </TableCell>
                 <TableCell>
