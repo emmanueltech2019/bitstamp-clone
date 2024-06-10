@@ -9,8 +9,8 @@ import DesktopFooter from "./navbar/footer";
 // const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Mirror Trading",
-  description: "No 1 investment platform",
+  title: "Mirror Stamp",
+  description: "Mirror Stamp is a group of financial and cryptocurrencies experts that mirror daily gain using shared experience of over 15 years",
 };
 
 export default function RootLayout({

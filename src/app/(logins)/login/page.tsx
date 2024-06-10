@@ -5,10 +5,22 @@ import Image from 'next/image'
 import logo from '../img/bitstamp_logo-removebg-preview.png'
 import Link from 'next/link'
 import axios from '../../../utils/axios';
+import Swal from 'sweetalert2'
 
 
 function Page() {
 
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    }
+  });
 
 interface LoginData {
   email: string;
@@ -21,7 +33,6 @@ interface LoginData {
     password: '',
   });
 
-  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -30,22 +41,27 @@ interface LoginData {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setError(null); // Clear any previous errors
     console.log(formData)
     try {
-      const response = await axios.post('/user/login', formData); // Your login API endpoint
-      localStorage.setItem('token', response.data.token); // Example token storage
+      const response = await axios.post('/user/login', formData);
+      localStorage.setItem('token', response.data.token);
       if (response.data.user.everified=="unverified") {
         window.location.href='/verification'
       }else{
         console.log('Login successful:', response.data);
-        window.location.href='/dashboard' // Redirect example (replace with your route)
+        Toast.fire({
+          icon:'success',
+          title: response.data.message
+        }).then(()=>{
+          window.location.href='/dashboard'
+        })
       }
-      // Handle successful login (e.g., store token, redirect)
     } catch (error: any) {
-      // Handle login errors (e.g., invalid credentials)
+      Toast.fire({
+        icon:'error',
+        title: error.response?.data.message
+      })
       console.error('Login error:', error.response?.data); 
-      setError(error.response?.data.message || 'An error occurred.');
     }
   };
 

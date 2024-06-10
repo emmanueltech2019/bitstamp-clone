@@ -222,15 +222,29 @@ function RegisterContent() {
                 console.log(formData)
                 const response = await axios.post('/user/register', { ...formData }); // Your login API endpoint
                 localStorage.setItem('token', response.data.token)
+                
                 if (response.data.newUser.everified=="unverified") {
-                    window.location.href='/verification'
+                    Toast.fire({
+                        icon: 'warning',
+                        title: "Verify account first"
+                    }).then(()=>{
+                        window.location.href='/verification'
+                    })
                 }else{
                     localStorage.setItem('token', response.data.token); // Example token storage
-                    window.location.href='/dashboard' // Redirect example (replace with your route)
+                    Toast.fire({
+                        icon: 'success',
+                        title: response.data.message
+                    }).then(()=>{
+                        window.location.href='/dashboard' // Redirect example (replace with your route)
+                    })
                 }
             } catch (error: any) {
                 console.error('Register error:', error.response?.data);
-                setError(error.response?.data.message || 'An error occurred.');
+                Toast.fire({
+                    icon: 'error',
+                    title: error.response?.data.message
+                })
             }
         }
     };

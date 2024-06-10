@@ -136,7 +136,8 @@ useEffect(() => {
 
                 
         <>
-        <div className='fixed right-2 bottom-14 z-[100]'>
+        <div className='fixed md:left-0 md:-bottom-14 bottom-12 z-[100]'>
+          hhh
         <GoogleTranslate/> 
         </div>
         <AppBar position="fixed" sx={{ backgroundColor: '#003b2f', height: '80px', zIndex: '2',  }} className=''>

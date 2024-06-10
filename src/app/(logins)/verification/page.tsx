@@ -1,5 +1,5 @@
 "use client"
-import React,{ useState, FormEvent, useEffect } from 'react'
+import React,{ useState, FormEvent, useEffect, useRef } from 'react'
 import './bg.css'
 import Image from 'next/image'
 import logo from '../img/bitstamp_logo-removebg-preview.png'
@@ -46,36 +46,73 @@ interface VerificationData {
       const response = await axios.post('/user/verify', formData, {
         headers: { Authorization: `Bearer ${token}` }
       });
-      // localStorage.setItem('token', response.data.token); 
+
+      Toast.fire({
+        icon: 'success',
+        title: 'Account verified'
+    }).then(() => {
       window.location.href='/dashboard'
+    });
+      // localStorage.setItem('token', response.data.token); 
     } catch (error: any) {
       console.error('Login error:', error.response?.data); 
-      setError(error.response?.data.message || 'An error occurred.');
+      Toast.fire({
+        icon: 'error',
+        title: error.response?.data.message
+    }).then(() => {
+      window.location.reload()
+    });
     }
   };
 
 
+  // useEffect(() => {
+  //   const getCode = async () => {
+  //     try {
+  //       const token = localStorage.getItem("token");
+  //       const response = await axios.post('/user/everify', {},{
+  //         headers: { Authorization: `Bearer ${token}` }
+  //       });
+  //       Toast.fire({
+  //         icon:'success',
+  //         title: 'Code sent to your email'
+  //       })
+
+  //     } catch (error: any) {
+        
+  //       console.error('Investment error:', error.response?.data);
+  //     }
+  //   };
+
+  //   getCode();
+  // }, []);
+  const effectRan = useRef(false);
+
   useEffect(() => {
+    if (effectRan.current) return; // Prevent running twice in development
+
     const getCode = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.post('/user/everify', {},{
+        await axios.post('/user/everify', {}, {
           headers: { Authorization: `Bearer ${token}` }
         });
         Toast.fire({
-          icon:'success',
+          icon: 'success',
           title: 'Code sent to your email'
-        })
-
-      } catch (error: any) {
-        
-        console.error('Investment error:', error.response?.data);
+        });
+      } catch (error:any) {
+        console.error('Investment error:', error.response?.data.message);
       }
     };
 
     getCode();
-  }, []);
 
+    effectRan.current = true; // Set to true after effect has run
+
+    // No need to reset effectRan.current in the cleanup function because
+    // it should only run once during the component's lifecycle.
+  }, []);
   return (
     <div className='bg-[#f2f2f2] px-5 py-6'>
       <header className='flex justify-between items-center'>

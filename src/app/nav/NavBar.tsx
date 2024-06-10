@@ -17,7 +17,7 @@ function NavBar() {
 
     return (
         <div className=''>
-            <div className='fixed right-2 bottom-14 z-[100]'>
+            <div className='fixed left-0 -bottom-14 z-[100]'>
         <GoogleTranslate/> 
         </div>
             <header className='flex justify-between lg:px-[3.5rem] p-3 px-6 items-center fixed top-0 w-[100%] bg-[#f2f2f2] z-40'>
