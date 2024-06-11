@@ -21,3 +21,7 @@ body {
   top: "0px !important"; 
 }
 iframe.skiptranslate { display: "none !important"; }
+
+.goog-te-combo{
+  font-size:10px!important; width:130px; height:38px; text-align: center; align-items: center;
+}
