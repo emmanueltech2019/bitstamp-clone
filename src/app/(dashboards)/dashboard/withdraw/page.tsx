@@ -13,6 +13,7 @@ import axios2 from "../../../../utils/axios"
 import Swal from 'sweetalert2';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'; // For the copy icon
 import AttachMoneyOutlinedIcon from '@mui/icons-material/AttachMoneyOutlined';
+import Link from 'next/link';
 const Toast = Swal.mixin({
   toast: true,
   position: "top-end",
@@ -105,9 +106,75 @@ function WithdrawalOptions() {
   const [password, setPassword] = React.useState<string | null>(null)
   const [network, setNetwork] = React.useState<string | null>(null)
 
-  const handleMethod = (method: string) => {
+  const handleMethod = async (method: string) => {
     setMethod(method);
+    console.log(method)
     setOpen(true);
+    const response = await axios2.get('/user/profile',{
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+    } )
+    if (response.data) {
+      console.log(response.data.wallets[0].wallet)
+    }
+    switch (method) {
+      case "BTC":
+        setNetwork("BITCOIN")
+        setAddress(response.data.wallets[0].wallet)
+        if(response.data.wallets[0].wallet=="xxxxxxxxxxxxxxxx"){
+          setOpen(false);
+          Toast.fire({
+            icon: "error",
+            title:"Please add your BTC wallet"
+          }).then(()=>{
+            window.location.href = "/dashboard/wallets"
+          })
+        }
+        break;
+      case "ETH":
+        setNetwork("ERC 20")
+        setAddress(response.data.wallets[1].wallet)
+        if(response.data.wallets[1].wallet=="xxxxxxxxxxxxxxxx"){
+          setOpen(false);
+          Toast.fire({
+            icon: "error",
+            title:"Please add your ETH wallet"
+          }).then(()=>{
+            window.location.href = "/dashboard/wallets"
+          })
+        }
+        break;
+      case "USDT":
+        setNetwork("TRC20")
+        setAddress(response.data.wallets[2].wallet)
+        if(response.data.wallets[2].wallet=="xxxxxxxxxxxxxxxx"){
+          setOpen(false);
+          Toast.fire({
+            icon: "error",
+            title:"Please add your USDT wallet"
+          }).then(()=>{
+            window.location.href = "/dashboard/wallets"
+          })
+        }
+        break;
+      case "LTC":
+        setNetwork("LTC")
+        setAddress(response.data.wallets[3].wallet)
+        if(response.data.wallets[3].wallet=="xxxxxxxxxxxxxxxx"){
+          setOpen(false);
+          Toast.fire({
+            icon: "error",
+            title:"Please add your LTC wallet"
+          }).then(()=>{
+            window.location.href = "/dashboard/wallets"
+          })
+        }
+        break;
+      case "TO BANK":
+        setNetwork("")
+        break;
+      default:
+        break;
+    }
   }
   return (
     <>
@@ -206,6 +273,7 @@ function WithdrawalOptions() {
              </div>
             <TextField
               fullWidth
+              disabled
               value={address}
               onChange={(e)=>setAddress(e.target.value)}
             />
@@ -217,7 +285,8 @@ function WithdrawalOptions() {
             <TextField
               fullWidth
               value={network} 
-              placeholder='EG: TRC 20'
+              placeholder=''
+              disabled
               onChange={(e)=>setNetwork(e.target.value)}
             />
               <div>
@@ -250,9 +319,11 @@ function WithdrawalOptions() {
       <Box className="p-4"> {/* Add padding for spacing */}
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            {/* <Button variant="outlined" startIcon={<AddCircleOutlineOutlinedIcon />} className="text-[#003b2f] border-[#003b2f]">
+            <Link href={'/dashboard/wallets'}>
+            <Button variant="outlined" startIcon={<AddCircleOutlineOutlinedIcon />} className="text-[#003b2f] border-[#003b2f]">
               Add your wallet
-            </Button> */}
+            </Button>
+            </Link>
           </Grid>
           {options.map((option) => (
             <Grid item xs={12} sm={6} md={2.4} key={option.label}>
