@@ -38,7 +38,7 @@ import {
 } from '@mui/icons-material';
 import { NavBarContext } from '../../context/NavBar';
 import Swal from 'sweetalert2';
-import GoogleTranslate from './TransLate';
+// import GoogleTranslate from './TransLate';
 
 const Navbar:React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -137,7 +137,7 @@ useEffect(() => {
                 
         <>
         <div className='fixed md:left-0 md:-bottom-14 bottom-12 z-[100]'>
-        <GoogleTranslate/> 
+        {/* <GoogleTranslate/>  */}
         </div>
         <AppBar position="fixed" sx={{ backgroundColor: '#003b2f', height: '80px', zIndex: '2',  }} className=''>
           <Toolbar>

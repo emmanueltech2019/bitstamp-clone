@@ -125,8 +125,14 @@ const [profileData, setProfileData] = useState<ProfileData | null>(null);
               </Box>
 
               <Typography variant="h4" className="font-bold my-2 text-[20px]">
-                {showBalance ? `$${profileData?.balance}.00` : "***"}
+                {
+                  showBalance ? `${profileData?.balance}.00` : "***"
+                }
+                
               </Typography>
+              {/* <Typography variant="h4" className="font-bold my-2 text-[20px]">
+                {profileData?.balance ? (showBalance ? `$${profileData.balance}.00` : "***") : "0.00"}
+              </Typography> */}
 
               <Grid container spacing={2}>
                 <Grid item xs={4} className='text-center'>
@@ -164,7 +170,7 @@ const [profileData, setProfileData] = useState<ProfileData | null>(null);
               <Typography variant="body2" className="my-2">
                 Earn up to $100 when your friend joins and invests with us.
               </Typography>
-              <Link href={"/dashboard/refferals"} >
+              <Link href={"/dashboard/referrals"} >
                 <Button variant="outlined" className="border-[#003b2f] text-[#003b2f] w-full hover:bg-[#005b49] hover:text-white">
                   Get Started
                 </Button>
