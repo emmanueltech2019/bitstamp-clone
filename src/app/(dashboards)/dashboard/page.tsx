@@ -56,7 +56,9 @@ const [profileData, setProfileData] = useState<ProfileData | null>(null);
     setShowBalance(!showBalance);
   };
 
+  const [balance, setBalance] = useState(0);
   useEffect(() => {
+
     const fetchProfileData = async () => {
       try {
         const token = localStorage.getItem("token");
@@ -65,6 +67,7 @@ const [profileData, setProfileData] = useState<ProfileData | null>(null);
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         });         
         setProfileData(response.data);
+        setBalance(response.data.balance)
         console.log(profileData)
       } catch (error: any) {
       } finally {
@@ -126,12 +129,12 @@ const [profileData, setProfileData] = useState<ProfileData | null>(null);
 
               <Typography variant="h4" className="font-bold my-2 text-[20px]">
                 {
-                  showBalance ? `${profileData?.balance}.00` : "***"
+                  showBalance ? `${balance}.00` : "***"
                 }
                 
               </Typography>
               {/* <Typography variant="h4" className="font-bold my-2 text-[20px]">
-                {profileData?.balance ? (showBalance ? `$${profileData.balance}.00` : "***") : "0.00"}
+                {profileData?.balance ? (showBalance ? `$${balance}.00` : "***") : "0.00"}
               </Typography> */}
 
               <Grid container spacing={2}>
