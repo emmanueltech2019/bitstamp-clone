@@ -1,8 +1,10 @@
 "use client"
-import React, { useState, ChangeEvent, FormEvent } from 'react';
-import { Box, Typography, TextField, MenuItem, Button, Card, CardContent, Grid } from '@mui/material';
+import React, { useState, ChangeEvent, FormEvent, useEffect } from 'react';
+import { Box, Typography, TextField, MenuItem, Button, Card, CardContent, Grid, Accordion, AccordionSummary, AccordionDetails, IconButton, OutlinedInput, InputAdornment } from '@mui/material';
 import axios2 from "../../../../utils/axios"
-
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import SendIcon from "@mui/icons-material/Send"; // Import Send icon
+import MessageOutlinedIcon from '@mui/icons-material/MessageOutlined';
 import Swal from "sweetalert2"
 const Toast = Swal.mixin({
   toast: true,
@@ -21,6 +23,19 @@ interface Reason {
   label: string;
 }
 
+interface Message {
+  _id: any;
+  title: string;
+  reason: string;
+  message: string;
+  replies: Reply[]; // Array to store replies
+}
+
+interface Reply {
+  _id: number;
+  message: string;
+  from: string
+}
 
 const reasons: Reason[] = [
   { value: 'technical', label: 'Technical Support' },
@@ -34,10 +49,18 @@ const SupportForm: React.FC = () => {
   const [reason, setReason] = useState<string>('');
   const [message, setMessage] = useState<string>('');
   const [title, setTitle] = useState<string>('');
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [activeThreadId, setActiveThreadId] = useState<number | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
     setReason(event.target.value);
   };
+
+  const [replyText, setReplyText] = useState("");
+
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
@@ -63,10 +86,51 @@ const SupportForm: React.FC = () => {
       })
       .then(()=>{})
       // Handle login errors (e.g., invalid credentials)
-      // console.error('Login error:', error.response?.data); 
+      console.error('Login error:', error.response?.data); 
       // setError(error.response?.data.message || 'An error occurred.');
     }
   };
+
+  const fetchMessages = async () => {
+    
+    try {
+      const response = await axios2.get("/user/messages", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      setMessages(response.data.messages);
+      setIsLoading(false);
+    } catch (error) {
+      console.error("Error fetching messages:", error);
+    }
+  };
+  
+    // Fetch messages on initial load and after adding a reply
+    useEffect(() => {
+      fetchMessages();
+    }, []); 
+  
+    const handleReply = async (messageId: number) => {
+      try {
+        await axios2.post(
+          `/user/messages/${messageId}/reply`,
+          { message: replyText },
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        );
+  
+        setReplyText("");
+        // Re-fetch messages after adding a reply
+        await fetchMessages(); 
+      } catch (error) {
+        console.error("Error sending reply:", error);
+      }
+    };
+  
   return (
     <Box className="p-6 py-1">
       <Card className="bg-white rounded-lg p-6 py-1 shadow-md">
@@ -140,6 +204,78 @@ const SupportForm: React.FC = () => {
           </form>
         </CardContent>
       </Card>
+
+
+
+      {/* Message List with Reply Threads */}
+      <Box mt={4} pb={5}>
+        <h1 className='text-[20px] font-bold'>Tickets</h1>
+
+        {isLoading ? (
+      <Typography>Loading messages...</Typography> // Display loading message
+    ) : (
+      <>
+       {messages.map((message) => (
+          <Accordion
+          key={message._id}
+          expanded={activeThreadId === message._id}
+          onChange={() =>
+            setActiveThreadId(
+              activeThreadId === message._id ? null : message._id
+            )
+          }
+        >
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            {/* Add close button */}
+            <IconButton
+              onClick={(event) => {
+                event.stopPropagation(); // Prevent accordion expansion
+                setActiveThreadId(null); // Close the thread
+              }}
+              sx={{ marginRight: 1 }}
+            >
+              <MessageOutlinedIcon /> 
+            </IconButton>
+
+            <Typography>
+              {message.title} ({message.reason})
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+          {message.replies && message.replies.length > 0 ? (
+              <div>
+                {/* Render replies */}
+                {message.replies.map((reply) => (
+                  <Typography key={reply._id} className='border  border-1 my-2 p-2 px-2 rounded-full'><b>{reply.from}</b>- {reply.message}</Typography>
+                ))}
+              </div>
+            ) : (
+              <Typography>No replies yet</Typography> // Or similar message
+            )}
+
+            {/* Reply Input and Button */}
+            <OutlinedInput
+              fullWidth
+              placeholder="Enter your reply"
+              value={replyText}
+              onChange={(e) => setReplyText(e.target.value)}
+              endAdornment={
+                <InputAdornment position="end">
+                  <IconButton
+                    onClick={() => handleReply(message._id)}
+                    disabled={!replyText.trim()}
+                  >
+                    <SendIcon />
+                  </IconButton>
+                </InputAdornment>
+              }
+            />
+          </AccordionDetails>
+        </Accordion>
+        ))}</>
+    )}
+       
+      </Box>
     </Box>
   );
 };
