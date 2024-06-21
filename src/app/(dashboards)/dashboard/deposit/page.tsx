@@ -405,29 +405,43 @@ function Deposit() {
             </Box>
             <Typography className="mb-2">Select Payment Method</Typography>
             <Box className="p-4 text-left">
-        <Grid container spacing={2}>
-            {cryptoOptions.map((option) => (
-            <Grid item xs={6} key={option.label} >
-                <FormControlLabel
-                control={
-                    <Checkbox
-                    // checked={selectedCryptos?.includes(option.label)}
-                    checked={selectedCryptos === option.label}
-                    onChange={handleCryptoChange}
-                    name={option.label} // Add name to identify crypto in handlerp
-                    id='cryptoType'
-                    />
-                }
-                label={
-                    <Box className="flex items-center space-x-2">
-                    <Image src={option.icon} alt={option.label} className='w-10' />
-                    <Typography className='text-[11px]'>{option.label}</Typography>
-                    </Box>
-                }
-                />
-            </Grid>
-            ))}
-        </Grid>
+            <Grid container spacing={2}>
+  {cryptoOptions.map((option) => (
+    <Grid item xs={6} key={option.label}>
+      <Button
+        onClick={() => {
+          setSelectedCryptos(option.label);
+          setSelectedWallet(option.wallet);
+        }}
+        sx={{
+          width: "100%", // Make the button take the full width of the grid item
+          justifyContent: "flex-start", // Align content to the start (left)
+          textTransform: "none", // Don't capitalize the button text
+        }}
+      >
+        <FormControlLabel
+          control={
+            <Checkbox
+              checked={selectedCryptos === option.label}
+              onChange={() => {
+                setSelectedCryptos(option.label);
+                setSelectedWallet(option.wallet);
+              }}
+              name={option.label}
+              id='cryptoType'
+            />
+          }
+          label={
+            <Box className="flex items-center space-x-2">
+              <Image src={option.icon} alt={option.label} className='w-10' />
+              <Typography className='text-[11px]'>{option.label}</Typography>
+            </Box>
+          }
+        />
+      </Button>
+    </Grid>
+  ))}
+</Grid>
         </Box>
 
         <Button variant="contained" onClick={handleOpen} fullWidth className="mt-4 bg-[#003b2f] hover:bg-[#003b2f]">
