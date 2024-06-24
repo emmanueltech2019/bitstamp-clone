@@ -68,9 +68,7 @@ function Deposit() {
   const [totalAmount, setTotalAmount] = useState(0.00);
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
   // const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    alert("here")
     setSelectedOption(event.target.value);
-    console.log("Option changed to: ", event.target.value);  // Debugging log
 
   };
   // const [isAvatarError, setIsAvatarError] = useState(false); 
