@@ -66,15 +66,18 @@ function Deposit() {
   const [selectedOption, setSelectedOption] = useState('manual');
   const [amount, setAmount] = useState<number | string>(100);
   const [totalAmount, setTotalAmount] = useState(0.00);
-
-  const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  // const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    alert("here")
     setSelectedOption(event.target.value);
-  };
-  const [isAvatarError, setIsAvatarError] = useState(false); 
+    console.log("Option changed to: ", event.target.value);  // Debugging log
 
-  const handleAvatarError = () => {
-    setIsAvatarError(true); 
   };
+  // const [isAvatarError, setIsAvatarError] = useState(false); 
+
+  // const handleAvatarError = () => {
+  //   setIsAvatarError(true); 
+  // };
 
   const [selectedCryptos, setSelectedCryptos] = useState<string | null>(null)
   const [selectedWallet, setSelectedWallet] = useState<string | null>(null)
@@ -90,14 +93,14 @@ function Deposit() {
   //   });
   // };
 
-  const handleCryptoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSelectedCryptos(event.target.checked ? event.target.name : null);
-    const selectedOption = cryptoOptions.find(
-      (option) => event.target.name === option.label
-    );
-    setSelectedWallet(selectedOption ? selectedOption.wallet : null);
+  // const handleCryptoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   setSelectedCryptos(event.target.checked ? event.target.name : null);
+  //   const selectedOption = cryptoOptions.find(
+  //     (option) => event.target.name === option.label
+  //   );
+  //   setSelectedWallet(selectedOption ? selectedOption.wallet : null);
 
-  };
+  // };
 
   const cryptoOptions = [
     { label: 'Bitcoin (BTC)', icon: Btc, wallet:"bc1qs4l3nyhpyyx9xq8mdgf2cx0u253m3vl075k2f0" },
@@ -181,6 +184,8 @@ function Deposit() {
       // setError(error.response?.data.message || 'An error occurred.');
     }
   };
+
+  
   useEffect(() => {
     const fetchDeposits = async () => { 
       try {
@@ -307,12 +312,13 @@ function Deposit() {
             DEPOSIT
         </Typography>
 
-        <Typography className="mb-2 text-[11px]">Choose your preferred payment option</Typography>
-
+        <Typography className="mb-2 text-[11px] pb-10">Choose your preferred payment option</Typography>
+{/* 
         <RadioGroup value={selectedOption} onChange={handleOptionChange} className="mb-4 flex flex-row justify-center">
             <FormControlLabel
             value="manual"
-            control={<Radio className="" sx={{
+            
+            control={<Radio  className="" sx={{
                 color: "#003b2f",
                 '&.Mui-checked': {
                 color: "#fff", 
@@ -333,7 +339,9 @@ function Deposit() {
             />
             <FormControlLabel
             value="card"
-            control={<Radio className="" sx={{
+            control={<Radio className=""   
+              onClick={()=>alert("nj")}
+            sx={{
                 color: "#003b2f",
                 '&.Mui-checked': {
                 color: "#fff", 
@@ -352,8 +360,15 @@ function Deposit() {
                 }
             }}
             />
-        </RadioGroup>
-
+        </RadioGroup> */}
+        <select
+          value={selectedOption}
+          onChange={handleChange}
+          className="mb-4 w-full p-2 rounded border border-gray-300"
+        >
+          <option value="manual">Manual Deposit</option>
+          <option value="card">Card Payment</option>
+        </select>
         {selectedOption === 'manual' && (
             <>
             <Box className="mb-4">
@@ -450,7 +465,7 @@ function Deposit() {
             </>
         )}
 
-        {selectedOption === 'card' && (
+        {selectedOption == 'card' && (
             <Container maxWidth="sm" className="h-fit flex flex-col justify-center items-center text-center">
             <Box className="bg-white p-8 rounded-lg shadow-lg">
             <Typography variant="h3" className="font-bold mb-4">
@@ -513,3 +528,11 @@ function Deposit() {
 }
 
 export default Deposit;
+
+
+
+
+
+
+
+
