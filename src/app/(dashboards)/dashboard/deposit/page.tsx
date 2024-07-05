@@ -16,21 +16,21 @@ import {
   Divider,
   Modal
 } from '@mui/material';
-import Btc from "../../../nav/img/bitcoin.png"
-import Eth from "../../../nav/img/ethereum.png"
-import Usdt from "../../../nav/img/tether.png"
-import Ltc from "../../../nav/img/digital.png"
+import Btc from "../../../nav/img/bitcoin.png";
+import Eth from "../../../nav/img/ethereum.png";
+import Usdt from "../../../nav/img/tether.png";
+import Ltc from "../../../nav/img/digital.png";
 import Image from 'next/image';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputAdornment from '@mui/material/InputAdornment';
-import Paxful from "../../../nav/img/paxful.png"
-import Binance from "../../../nav/img/binance.png"
-import Cryptocom from "../../../nav/img/cryto.png"
+import Paxful from "../../../nav/img/paxful.png";
+import Binance from "../../../nav/img/binance.png";
+import Cryptocom from "../../../nav/img/cryto.png";
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'; // For the copy icon
 import axios from 'axios';
-import Swal from "sweetalert2"
+import Swal from "sweetalert2";
 import { useRouter } from 'next/navigation';
 import axios2 from '../../../../utils/axios';
 import Link from 'next/link';
