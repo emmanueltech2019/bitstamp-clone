@@ -221,30 +221,30 @@ function RegisterContent() {
             try {
                 console.log(formData)
                 const response = await axios.post('/user/register', { ...formData }); // Your login API endpoint
-                localStorage.setItem('token', response.data.token)
-                // localStorage.setItem('token', response.data.token); // Example token storage
-                    // Toast.fire({
-                    //     icon: 'success',
-                    //     title: response.data.message
-                    // }).then(()=>{
-                    //     window.location.href='/dashboard' // Redirect example (replace with your route)
-                    // })
-                if (response.data.newUser.everified=="unverified") {
-                    Toast.fire({
-                        icon: 'warning',
-                        title: "Verify account first"
-                    }).then(()=>{
-                        window.location.href='/verification'
-                    })
-                }else{
-                    localStorage.setItem('token', response.data.token); // Example token storage
+                // localStorage.setItem('token', response.data.token)
+                localStorage.setItem('token', response.data.token); // Example token storage
                     Toast.fire({
                         icon: 'success',
                         title: response.data.message
                     }).then(()=>{
                         window.location.href='/dashboard' // Redirect example (replace with your route)
                     })
-                }
+                // if (response.data.newUser.everified=="unverified") {
+                //     Toast.fire({
+                //         icon: 'warning',
+                //         title: "Verify account first"
+                //     }).then(()=>{
+                //         window.location.href='/verification'
+                //     })
+                // }else{
+                //     localStorage.setItem('token', response.data.token); // Example token storage
+                //     Toast.fire({
+                //         icon: 'success',
+                //         title: response.data.message
+                //     }).then(()=>{
+                //         window.location.href='/dashboard' // Redirect example (replace with your route)
+                //     })
+                // }
             } catch (error: any) {
                 console.error('Register error:', error.response?.data);
                 Toast.fire({

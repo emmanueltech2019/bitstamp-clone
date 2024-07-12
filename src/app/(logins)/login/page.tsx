@@ -45,23 +45,25 @@ interface LoginData {
     try {
       const response = await axios.post('/user/login', formData);
       localStorage.setItem('token', response.data.token);
-      if (response.data.user.everified=="unverified") {
-        window.location.href='/verification'
-      }else{
-        console.log('Login successful:', response.data);
-        Toast.fire({
-          icon:'success',
-          title: response.data.message
-        }).then(()=>{
-          window.location.href='/dashboard'
-        })
-      }
-      // Toast.fire({
-      //   icon:'success',
-      //   title: response.data.message
-      // }).then(()=>{
-      //   window.location.href='/dashboard'
-      // })
+      // if (response.data.user.everified=="unverified") {
+      //   window.location.href='/verification'
+      // }else{
+      //   console.log('Login successful:', response.data);
+      //   Toast.fire({
+      //     icon:'success',
+      //     title: response.data.message
+      //   }).then(()=>{
+      //     window.location.href='/dashboard'
+      //   })
+      // }
+      Toast.fire({
+        icon:'success',
+        title: response.data.message
+      }).then(()=>{
+        window.location.href='/dashboard'
+      })
+
+      
     } catch (error: any) {
       Toast.fire({
         icon:'error',
