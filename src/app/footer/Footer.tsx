@@ -13,6 +13,7 @@ function Footer() {
                         <header className="my-5">
                             <h1 className="text-[#fff] font-bold">About</h1>
                         </header>
+                        
 
                         <ul className="text-[12px] text-[#b1b4b6] flex flex-col gap-[.6em]">
                             <Link href='/hero/about'><li>Who We Are</li></Link>
