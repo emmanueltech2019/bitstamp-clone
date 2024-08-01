@@ -99,13 +99,10 @@ function Footer() {
 
                         <ul className="text-[12px] text-[#b1b4b6] flex flex-col gap-[.6em]">
                             <li>Customer support</li>
-                            <li>info@mirrorstamptrading.com</li>
-                            <li>press@mirrorstamptrading.com</li>
-                            <li>support@mirrorstamptrading.com</li>
-                            <li>complaints@mirrorstamptrading.com</li>
-                            <li>&#43;44 20 3868 9628</li>
-                            <li>&#43;1 800 712 5702</li>
-                            <li>&#43;352 20 88 10 96</li>
+                            <li>info@mirrorstamptrade.com</li>
+                            <li>press@mirrorstamptrade.com</li>
+                            <li>support@mirrorstamptrade.com</li>
+                            <li>complaints@mirrorstamptrade.com</li>
                             <li>Customer support will be provided:
                                 Mon - Sat: 6am
                                 CET to 10pm CET
