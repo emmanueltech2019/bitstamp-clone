@@ -129,7 +129,7 @@ const [profileData, setProfileData] = useState<ProfileData | null>(null);
 
               <Typography variant="h4" className="font-bold my-2 text-[20px]">
                 {
-                  showBalance ? `${balance}.00` : "***"
+                  showBalance ? `$${balance}.00` : "***"
                 }
                 
               </Typography>
