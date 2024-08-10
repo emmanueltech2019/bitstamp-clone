@@ -131,7 +131,6 @@ const [profileData, setProfileData] = useState<ProfileData | null>(null);
                 {
                   showBalance ? `$${balance}.00` : "***"
                 }
-                
               </Typography>
               {/* <Typography variant="h4" className="font-bold my-2 text-[20px]">
                 {profileData?.balance ? (showBalance ? `$${balance}.00` : "***") : "0.00"}

@@ -229,7 +229,7 @@ const TierTwoVerification: React.FC = () => {
   const [hide, setHide] = useState<boolean>(false);
   const [frontImageDims, setFrontImageDims] = useState({ width: 200, height: 200 });
   const [backImageDims, setBackImageDims] = useState({ width: 200, height: 200 });
-
+  const [loading, setLoading] = useState<boolean>(false);
 
   interface HTMLImageElement {
     // ... existing properties and methods ...
@@ -278,7 +278,7 @@ const TierTwoVerification: React.FC = () => {
       alert('Please upload the front view of your ID.');
       return;
     }
-
+    setLoading(true);
     const formData = new FormData();
     formData.append('frontImage', frontImage);
     if (backImage) {
@@ -385,7 +385,7 @@ const TierTwoVerification: React.FC = () => {
             <Box className="text-center mt-6">
               {!hide && (
                 <Button variant="contained" color="primary" type='submit' className="px-8 bg-[#003b2f] hover:bg-[#003b2f]">
-                  Send
+                  {loading?"Loading...":"Send"}
                 </Button>
               )}
             </Box>
