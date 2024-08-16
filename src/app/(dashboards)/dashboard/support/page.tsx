@@ -105,10 +105,25 @@ const SupportForm: React.FC = () => {
       console.error("Error fetching messages:", error);
     }
   };
+  const ScriptLiveCHat = () =>{
+     // Create a script element
+     const script = document.createElement('script');
+     script.src = '//code.tidio.co/kfj3q00yoch85gu4lz4qfqomcckpjvnc.js';
+     script.async = true;
+     
+     // Append the script to the body
+     document.body.appendChild(script);
+ 
+     // Cleanup the script when the component unmounts
+     return () => {
+       document.body.removeChild(script);
+     };
+  }
   
     // Fetch messages on initial load and after adding a reply
     useEffect(() => {
-      fetchMessages();
+      // fetchMessages();
+      ScriptLiveCHat()
     }, []); 
   
     const handleReply = async (messageId: number) => {
