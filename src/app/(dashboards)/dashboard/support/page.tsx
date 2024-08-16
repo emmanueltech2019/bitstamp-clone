@@ -122,7 +122,7 @@ const SupportForm: React.FC = () => {
   
     // Fetch messages on initial load and after adding a reply
     useEffect(() => {
-      // fetchMessages();
+      fetchMessages();
       ScriptLiveCHat()
     }, []); 
   
@@ -241,7 +241,6 @@ const SupportForm: React.FC = () => {
           }
         >
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            {/* Add close button */}
             <IconButton
               onClick={(event) => {
                 event.stopPropagation(); // Prevent accordion expansion
@@ -259,7 +258,6 @@ const SupportForm: React.FC = () => {
           <AccordionDetails>
           {message.replies && message.replies.length > 0 ? (
               <div>
-                {/* Render replies */}
                 {message.replies.map((reply) => (
                   <Typography key={reply._id} className='border  border-1 my-2 p-2 px-2 rounded-full'><b>{reply.from}</b>- {reply.message}</Typography>
                 ))}
@@ -268,7 +266,6 @@ const SupportForm: React.FC = () => {
               <Typography>No replies yet</Typography> // Or similar message
             )}
 
-            {/* Reply Input and Button */}
             <OutlinedInput
               fullWidth
               placeholder="Enter your reply"
