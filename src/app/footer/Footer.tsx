@@ -1,12 +1,12 @@
 import React from 'react'
 import Image from 'next/image'
-import logo from './img/bitstamp_logo-removebg-preview.png'
+import logo from './img/Mirror Trade_logo-removebg-preview.png'
 import Link from 'next/link'
 
 
 function Footer() {
     return (
-        <div className='bg-[#003b2f]'>
+        <div className='bg-[#303841]'>
             <div className='md:max-w-[95%] m-auto md:me-[2.5em] px-6'>
                 <div className=" grid grid-cols-2 md:grid-cols-6 gap-7 md:gap-1 ">
                     <div className='about'>
@@ -17,7 +17,7 @@ function Footer() {
 
                         <ul className="text-[12px] text-[#b1b4b6] flex flex-col gap-[.6em]">
                             <Link href='/hero/about'><li>Who We Are</li></Link>
-                            <li>The Bitstamp Way</li>
+                            <li>The Mirror Trade Way</li>
                             <li>Careers</li>
                             <li>Legal & privacy</li>
                             <li>Terms of Use - USA</li>
@@ -31,16 +31,16 @@ function Footer() {
                         </header>
 
                         <ul className="text-[12px] text-[#b1b4b6] flex flex-col gap-[.6em]">
-                            <li>Terms of Use: Bitstamp LTD</li>
-                            <li>Terms of Use: Bitstamp USA Inc</li>
+                            <li>Terms of Use: Mirror Trade LTD</li>
+                            <li>Terms of Use: Mirror Trade USA Inc</li>
                             <li>BitGo customer terms</li>
                             <li>Copper customer terms</li>
                             <li>Privacy Policy</li>
                             <li>AML Policy</li>
                             <li>Complaint Resolution Procedure</li>
                             <li>Referral Program</li>
-                            <li>Bitstamp Earn Terms</li>
-                            <li>Bitstamp OTC Terms</li>
+                            <li>Mirror Trade Earn Terms</li>
+                            <li>Mirror Trade OTC Terms</li>
                             <li>Cookie Policy</li>
                             <li>Risk Warning</li>
                             <li>Digital Asset Listing Framework</li>
@@ -64,8 +64,8 @@ function Footer() {
 
                         <ul className="text-[12px] text-[#b1b4b6] md:w-20 flex flex-col gap-[.6em]">
                             <li>Institutions & Partners</li>
-                            <li>Bitstamp as a Service</li>
-                            <li>The Bitstamp Ecosystem</li>
+                            <li>Mirror Trade as a Service</li>
+                            <li>The Mirror Trade Ecosystem</li>
                             <li>Pro</li>
                         </ul>
                     </div>
@@ -87,7 +87,7 @@ function Footer() {
                         </header>
 
                         <ul className="text-[12px] text-[#b1b4b6] md:w-20 flex flex-col gap-[.6em]">
-                            <li>Bitstamp Ltd</li>
+                            <li>Mirror Trade Ltd</li>
                             <li>5 New Street Square</li>
                             <li>London, EC4A 3TW</li>
                             <li>United Kingdom</li>
@@ -154,12 +154,12 @@ function Footer() {
 
                     </div>
 
-                    <div className="bitstamp-license text-[12px] text-center smm:text-left mt-3 lg:w-[50%] lg:ms-[5rem]">
+                    <div className="Mirror Trade-license text-[12px] text-center smm:text-left mt-3 lg:w-[50%] lg:ms-[5rem]">
                         <div className='flex justify-center smm:justify-start'>
                             <svg className='text-[#fff] my-4' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 20" width="88px" height="20px" fill="currentColor" data-v-922e7ce6="" data-v-fca198d0=""><path d="M13.58,11.49c0-1.63-.95-2.94-2.48-3.47,1.16-.53,1.97-1.63,1.97-3.05,0-2.22-1.87-3.77-4.51-3.77H1v1.89c1.19,0,2.15,.96,2.15,2.15s-.96,2.15-2.15,2.15v1.7c1.19,0,2.15,.96,2.15,2.15s-.96,2.15-2.15,2.15v2.06h7.89c2.71,0,4.68-1.61,4.68-3.94M5.06,3.25h3.11c1.27,0,2.18,.83,2.18,1.99s-.91,1.97-2.18,1.97h-3.11V3.25Zm0,10.13v-4.3h3.39c1.4,0,2.35,.87,2.35,2.14s-.95,2.16-2.35,2.16h-3.39Z"></path><path d="M16.65,.46c.95,0,1.63,.68,1.63,1.63s-.68,1.63-1.63,1.63-1.61-.68-1.61-1.63,.68-1.63,1.61-1.63m-1.36,4.6h2.71V15.44h-2.71V5.05Z"></path><path d="M23.25,5.05h2.88v2.06h-2.88v4.96c0,.79,.63,1.45,1.42,1.46,.41,0,.87-.06,1.38-.19l.36,2.03c-.83,.21-1.61,.32-2.35,.32-2.08,0-3.52-1.36-3.52-3.35V2.68c0-.37,.3-.67,.67-.67h2.04v3.05Z"></path><path d="M31.62,4.8c1.21,0,2.5,.25,3.81,.72l-.59,1.95c-1.04-.4-2.08-.66-3.01-.66s-1.61,.44-1.61,1.12c0,1.88,5.55,.51,5.55,4.53,0,1.89-1.7,3.22-4.15,3.22-1.27,0-2.67-.28-4.13-.83l.57-1.93c1.21,.49,2.35,.74,3.35,.74s1.7-.49,1.7-1.21c0-1.97-5.53-.59-5.53-4.53,0-1.82,1.65-3.14,4.05-3.14"></path><path d="M40.09,5.05h2.88v2.06h-2.88v4.96c0,.79,.63,1.45,1.42,1.46,.41,0,.87-.06,1.38-.19l.36,2.03c-.83,.21-1.61,.32-2.35,.32-2.08,0-3.52-1.36-3.52-3.35V2.68c0-.38,.31-.68,.68-.68h2.03v3.05Z"></path><path d="M57.3,5.05h2.16l.34,1.42c.83-1.08,2.03-1.67,3.41-1.67,1.5,0,2.73,.72,3.33,1.91,.95-1.23,2.25-1.91,3.75-1.91,2.27,0,3.88,1.57,3.88,3.79v6.84h-2.71v-6.42c0-1.16-.83-1.99-2.01-1.99-1.38,0-2.35,1.04-2.35,2.52v5.89h-2.71v-6.42c0-1.16-.83-1.99-1.99-1.99-1.4,0-2.37,1.04-2.37,2.52v5.89h-2.71V5.05Z"></path><path d="M76.41,5.05h2.16l.34,1.34c.76-1.02,1.95-1.59,3.33-1.59,2.8,0,4.77,2.25,4.77,5.45s-1.97,5.44-4.77,5.44c-1.27,0-2.37-.51-3.12-1.44v4.62c0,.37-.3,.68-.68,.68h-2.04V5.05Zm5.13,1.89c-1.44,0-2.46,1.08-2.46,2.61v1.4c0,1.5,1.02,2.61,2.46,2.61,1.59,0,2.71-1.38,2.71-3.3s-1.12-3.31-2.71-3.31"></path><path d="M52.19,10.94c0,1.5-1.02,2.61-2.46,2.61-1.59,0-2.71-1.38-2.71-3.3s1.12-3.31,2.71-3.31c1.44,0,2.46,1.08,2.46,2.61v1.4Zm2.67-.6h0V5.05h-2.16l-.34,1.34c-.76-1.02-1.95-1.59-3.33-1.59-2.8,0-4.77,2.25-4.77,5.45s1.97,5.44,4.77,5.44c.16,0,.32,0,.48-.03,1.17-.12,2.17-.67,2.85-1.56l.34,1.34h2.16v-5.09Z"></path></svg>
                         </div>
                         <p className='text-[#b1b4b6]'>
-                            Bitstamp USA, Inc. is licensed to engage in
+                            Mirror Trade USA, Inc. is licensed to engage in
                             Virtual Currency Business Activity by the New
                             York State Department of Financial Services.
                             Licensed as a Money Transmitter by the New York
@@ -167,7 +167,7 @@ function Footer() {
                         </p>
 
                         <p className='text-[#b1b4b6] text-[12px] my-2'>
-                            All rights reserved © 2024 Bitstamp.
+                            All rights reserved © 2024 Mirror Trade.
                             <a className=' transition-all duration-5000 hover:underline' href="https://www.nmlsconsumeraccess.org/EntityDetails.aspx/COMPANY/1905429" target="_blank" rel="noopener noreferrer nofollow">NMLS #1905429</a>
                         </p>
                     </div>

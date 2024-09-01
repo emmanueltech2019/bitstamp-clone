@@ -58,7 +58,7 @@ const TierTwoVerification: React.FC = () => {
       <Button 
         variant="contained" 
         color="primary"
-        className="px-6 py-2 rounded-md text-sm font-medium bg-[#003b2f] hover:bg-[#003b2f]" // Tailwind classes
+        className="px-6 py-2 rounded-md text-sm font-medium bg-[#303841] hover:bg-[#303841]" // Tailwind classes
       >
         Click here for Verification
       </Button>

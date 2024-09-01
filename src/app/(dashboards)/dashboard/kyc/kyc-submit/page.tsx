@@ -184,7 +184,7 @@
 //             </Grid>
 //             <Box className="text-center mt-6">
 //               {
-//                 hide ? "" : <Button variant="contained" color="primary" type='submit' className="px-8 bg-[#003b2f] hover:bg-[#003b2f]">
+//                 hide ? "" : <Button variant="contained" color="primary" type='submit' className="px-8 bg-[#303841] hover:bg-[#303841]">
 //                   Send
 //                 </Button>
 //               }
@@ -384,7 +384,7 @@ const TierTwoVerification: React.FC = () => {
             </Grid>
             <Box className="text-center mt-6">
               {!hide && (
-                <Button variant="contained" color="primary" type='submit' className="px-8 bg-[#003b2f] hover:bg-[#003b2f]">
+                <Button variant="contained" color="primary" type='submit' className="px-8 bg-[#303841] hover:bg-[#303841]">
                   {loading?"Loading...":"Send"}
                 </Button>
               )}

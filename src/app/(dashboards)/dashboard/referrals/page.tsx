@@ -70,7 +70,7 @@ const Referral: React.FC = () => {
                 We support you every step of the way
               </Typography>
               <Typography variant="body1" className="mb-6 text-[12px]">
-                As an affiliate, you&lsquo;ll receive free access to a range of marketing tools and resources designed to help you promote our site and drive sales. We offer top commissions for every successful referral you make, so you can earn money while helping others discover the benefits of Bitstamp. To get started, simply copy your unique referral link below and share it with your family and friends. If you have any questions or need assistance, please don&lsquo;t hesitate to contact our support team.
+                As an affiliate, you&lsquo;ll receive free access to a range of marketing tools and resources designed to help you promote our site and drive sales. We offer top commissions for every successful referral you make, so you can earn money while helping others discover the benefits of Mirror Trade. To get started, simply copy your unique referral link below and share it with your family and friends. If you have any questions or need assistance, please don&lsquo;t hesitate to contact our support team.
               </Typography>
               <TextField
                 fullWidth
@@ -97,7 +97,7 @@ const Referral: React.FC = () => {
                 <Button
                   variant="contained"
                   startIcon={<ShareIcon />}
-                  className="mr-2 bg-[#003b2f] hover:bg-[#003b2f]"
+                  className="mr-2 bg-[#303841] hover:bg-[#303841]"
                 >
                   Share
                 </Button>

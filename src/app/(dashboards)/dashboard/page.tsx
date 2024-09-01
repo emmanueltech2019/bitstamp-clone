@@ -111,7 +111,7 @@ const [profileData, setProfileData] = useState<ProfileData | null>(null);
     <Box className="p-6">
       <Grid container spacing={2}>
         <Grid item xs={12} md={7}>
-          <Card className="bg-[#003b2f] text-white rounded-lg p-4 py-5 shadow-md">
+          <Card className="bg-[#303841] text-white rounded-lg p-4 py-5 shadow-md">
             <CardContent>
               <Box className="flex justify-between items-center">
                 <Typography variant="h6" className='text-[12px] flex items-center space-x-2'>

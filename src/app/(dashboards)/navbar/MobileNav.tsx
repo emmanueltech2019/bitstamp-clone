@@ -34,7 +34,7 @@ function MobileBottomNavBar() {
 
         </Link>
         <Link href={"/dashboard/"}>
-        <BottomNavigationAction label="Home" icon={<HomeOutlinedIcon className='bg-[#003b2f] rounded w-16 h-10 text-white' />}  />
+        <BottomNavigationAction label="Home" icon={<HomeOutlinedIcon className='bg-[#303841] rounded w-16 h-10 text-white' />}  />
 
         </Link>
         <Link href={"/dashboard/investment"}>

@@ -2,7 +2,7 @@
 import React,{ useState, FormEvent, useEffect, useRef } from 'react'
 import './bg.css'
 import Image from 'next/image'
-import logo from '../img/bitstamp_logo-removebg-preview.png'
+import logo from '../img/Mirror Trade_logo-removebg-preview.png'
 import Link from 'next/link'
 import axios from '../../../utils/axios';
 import Swal from 'sweetalert2'
@@ -146,7 +146,7 @@ interface VerificationData {
               <small className='text-[10px] text-[#6d6e71]'>This site is protected by hCaptcha and its <span className='text-[#217cf2] cursor-pointer'>Privacy Policy</span> and <span className='text-[#217cf2] cursor-pointer'>Terms of Service</span> apply</small>
             </div> */}
             {/* <Link href={"/dashboard"}> */}
-              <button type='submit' className='bg-[#003b2f] text-[#03fc9d] p-2 rounded w-[300px] m-auto'>Submit</button>
+              <button type='submit' className='bg-[#303841] text-[#F3F3F3] p-2 rounded w-[300px] m-auto'>Submit</button>
             {/* </Link> */}
           </form>
         </div>

@@ -2,16 +2,16 @@
 import React, { useEffect } from 'react'
 import Image from 'next/image'
 import Video from 'next-video'
-import vidFrame from '../../nav/img/mockup-app.png'
+import vidFrame from '../../nav/img/bull.png'
 import heroVid from '../../videos/simple_app_798e07c086.mp4'
-import newImg from './img/recurring_payments_d103b6b8fb.png'
+import newImg from '../../nav/img/recurring.png'
 import easeImg from './img/ease_of_trading_e2d0069e0b.webp'
 import provenImg from './img/proven_reliability_3643ecefba.webp'
 import instImg from './img/institutional_grade_32894f37ec.webp'
-import crytoCatImg from './img/crypto_categories_43fed5d51c.webp'
+import crytoCatImg from '../../nav/img/item1.png'
 import mobileAppsImg from './img/mobile_apps_2a4011f645.webp'
 import tradingImg from './img/trading_tools_e82bf5c7fd.webp'
-import guyImage from './img/guy_e7100f4155.webp'
+import guyImage from './img/guy.png'
 import dukasImage from './img/Dukascopy_888acd9202.webp'
 import swissImage from './img/Swissquote_5fc90c4cef.webp'
 import registerImg from './img/register_a0962b5bb3.webp'
@@ -68,24 +68,24 @@ function page() {
   };
   
   return (
-    <div className='bg-[#003b2f] pt-24 md:pt-60 overflow-x-hidden'>
+    <div className='bg-[#2185D5] pt-20 md:pt-36 overflow-x-hidden'>
       <section className='md:flex px-6 md:max-w-[95%] m-auto'>
         <div>
           <div className="head-text sm:w-[90%] md:w-[83%] lg:w-[70%]">
-            <h1 className='hero-text text-white font-bold text-[48px] vsm:text-[50px] lg:text-[65px] text-pretty leading-[15mm] vsm:leading-[18mm] lg:leading-[22mm]'>
-              <mark className='bg-[#03fc9d] px-4 text-[#003b2f]'>Buy & trade</mark>
-              <span> with ease on the trusted crypto exchange.</span>
+            <h1 className='hero-text text-white font-bold text-[48px] vsm:text-[50px] lg:text-[65px] text-pretty leading-[15mm] vsm:leading-[18mm] lg:leading-[22mm] animate__animated animate__pulse'>
+              <mark className='bg-[#3A4750] px-4 text-[#F3F3F3] '>Trade Beyond Borders</mark>
+              <span> Unlocking Global Market Potentials</span>
             </h1>
 
             <p className='text-[#f2f2f2] text-[19px] mt-8 text-left vsm:w-[90%]'>
-              Designed for simplicity, Bitstamp helps you feel good about crypto.
+              Designed for simplicity, Mirror Trade helps you feel good about crypto.
               Trusted Crypto Exchange Since 2011.
             </p>
           </div>
 
           <div className="buttons my-7">
             <Link href={"/login"}>
-            <button className="get-started bg-[#03fc9d] text-[#003b2f] hover:bg-[#f2f2f2] w-full p-2 rounded font-semi-bold smm:w-[30%]">Get started</button>
+            <button className="get-started bg-[#3A4750] text-[#F3F3F3] hover:bg-[#f2f2f2] w-full p-2 rounded font-semi-bold smm:w-[30%]">Get started</button>
             </Link>
 
             <div className='flex gap-3 my-6'>
@@ -97,8 +97,8 @@ function page() {
 
 
         <div className="relative w-full h-full left-[0px] top-0 md:top-[-24px] overflow-x-hidden md:overflow-x-visible">
-          <div className=" relative w-fit lg:w-[500px] z-10 mx-auto overflow-x-hidden flex justify-center">
-            <Image src={vidFrame} alt="Phone Frame" className="w-[400px]   lg:w-[500px] h-[75vh] object-contain ms-3" />
+          <div className=" relative w-fit z-10 mx-auto overflow-x-hidden flex justify-center">
+            <Image src={vidFrame} alt="Phone Frame" className="w-[600px]   lg:w-[700px] h-[100vh] object-contain ms-3" />
             
           </div>
         </div>
@@ -107,18 +107,18 @@ function page() {
       <section className='new-offering bg-[#fff] px-6 py-8'>
         <div className='smm:flex md:max-w-[95%] m-auto'>
           <div className="new-text">
-            <h1 className='text-[#003b2f] text-[32px] md:text-[48px] font-bold my-5'>
-              <mark className='bg-[#03fc9d] px-4 text-[#003b2f]'>New Offering&#58;</mark>
+            <h1 className='text-[#303841] text-[32px] md:text-[48px] font-bold my-5'>
+              <mark className='bg-[#3A4750] px-4 text-[#F3F3F3]'>New Offering&#58;</mark>
               <span>Set up Recurring buy or sell!</span>
             </h1>
 
-            <p className='text-[#003b2f] mb-2 text-[18px] md:text-[20px]'>
+            <p className='text-[#3A4750] mb-2 text-[18px] md:text-[20px]'>
               Effortlessly schedule your transaction and build your crypto routine
             </p>
 
             <div className="start-now my-4 hidden smm:block smm:w-[380px]">
             <Link href={"/login"}>
-              <button className="get-started bg-[#03fc9d] text-[#003b2f] w-full p-2 rounded font-semi-bold smm:w-[30%]">Start now</button>
+              <button className="get-started bg-[#3A4750] text-[#F3F3F3] w-full p-2 rounded font-semi-bold smm:w-[30%]">Start now</button>
             </Link>
             </div>
           </div>
@@ -128,7 +128,7 @@ function page() {
           </div>
 
           <div className="start-now my-4 smm:hidden">
-            <button className="get-started bg-[#03fc9d] text-[#003b2f] hover:bg-[#003b2f] hover:text-[#03fc9d] w-full p-2 rounded font-semi-bold smm:w-[30%]">Start now</button>
+            <button className="get-started bg-[#3A4750] text-[#F3F3F3] hover:bg-[#2185D5] hover:text-[#F3F3F3] w-full p-2 rounded font-semi-bold smm:w-[30%]">Start now</button>
           </div>
         </div>
       </section>
@@ -139,19 +139,19 @@ function page() {
         </div>
       </section>
 
-      <section className="bg-[#03fc9d] px-6 py-6">
+      <section className="bg-[#3A4750] px-6 py-6">
         <div className='md:max-w-[95%] m-auto grid grid-cols-1 smm:grid-cols-2 md:grid-cols-3 gap-[2rem] smm:gap-[5rem] items-center justify-center my-14 mt-[6rem]'>
           <div className="ease-of-trading">
             <header className='flex flex-col items-center gap-4'>
               <Image src={easeImg} alt="alt" />
 
-              <h3 className='text-[20px] smm:text-[29px] text-[#003b2f] font-GT font-bold'>
+              <h3 className='text-[20px] smm:text-[29px] text-[#F3F3F3] font-GT font-bold'>
                 <mark className='bg-[#fff] px-2'>Ease</mark>
                 <span> of Trading</span>
               </h3>
             </header>
 
-            <ul className="info text-center my-5 text-[16px] text-[#003b2f] smm:text-left smm:text-[18px]">
+            <ul className="info text-center my-5 text-[16px] text-[#F3F3F3] smm:text-left smm:text-[18px]">
               <li className='border-b-[2px] border-[#fff] py-4'>Intuitive interface</li>
               <li className='border-b-[2px] border-[#fff] py-4'>Instant deposit options</li>
               <li className='pt-3'>Cash out directly to your bank account</li>
@@ -162,13 +162,13 @@ function page() {
             <header className='flex flex-col items-center gap-4'>
               <Image src={instImg} alt="alt" />
 
-              <h3 className='text-[20px] smm:text-[29px] text-[#003b2f] font-GT font-bold'>
+              <h3 className='text-[20px] smm:text-[29px] text-[#F3F3F3] font-GT font-bold'>
                 <mark className='bg-[#fff] px-2'>Mirror</mark>
                 <span> Trading</span>
               </h3>
             </header>
 
-            <ul className="info text-center my-5 text-[16px] text-[#003b2f] smm:text-left smm:text-[18px]">
+            <ul className="info text-center my-5 text-[16px] text-[#F3F3F3] smm:text-left smm:text-[18px]">
               <li className='border-b-[2px] border-[#fff] py-4'>skills and strategies of experienced traders </li>
               <li className='border-b-[2px] border-[#fff] py-4'>benefiting from expert analysis</li>
               <li className='pt-3'>Diversify investment portfolio</li>
@@ -179,13 +179,13 @@ function page() {
             <header className='flex flex-col items-center gap-4'>
               <Image src={provenImg} alt="alt" />
 
-              <h3 className='text-[20px] smm:text-[29px] text-[#003b2f] font-GT font-bold'>
+              <h3 className='text-[20px] smm:text-[29px] text-[#F3F3F3] font-GT font-bold'>
                 <mark className='bg-[#fff] px-2'>Proven</mark>
                 <span> Reliability</span>
               </h3>
             </header>
 
-            <ul className="info text-center my-5 text-[16px] text-[#003b2f] smm:text-left smm:text-[18px]">
+            <ul className="info text-center my-5 text-[16px] text-[#F3F3F3] smm:text-left smm:text-[18px]">
               <li className='border-b-[2px] border-[#fff] py-4'>Serving customers since 2011</li>
               <li className='border-b-[2px] border-[#fff] py-4'>Live customer support</li>
               <li className='pt-3'>Industry-leading uptime</li>
@@ -194,12 +194,12 @@ function page() {
         </div>
       </section>
 
-      <section className='join bg-[#003b2f] px-6 py-6'>
+      <section className='join bg-[#303841] px-6 py-6'>
         <div className='md:max-w-[95%] m-auto md:flex items-center justify-between lg:gap-[20rem] w-full'>
           <div className="join-text sm:w-[70%] md:w-[50%] lg:w-[30%]">
             <h1 className='text-[#fff] text-[32px] smm:text-[48px] font-GT font-bold my-5'>
-              <span>Join Bitstamp&#39;s </span>
-              <mark className='bg-[#03fc9d] px-2 text-[#003b2f]'>crypto explorers</mark>
+              <span>Join Mirror Trade&#39;s </span>
+              <mark className='bg-[#2185D5] px-2 text-[#F3F3F3]'>crypto explorers</mark>
             </h1>
 
             <p className='text-[#fff] mb-2 text-[18px] md:text-[16px] py-2 md:w-[85%]'>
@@ -209,7 +209,7 @@ function page() {
 
             <div className="start-exploring my-4 smm:w-[470px]">
             <Link href={"/login"}>
-              <button className="get-started bg-[#03fc9d] text-[#003b2f] hover:bg-[#f2f2f2] w-full p-2 rounded font-semi-bold smm:w-[30%]">Start exploring</button>
+              <button className="get-started bg-[#2185D5] text-[#F3F3F3] hover:bg-[#2185D5] w-full p-2 rounded font-semi-bold smm:w-[30%]">Start exploring</button>
             </Link>
             </div>
           </div>
@@ -223,22 +223,22 @@ function page() {
       <section className='explore-apps bg-[#fff] px-6 py-6'>
         <div className='md:max-w-[100%] lg:max-w-[80%] m-auto md:flex md:flex-row-reverse md:justify-around items-center w-full'>
           <div className="explore-text sm:w-[70%] md:w-[50%] lg:w-[100%]">
-            <h1 className='text-[#003b2f] text-[32px] smm:text-[48px] font-GT font-bold my-5'>
-              <mark className='bg-[#03fc9d] px-2 text-[#003b2f]'>Trade</mark>
+            <h1 className='text-[#F3F3F3] text-[32px] smm:text-[48px] font-GT font-bold my-5'>
+              <mark className='bg-[#3A4750] px-2 text-[#F3F3F3]'>Trade</mark>
               <span>on the go with our mobile apps.</span>
             </h1>
-            <h4 className='text-[#003b2f] text-[18px] smm:text-[25px] font-GT font-bold'>
+            <h4 className='text-[#F3F3F3] text-[18px] smm:text-[25px] font-GT font-bold'>
               Take control of your crypto anytime with the app that fits your experience
             </h4>
-            <p className='text-[#003b2f] mb-2 text-[16px] md:text-[18px] py-2 md:w-[95%] lg:w-[100%]'>
-              Choose between the Bitstamp app, the easiest way to buy and sell crypto, or the Bitstamp Pro app&#44; built for pro traders and crypto experts.
+            <p className='text-[#F3F3F3] mb-2 text-[16px] md:text-[18px] py-2 md:w-[95%] lg:w-[100%]'>
+              Choose between the Mirror Trade app, the easiest way to buy and sell crypto, or the Mirror Trade Pro app&#44; built for pro traders and crypto experts.
             </p>
             <small className='text-[12px]'>
               Not yet available in UK & USA but coming soon.
             </small>
 
             <div className="start-exploring my-4 smm:w-[470px]">
-              <button className="get-started bg-[#03fc9d] text-[#003b2f] hover:bg-[#003b2f] hover:text-[#03fc9d] w-full p-2 rounded font-semi-bold smm:w-[30%]">Explore the Apps</button>
+              <button className="get-started bg-[#3A4750] text-[#F3F3F3] hover:bg-[#2185D5] hover:text-[#F3F3F3] w-full p-2 rounded font-semi-bold smm:w-[30%]">Explore the Apps</button>
             </div>
           </div>
 
@@ -248,11 +248,11 @@ function page() {
         </div>
       </section>
 
-      <section className='bg-[#003b2f] px-6 py-6'>
+      <section className='bg-[#2185D5] px-6 py-6'>
         <div className='md:max-w-[95%] m-auto sm:flex lg:justify-between w-full lg:gap-[6rem]'>
           <div className="advanced-text sm:w-[48%] lg:w-full">
             <h1 className='text-[#fff] text-[32px] smm:text-[48px] font-GT font-bold my-5'>
-              <mark className='bg-[#03fc9d] px-2 text-[#003b2f]'>Advanced</mark>
+              <mark className='bg-[#3A4750] px-2 text-[#F3F3F3]'>Advanced</mark>
               <span>trading tools</span>
             </h1>
 
@@ -287,10 +287,10 @@ function page() {
 
             <div className="start-exploring my-4 smm:w-[470px] flex flex-col gap-3 md:flex-row smm:gap-3">
             {/* <Link href={"/register"}>
-              <button className="get-started bg-[#fff] text-[#003b2f] w-full p-2 rounded font-semi-bold smm:w-[40%]">Register</button>
+              <button className="get-started bg-[#fff] text-[#F3F3F3] w-full p-2 rounded font-semi-bold smm:w-[40%]">Register</button>
             </Link>
               <Link href={"/login"}>
-              <button className="get-started bg-[#03fc9d] text-[#003b2f] hover:bg-[#f2f2f2] w-full p-2 rounded font-semi-bold smm:w-[30%]">Get started</button>
+              <button className="get-started bg-[#3A4750] text-[#F3F3F3] hover:bg-[#f2f2f2] w-full p-2 rounded font-semi-bold smm:w-[30%]">Get started</button>
               </Link> */}
             </div>
           </div>
@@ -304,33 +304,33 @@ function page() {
       <section className='buy-crypto bg-[#f2f2f2] px-6'>
         <div className='md:max-w-[95%] m-auto lg:flex lg:flex-row-reverse lg:justify-between'>
           <div className='py-6 md:my-[6rem]'>
-            <h1 className='text-[#003b2f] text-[32px] smm:text-[48px] font-GT font-bold my-5'>
-              <span>Buy crypto</span>
-              <mark className='bg-[#03fc9d] px-2 text-[#003b2f]'>instantly</mark>
+            <h1 className='text-[#F3F3F3] text-[32px] smm:text-[48px] font-GT font-bold my-5'>
+              <span className='text-[#303841]'>Buy crypto</span>
+              <mark className='bg-[#3A4750] px-2 text-[#F3F3F3]'>instantly</mark>
             </h1>
 
             <div className='grid smm:grid-cols-2 md:grid-cols-2 md:gap-[3rem] gap-2 smm:gap-x-8 mt-[4rem]'>
               <div>
-                <h4 className='text-[#003b2f] text-[18px] smm:text-[23px] font-GT font-bold my-[11px]'>
+                <h4 className='text-[#303841] text-[18px] smm:text-[23px] font-GT font-bold my-[11px]'>
                   Effortless ways to buy
                 </h4>
-                <p className='text-[#003b2f] mb-2 text-[16px] sm:text-[17px] py-2 lg:w-[100%]'>
+                <p className='text-[#303841] mb-2 text-[16px] sm:text-[17px] py-2 lg:w-[100%]'>
                   Pay with credit, debit cards or Apple Pay, Google Pay (some exceptions apply).
                 </p>
               </div>
 
               <div>
-                <h4 className='text-[#003b2f] text-[18px] smm:text-[23px] font-GT font-bold my-[11px]'>
+                <h4 className='text-[#303841] text-[18px] smm:text-[23px] font-GT font-bold my-[11px]'>
                   Cash out in seconds
                 </h4>
-                <p className='text-[#003b2f] mb-2 text-[16px] sm:text-[17px] py-2 lg:w-[100%]'>
+                <p className='text-[#303841] mb-2 text-[16px] sm:text-[17px] py-2 lg:w-[100%]'>
                   Withdraw funds directly to your bank account quickly and securely.
                 </p>
               </div>
             </div>
             <div className="get-started my-4 smm:w-[470px]">
             <Link href={"/login"}>
-              <button className="get-started text-[#03fc9d] bg-[#003b2f] hover:text-[#003b2f] hover:bg-[#03fc9d] w-full p-2 rounded font-semi-bold smm:w-[30%]">Get started</button>
+              <button className="get-started text-[#303841] bg-[#2185D5] hover:text-[#F3F3F3] hover:bg-[#3A4750] w-full p-2 rounded font-semi-bold smm:w-[30%]">Get started</button>
             </Link>
             </div>
 
@@ -342,10 +342,10 @@ function page() {
         </div>
       </section>
 
-      <section className="bg-white py-5 px-5">
+      {/* <section className="bg-white py-5 px-5">
         <div className='md:max-w-[80%] lg:max-w-[50%] m-auto my-[6.5rem]'>
-          <h4 className='text-[#003b2f] text-[20px] smm:text-[28px] text-center font-GT font-bold my-[11px] md:w-[50%] md:m-auto'>
-            <mark className='bg-[#03fc9d] px-2 text-[#003b2f]'>Reliable</mark>
+          <h4 className='text-[#F3F3F3] text-[20px] smm:text-[28px] text-center font-GT font-bold my-[11px] md:w-[50%] md:m-auto'>
+            <mark className='bg-[#3A4750] px-2 text-[#F3F3F3]'>Reliable</mark>
             <span> institutional access to crypto</span>
           </h4>
 
@@ -358,55 +358,51 @@ function page() {
               <Image src={swissImage} alt="alt" />
             </div>
           </div>
-
-          {/* <div className="get-started my-4 text-center">
-            <button className="get-started bg-[#03fc9d] text-[#003b2f] hover:bg-[#003b2f] hover:text-[#03fc9d] w-full p-2 rounded font-semi-bold smm:w-[330px] ">Learn about the institutional offer</button>
-          </div> */}
         </div>
-      </section>
+      </section> */}
 
       <section className="trading-steps bg-[#f2f2f2] py-5 px-5">
         <div className='md:max-w-[95%] m-auto md:flex md:items-center'>
           <div className='md:w-[40%] lg:w-full'>
-            <h2 className='text-[#003b2f] text-[30px] smm:text-[47px] font-GT font-bold my-8 '>
-              <mark className='bg-[#03fc9d] px-2 text-[#003b2f]'>3 steps</mark>
+            <h2 className='text-[#303841] text-[30px] smm:text-[47px] font-GT font-bold my-8 '>
+              <mark className='bg-[#3A4750] px-2 text-[#F3F3F3]'>3 steps</mark>
               <span> to start trading</span>
             </h2>
 
             <div className="get-started my-[3rem] text-center smm:text-left">
-              <button className="get-started bg-[#03fc9d] text-[#003b2f] hover:bg-[#003b2f] hover:text-[#03fc9d] w-[95%] smm:w-[30%] md:w-[130px] p-2 rounded font-semi-bold ">Get started</button>
+              <button className="get-started bg-[#3A4750] text-[#f3f3f3] hover:bg-[#2185D5] hover:text-[#F3F3F3] w-[95%] smm:w-[30%] md:w-[130px] p-2 rounded font-semi-bold ">Get started</button>
             </div>
           </div>
 
           <div className="steps grid grid-cols-1 smm:grid-cols-2 md:grid-cols-3 justify-center items-center text-center w-[95%] m-auto gap-[2.3rem] md:gap-[6.1rem] md:my-[6rem]">
             <div className="register flex flex-col items-center smm:items-start gap-4">
-              <Image src={registerImg} alt="alt" />
+              {/* <Image src={registerImg} alt="alt" /> */}
 
               <div className='smm:text-left'>
-                <h3 className='text-[#003b2f] text-[20px] smm:text-[23px] font-GT font-bold'>1. Register</h3>
-                <p className='text-[#003b2f] mb-2 text-[18px] sm:text-[17px] py-2 lg:w-[100%]'>
+                <h3 className='text-[#303841] text-[20px] smm:text-[23px] font-GT font-bold'>1. Register</h3>
+                <p className='text-[#303841] mb-2 text-[18px] sm:text-[17px] py-2 lg:w-[100%]'>
                   Choose the right account type and verify your identity.
                 </p>
               </div>
             </div>
 
             <div className="fund flex flex-col items-center smm:items-start gap-4 md:mt-[44px]">
-              <Image src={fundImg} alt="alt" />
+              {/* <Image src={fundImg} alt="alt" /> */}
 
               <div className='smm:text-left'>
-                <h3 className='text-[#003b2f] text-[20px] smm:text-[23px] font-GT font-bold'>2. Fund</h3>
-                <p className='text-[#003b2f] mb-2 text-[18px] sm:text-[17px] py-2 lg:w-[100%]'>
+                <h3 className='text-[#303841] text-[20px] smm:text-[23px] font-GT font-bold'>2. Fund</h3>
+                <p className='text-[#303841] mb-2 text-[18px] sm:text-[17px] py-2 lg:w-[100%]'>
                   Use your debit or credit card or a range of global bank deposit methods.
                 </p>
               </div>
             </div>
 
             <div className="trade flex flex-col items-center smm:items-start gap-4">
-              <Image src={tradeImg} alt="alt" />
+              {/* <Image src={tradeImg} alt="alt" /> */}
 
               <div className='smm:text-left'>
-                <h3 className='text-[#003b2f] text-[20px] smm:text-[23px] font-GT font-bold'>3. Trade</h3>
-                <p className='text-[#003b2f] mb-2 text-[18px] sm:text-[17px] py-2 lg:w-[100%]'>
+                <h3 className='text-[#303841] text-[20px] smm:text-[23px] font-GT font-bold'>3. Trade</h3>
+                <p className='text-[#303841] mb-2 text-[18px] sm:text-[17px] py-2 lg:w-[100%]'>
                   Buy, sell and transfer leading cryptocurrencies.
                 </p>
               </div>

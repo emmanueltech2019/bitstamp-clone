@@ -456,7 +456,7 @@ function Deposit() {
 </Grid>
         </Box>
 
-        <Button variant="contained" onClick={handleOpen} fullWidth className="mt-4 bg-[#003b2f] hover:bg-[#003b2f]">
+        <Button variant="contained" onClick={handleOpen} fullWidth className="mt-4 bg-[#303841] hover:bg-[#303841]">
             Proceed to Payment
         </Button>
             </>
@@ -487,7 +487,7 @@ function Deposit() {
         ${totalAmount}
       </Typography>
         <Link href={"/dashboard/transactions"} >
-          <Button variant="contained" fullWidth className="mb-4 bg-[#003b2f] hover:bg-[#003b2f] text-[12px]">
+          <Button variant="contained" fullWidth className="mb-4 bg-[#303841] hover:bg-[#303841] text-[12px]">
             View Deposit History
           </Button>
         </Link>

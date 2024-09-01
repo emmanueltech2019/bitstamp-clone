@@ -2,7 +2,7 @@
 import React,{ useState, FormEvent } from 'react'
 import './bg.css'
 import Image from 'next/image'
-import logo from '../img/bitstamp_logo-removebg-preview.png'
+import logo from '../../nav/img/logo.png'
 import Link from 'next/link'
 import axios from '../../../utils/axios';
 import Swal from 'sweetalert2'
@@ -77,7 +77,7 @@ interface LoginData {
     <div className='bg-[#f2f2f2] px-5 py-6'>
       <header className='flex justify-between items-center'>
         <div className="logo">
-          <Link href=""><Image src={logo} alt="alt" className='w-[135px]' /></Link>
+          <Link href=""><Image src={logo} alt="alt" className='w-[185px]' /></Link>
         </div>
 
         <div className="register">
@@ -111,7 +111,7 @@ interface LoginData {
               <small className='text-[10px] text-[#6d6e71]'>This site is protected by hCaptcha and its <span className='text-[#217cf2] cursor-pointer'>Privacy Policy</span> and <span className='text-[#217cf2] cursor-pointer'>Terms of Service</span> apply</small>
             </div>
             {/* <Link href={"/dashboard"}> */}
-              <button type='submit' className='bg-[#003b2f] text-[#03fc9d] p-2 rounded w-[300px] m-auto'>Log in</button>
+              <button type='submit' className='bg-[#303841] text-[#F3F3F3] p-2 rounded w-[300px] m-auto'>Log in</button>
             {/* </Link> */}
           </form>
         </div>

@@ -2,7 +2,7 @@
 'use client'
 import React, { useState, useContext, useEffect } from 'react';
 import Link from 'next/link';
-import Logo from "../../nav/img/Bitstamp-Logo-PNG-Image.png";
+import Logo from "../../nav/img/logo.png";
 import SmallLogo from "../../nav/img/small-logo.png"; // Add a smaller version of the logo
 import UserIcon from "../../nav/img/elon.jpeg";
 import Image from 'next/image';
@@ -139,7 +139,7 @@ useEffect(() => {
         <div className='fixed md:left-0 md:-bottom-14 bottom-12 z-[100]'>
         {/* <GoogleTranslate/>  */}
         </div>
-        <AppBar position="fixed" sx={{ backgroundColor: '#003b2f', height: '80px', zIndex: '2',  }} className=''>
+        <AppBar position="fixed" sx={{ backgroundColor: '#2185D5', height: '80px', zIndex: '2',  }} className=''>
           <Toolbar>
             <div className={`sm:flex sm:flex-row flex-row-reverse sm:justify-between ${isCollapsed ? 'md:pl-16' : 'md:pl-60'} w-screen`}>
               <div className="pt-20 hidden md:block">
@@ -214,12 +214,12 @@ useEffect(() => {
         </AppBar>
 
         {/* Sidebar */}
-        <nav className={`bg-[#003b2f] h-screen fixed top-0 left-0 z-10 ${isCollapsed ? 'lg:w-20' : 'lg:w-64'} w-20 hidden sm:block`}>
+        <nav className={`bg-[#2185D5] h-screen fixed top-0 left-0 z-10 ${isCollapsed ? 'lg:w-20' : 'lg:w-64'} w-20 hidden sm:block`}>
           <div className={`max-w-7xl mx-auto px-2 py-3 ${isCollapsed ? 'px-1' : 'sm:px-6 lg:px-8'}`}>
             <div className="relative flex items-left justify-left">
               <div className="items-left justify-left sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 grid place-items-center">
-                  <Image src={isCollapsed ? SmallLogo : Logo} alt="alt" className={`${isCollapsed ? 'w-[40px]' : 'w-[200px]'}`} />
+                  <Image src={isCollapsed ? SmallLogo : Logo} alt="alt" className={`${isCollapsed ? 'w-[60px]' : 'w-[250px]'}`} />
                 </div>
                 <div className={`sm:block sm:ml-0 ${isCollapsed ? 'hidden' : 'space-y-4'} mt-10`}>
                   {[
@@ -232,7 +232,7 @@ useEffect(() => {
                     { href: '/dashboard/support', icon: <QuestionMarkOutlinedIcon />, label: 'Help' }
                   ].map((item, index) => (
                     <Link href={item.href} legacyBehavior key={index}>
-                      <a className={`text-gray-300 hover:bg-[#005b49] hover:text-white py-3 rounded-full px-3 text-sm font-medium flex space-x-3 items-center justify-center lg:justify-start`}>
+                      <a className={`text-gray-300 hover:bg-[#3A4750] hover:text-[#F3F3F3] py-3 rounded-full px-3 text-sm font-medium flex space-x-3 items-center justify-center lg:justify-start`}>
                         <span>{item.icon}</span>
                         {/* <p>{isCollapsed?"tru":"fal"}</p> */}
                         <span className={`hidden lg:block ${isCollapsed ? 'lg:hidden' : 'lg:block'}`}>{item.label}</span>

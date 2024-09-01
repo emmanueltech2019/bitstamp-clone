@@ -78,7 +78,7 @@ function InvestmentComponent() {
         Get started with your investment.
       </Typography>
       <Typography variant="body1" className="mb-6">
-        An investment has never been easy but with Bitstamp Trade, we have made it simple with mega returns
+        An investment has never been easy but with Mirror Trade Trade, we have made it simple with mega returns
       </Typography>
     <form onSubmit={handleSubmit}>
       <Box className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -107,7 +107,7 @@ function InvestmentComponent() {
             className="mb-4 grid grid-cols-5 gap-2"
           >
             {quickAmounts.map((amount) => (
-              <ToggleButton key={amount} value={amount} className="text-[#fff] bg-[#003b2f] hover:bg-[#215248]">
+              <ToggleButton key={amount} value={amount} className="text-[#fff] bg-[#303841] hover:bg-[#215248]">
                 ${amount}
               </ToggleButton>
             ))}
@@ -159,7 +159,7 @@ function InvestmentComponent() {
           </Box>
 
           <Typography className="mb-2">Amount to Invest: ${amount}</Typography> 
-          <Button variant="contained" color="primary" type='submit' fullWidth className="mt-4 bg-[#003b2f] hover:bg-[#003b2f]">
+          <Button variant="contained" color="primary" type='submit' fullWidth className="mt-4 bg-[#303841] hover:bg-[#303841]">
             Confirm & Invest
           </Button>
         </Box>

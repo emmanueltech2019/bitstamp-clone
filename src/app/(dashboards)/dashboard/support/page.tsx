@@ -211,7 +211,7 @@ const SupportForm: React.FC = () => {
                 />
               </Grid>
               <Grid item xs={12}>
-                <Button variant="contained" type='submit' color="primary" className="w-full bg-[#003b2f] text-white">
+                <Button variant="contained" type='submit' color="primary" className="w-full bg-[#303841] text-white">
                   Submit
                 </Button>
               </Grid>
