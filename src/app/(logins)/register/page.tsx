@@ -150,6 +150,7 @@ import { useSearchParams } from 'next/navigation'
 import Swal from 'sweetalert2'
 import ReCaptcha from './Recap'
 
+
 const Toast = Swal.mixin({
     toast: true,
     position: "top-end",
