@@ -2,7 +2,7 @@
 'use client'
 import React, { useState, useContext, useEffect } from 'react';
 import Link from 'next/link';
-import Logo from "../../nav/img/logo.png";
+import Logo from "../../../app/(home)/hero/img/logo2.png";
 import SmallLogo from "../../nav/img/small-logo.png"; // Add a smaller version of the logo
 import UserIcon from "../../nav/img/elon.jpeg";
 import Image from 'next/image';

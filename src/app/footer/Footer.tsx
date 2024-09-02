@@ -18,7 +18,6 @@ function Footer() {
                         <ul className="text-[12px] text-[#b1b4b6] flex flex-col gap-[.6em]">
                             <Link href='/hero/about'><li>Who We Are</li></Link>
                             <li>Legal & privacy</li>
-                            <li>Terms of Use - USA</li>
                             <Link href='./hero/faq'><li>FAQ</li></Link>
                         </ul>
                     </div>
@@ -28,8 +27,6 @@ function Footer() {
                             <h1 className="text-[#fff] font-bold">Products</h1>
                         </header>
                         <ul className="text-[12px] text-[#b1b4b6] flex flex-col gap-[.6em]">
-                            <li>Mobile Apps</li>
-                            <li>Tradeview</li>
                             <Link href='/hero/staking'><li>Earn stake</li></Link>
                             <li>Earn Lend</li>
                         </ul>
@@ -41,7 +38,6 @@ function Footer() {
 
                         <ul className="text-[12px] text-[#b1b4b6] md:w-20 flex flex-col gap-[.6em]">
                             <li>MirrorTradeX as a Service</li>
-                            <li>The MirrorTradeX Ecosystem</li>
                         </ul>
                     </div>
                     <div className='resources'>
@@ -50,7 +46,7 @@ function Footer() {
                         </header>
 
                         <ul className="text-[12px] text-[#b1b4b6] md:w-20 flex flex-col gap-[.6em]">
-                            <li>Crypto Pulse</li>
+                            <li>Mobile Apps</li>
                         </ul>
                     </div>
                     <div className='access'>
@@ -59,7 +55,8 @@ function Footer() {
                         </header>
 
                         <ul className="text-[12px] text-[#b1b4b6] md:w-20 flex flex-col gap-[.6em]">
-                            <li>London, </li>
+                            <li>3433 Adamsville Road</li>
+                            <li>Laredo, TX</li>
                             <li>United Kingdom</li>
                         </ul>
                     </div>
