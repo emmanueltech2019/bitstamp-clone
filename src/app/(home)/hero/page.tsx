@@ -224,21 +224,20 @@ function page() {
         <div className='md:max-w-[100%] lg:max-w-[80%] m-auto md:flex md:flex-row-reverse md:justify-around items-center w-full'>
           <div className="explore-text sm:w-[70%] md:w-[50%] lg:w-[100%]">
             <h1 className='text-[#003b2f] text-[32px] smm:text-[48px] font-GT font-bold my-5'>
-              <mark className='bg-[#03fc9d] px-2 text-[#F3F3F3]'>Trade</mark>
-              <span>on the go with our mobile apps.</span>
+              <mark className='bg-[#03fc9d] px-2 text-[#F3F3F3]'>COMING SOON!!! </mark>
+              <span>  Trade on the go with our mobile apps.</span>
             </h1>
             <h4 className='text-[#000] text-[18px] smm:text-[25px] font-GT font-bold'>
               Take control of your crypto anytime with the app that fits your experience
             </h4>
             <p className='text-[#000] mb-2 text-[16px] md:text-[18px] py-2 md:w-[95%] lg:w-[100%]'>
-              Choose between the MirrorTradeX app, the easiest way to buy and sell crypto, or the MirrorTradeX Pro app&#44; built for pro traders and crypto experts.
-            </p>
+Coming soon....            </p>
             {/* <small className='text-[12px]'>
               Not yet available in UK & USA but coming soon.
             </small> */}
 
             <div className="start-exploring my-4 smm:w-[470px]">
-              <button className="get-started bg-[#03fc9d] text-[#003b2f] hover:bg-[#003b2f] hover:text-[#003b2f] w-full p-2 rounded font-semi-bold smm:w-[30%]">Explore the Apps</button>
+              {/* <button className="get-started bg-[#03fc9d] text-[#003b2f] hover:bg-[#003b2f] hover:text-[#003b2f] w-full p-2 rounded font-semi-bold smm:w-[30%]">Explore the Apps</button> */}
             </div>
           </div>
 

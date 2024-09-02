@@ -264,6 +264,7 @@ function Deposit() {
               value={amount}
               InputLabelProps={{ shrink: !!crptoEquivalent }}
               variant="outlined"
+              disabled
             />
           </div>
             </div>
@@ -279,6 +280,7 @@ function Deposit() {
               type={paymentType === 'USD' ? 'number' : 'text'}
               value={Math.floor((amount as number /crptoEquivalent) * 1e6)/ 1e6}
               InputLabelProps={{ shrink: !!crptoEquivalent }}
+              disabled
             />
           </div>
           </div>
