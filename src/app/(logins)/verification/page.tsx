@@ -2,7 +2,7 @@
 import React,{ useState, FormEvent, useEffect, useRef } from 'react'
 import './bg.css'
 import Image from 'next/image'
-import logo from '../img/Mirror Trade_logo-removebg-preview.png'
+import logo from '../../nav/img/logo.png'
 import Link from 'next/link'
 import axios from '../../../utils/axios';
 import Swal from 'sweetalert2'
