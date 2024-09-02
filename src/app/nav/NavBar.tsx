@@ -35,14 +35,14 @@ function NavBar() {
                         <li>Mobile</li> */}
                         <Link href='/hero/about'><li>About</li></Link>
                             <Link href='/hero/staking'><li>Earn Stake</li></Link>
-                
+                {/* #003b2f */}
                             <Link href='/hero/faq'><li>Faq</li></Link>
                         {/* <li>Earn Lend</li>
                         <li>Markets</li>
                         <li>Tradeview</li>
                         <li>Blog</li>
                         <li>Learn</li> */}
-                        {/* <li className='lg:hidden'>Get Mirror TradeX app</li> */}
+                        {/* <li className='lg:hidden'>Get MirrorTradeX app</li> */}
                     </ul>
                 </div>
                 {
@@ -58,7 +58,7 @@ function NavBar() {
                             {/* <li>Tradeview</li>
                             <li>Blog</li>
                             <li>Learn</li> */}
-                            {/* <li className='lg:hidden'>Get Mirror TradeX app</li> */}
+                            {/* <li className='lg:hidden'>Get MirrorTradeX app</li> */}
                         </ul>
                     </div> : <div className="navList-mobile absolute right-[-100%] top-[61px] w-full h-[100vh] bg-[#fff] -z-50 p-5 md:w-[45%] transition-all animate__animated animate__bounce animate__delay-4s">
                         <ul className='flex flex-col lg:flex-row gap-4 lg:text-[14px] text-[20px] font-light'>
@@ -75,7 +75,7 @@ function NavBar() {
                             {/* <li>Tradeview</li> */}
                             {/* <li>Blog</li> */}
                             {/* <li>Learn</li> */}
-                            {/* <li className='lg:hidden'>Get Mirror TradeX app</li> */}
+                            {/* <li className='lg:hidden'>Get MirrorTradeX app</li> */}
                         </ul>
                     </div>
                 }
@@ -85,7 +85,7 @@ function NavBar() {
                         <Link href='/login' className=' cursor-pointer'><p className='underline'>Log in</p></Link>
                     </div>
                     <div className="get-started">
-                    <Link href='/register' className='text-[#F3F3F3]  bg-[#303841] p-[6px] px-5 rounded'>Get started</Link>
+                    <Link href='/register' className='text-[#F3F3F3]  bg-[#003b2f] p-[6px] px-5 rounded'>Get started</Link>
                     </div>
                    
                     <div className='lg:hidden'>

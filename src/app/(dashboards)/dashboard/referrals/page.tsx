@@ -64,13 +64,13 @@ const Referral: React.FC = () => {
     <Box className="p-6">
       <Grid container spacing={3}>
         <Grid item xs={12} md={8}>
-          <Card className="bg-[#3A4750] p-3 rounded-lg shadow-md text-[#f3f3f3]">
+          <Card className="bg-[#03fc9d] p-3 rounded-lg shadow-md text-[#f3f3f3]">
             <CardContent>
               <Typography variant="h5" className="font-bold mb-4 ">
                 We support you every step of the way
               </Typography>
               <Typography variant="body1" className="mb-6 text-[12px]">
-                As an affiliate, you&lsquo;ll receive free access to a range of marketing tools and resources designed to help you promote our site and drive sales. We offer top commissions for every successful referral you make, so you can earn money while helping others discover the benefits of Mirror TradeX. To get started, simply copy your unique referral link below and share it with your family and friends. If you have any questions or need assistance, please don&lsquo;t hesitate to contact our support team.
+                As an affiliate, you&lsquo;ll receive free access to a range of marketing tools and resources designed to help you promote our site and drive sales. We offer top commissions for every successful referral you make, so you can earn money while helping others discover the benefits of MirrorTradeX. To get started, simply copy your unique referral link below and share it with your family and friends. If you have any questions or need assistance, please don&lsquo;t hesitate to contact our support team.
               </Typography>
               <TextField
                 fullWidth
@@ -97,7 +97,7 @@ const Referral: React.FC = () => {
                 <Button
                   variant="contained"
                   startIcon={<ShareIcon />}
-                  className="mr-2 bg-[#303841] hover:bg-[#303841]"
+                  className="mr-2 bg-[#003b2f] hover:bg-[#003b2f]"
                 >
                   Share
                 </Button>

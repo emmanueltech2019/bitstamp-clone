@@ -16,12 +16,12 @@ function page() {
             <section className="bg-[#f2f2f2]">
                 <div className='px-6 md:max-w-[95%] m-auto pt-[8rem] pb-[4rem]'>
                     <header className='mb-[3.6rem]'>
-                        <h1 className='text-[#303841] text-[28px] smm:text-[48px] font-GT font-bold'>FAQ</h1>
+                        <h1 className='text-[#003b2f] text-[28px] smm:text-[48px] font-GT font-bold'>FAQ</h1>
                     </header>
 
                     <div className='grid grid-cols-2 smm:grid-cols-2 smm:gap-x-[4rem]'>
                         <div>
-                            <Accordion title={<h2 className='font-GT font-bold text-[20px] text-[#303841]'>How to disable the Two-Factor Authentication code on your Mirror TradeX account?</h2>} answer={<div className='my-[2rem] text-[17px] text-[#003b2f] flex flex-col gap-5'>
+                            <Accordion title={<h2 className='font-GT font-bold text-[20px] text-[#003b2f]'>How to disable the Two-Factor Authentication code on your MirrorTradeX account?</h2>} answer={<div className='my-[2rem] text-[17px] text-[#003b2f] flex flex-col gap-5'>
                                 <p>
                                     If you have issues with your Two-Factor Authentication code&#44; you can disable by contacting us where you proceed with your customer ID/email address and password login.
                                 </p>
@@ -32,19 +32,19 @@ function page() {
                             </div>
 
                             } />
-                            <Accordion title={<h2 className='font-GT font-bold text-[20px] text-[#303841]'>Can you prepare a Statement for my account balance and transactions?</h2>} answer={<div className="my-[2rem] text-[17px] text-[#003b2f] flex flex-col gap-5">
+                            <Accordion title={<h2 className='font-GT font-bold text-[20px] text-[#003b2f]'>Can you prepare a Statement for my account balance and transactions?</h2>} answer={<div className="my-[2rem] text-[17px] text-[#003b2f] flex flex-col gap-5">
                                 <p>
-                                    We can issue a User Confirmation Statement for you, which declares that you are one of Mirror TradeX&#39;s verified users and includes the information stated below. If you wish us to prepare this statement for you, feel free to contact us via our ticket system&#58;
+                                    We can issue a User Confirmation Statement for you, which declares that you are one of MirrorTradeX&#39;s verified users and includes the information stated below. If you wish us to prepare this statement for you, feel free to contact us via our ticket system&#58;
                                 </p>
                                 <p>
                                     We can also include the following information in the document&#58;
                                 </p>
                                 <ul className=' list-disc px-[1.3rem]'>
                                     <li>
-                                        every transaction (every buy, sell, deposit, withdraw, etc.) on your Mirror TradeX account for the selected time period,
+                                        every transaction (every buy, sell, deposit, withdraw, etc.) on your MirrorTradeX account for the selected time period,
                                     </li>
                                     <li>
-                                        your total Mirror TradeX account balance, broken down into specific currencies, on a specified date.
+                                        your total MirrorTradeX account balance, broken down into specific currencies, on a specified date.
                                     </li>
                                 </ul>
                                 <p>
@@ -52,19 +52,19 @@ function page() {
                                      then click on Open export options. There you will be able to choose a specific date range, currencies and transaction types.
                                 </p>
                                 <p>
-                                    <strong>Disclaimer&#58;</strong> Please note that Mirror TradeX does not provide tax advice. You should consult a tax advisor for your own specific tax obligations.
+                                    <strong>Disclaimer&#58;</strong> Please note that MirrorTradeX does not provide tax advice. You should consult a tax advisor for your own specific tax obligations.
                                 </p>
                             </div>} />
-                            <Accordion title={<h2 className='font-GT font-bold text-[20px] text-[#303841]'>How do I change my personal information on my Mirror TradeX account?</h2>} answer={
-                                <div className="my-[2rem] text-[17px] text-[#303841] flex flex-col gap-5">
+                            <Accordion title={<h2 className='font-GT font-bold text-[20px] text-[#003b2f]'>How do I change my personal information on my MirrorTradeX account?</h2>} answer={
+                                <div className="my-[2rem] text-[17px] text-[#003b2f] flex flex-col gap-5">
                                     <div>
                                         <p>
-                                            If you wish to change any of your personal information on your Mirror TradeX account (your name, address, email, phone number, etc.) we will need to assist you with that. 
+                                            If you wish to change any of your personal information on your MirrorTradeX account (your name, address, email, phone number, etc.) we will need to assist you with that. 
                                         </p>
                                         <p>
                                             We can confirm that&#58;
                                         </p>
-                                        <ul className=' list-disc px-[1.3rem] text-[#303841]'>
+                                        <ul className=' list-disc px-[1.3rem] text-[#003b2f]'>
                                             <li>We have no material exposure to Silvergate Bank.</li>
                                             <li>We had no connection to Silicon Valley Bank whatsoever.</li>
                                         </ul>
@@ -82,24 +82,24 @@ function page() {
                             } />
                         </div>
                         <div>
-                            <Accordion title={<h2 className='font-GT font-bold text-[20px] text-[#303841]'>Is Mirror TradeX affected by the recent banking situation?</h2>} answer={
-                                <div className="my-[2rem] text-[17px] text-[#303841] flex flex-col gap-5">
+                            <Accordion title={<h2 className='font-GT font-bold text-[20px] text-[#003b2f]'>Is MirrorTradeX affected by the recent banking situation?</h2>} answer={
+                                <div className="my-[2rem] text-[17px] text-[#003b2f] flex flex-col gap-5">
                                     <p>
-                                        Mirror TradeX and particularly our USD payment rails continue to operate normally despite the recent events in the banking sector. All fiat and crypto are accessible 24/7. We also continue to offer trading on all USD pairs currently available.
+                                        MirrorTradeX and particularly our USD payment rails continue to operate normally despite the recent events in the banking sector. All fiat and crypto are accessible 24/7. We also continue to offer trading on all USD pairs currently available.
                                     </p>
 
                                 </div>
                             } />
-                            <Accordion title={<h2 className="font-GT font-bold text-[20px] text-[#303841]">Why do I have to wait after placing an Instant Purchase</h2>} answer={
-                                <div className="my-[2rem] text-[17px] text-[#303841] flex flex-col gap-5">
+                            <Accordion title={<h2 className="font-GT font-bold text-[20px] text-[#003b2f]">Why do I have to wait after placing an Instant Purchase</h2>} answer={
+                                <div className="my-[2rem] text-[17px] text-[#003b2f] flex flex-col gap-5">
                                     <p>
-                                        While you can use the deposited funds for trading as soon as they have been credited to your Mirror TradeX account, you are unable to withdraw the deposited amount in any currency, as the funds are reserved for 7 business days (weekends and holidays excluded) due to deposit processing. This applies to ACH deposits and Instant Purchases, namely purchases with credit or debit card, (“Card Purchase”), Google Pay, Apple Pay, or other valid forms of payment.
+                                        While you can use the deposited funds for trading as soon as they have been credited to your MirrorTradeX account, you are unable to withdraw the deposited amount in any currency, as the funds are reserved for 7 business days (weekends and holidays excluded) due to deposit processing. This applies to ACH deposits and Instant Purchases, namely purchases with credit or debit card, (“Card Purchase”), Google Pay, Apple Pay, or other valid forms of payment.
                                     </p>
                                     <p>
                                         Once the deposit processing is completed, the reservation is automatically lifted and you should have no issues withdrawing the deposited amount in the currency of your choice.
                                     </p>
                                     <p>
-                                        Alternatively, you may also fund your Mirror TradeX account via an alternative transfer method such as SEPA transfer or International Wire Transfer, for which we do not have a reservation period implemented, and you should be able to withdraw your funds as soon as they are credited to your Mirror TradeX account.
+                                        Alternatively, you may also fund your MirrorTradeX account via an alternative transfer method such as SEPA transfer or International Wire Transfer, for which we do not have a reservation period implemented, and you should be able to withdraw your funds as soon as they are credited to your MirrorTradeX account.
                                     </p>
                                 </div>
                             } />

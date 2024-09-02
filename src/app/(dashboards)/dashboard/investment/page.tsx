@@ -72,7 +72,7 @@ const [investments, setInvestments] = useState<Investments[]>([]);
         
       ))}
       <Link href={'/dashboard/investment/plan'}>
-        <Button variant="contained" color="primary" className="px-8 my-10 py-2 rounded-md text-white font-medium bg-[#303841] hover:bg-[#303841]">
+        <Button variant="contained" color="primary" className="px-8 my-10 py-2 rounded-md text-white font-medium bg-[#003b2f] hover:bg-[#003b2f]">
          Add Investment
         </Button>
       </Link>
@@ -92,7 +92,7 @@ const [investments, setInvestments] = useState<Investments[]>([]);
       </Typography>
 
       <Link href={'/dashboard/investment/plan'}>
-        <Button variant="contained" color="primary" className="px-8 py-2 rounded-md text-white font-medium bg-[#303841] hover:bg-[#303841]">
+        <Button variant="contained" color="primary" className="px-8 py-2 rounded-md text-white font-medium bg-[#003b2f] hover:bg-[#003b2f]">
           Start Investing
         </Button>
       </Link></Box></>}

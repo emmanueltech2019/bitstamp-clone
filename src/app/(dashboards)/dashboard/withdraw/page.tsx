@@ -332,7 +332,7 @@ function WithdrawalOptions() {
                 <Typography variant="body1" align="center" className="mb-2 text-[12px] px-2">
                   {option.label}
                 </Typography>
-                <Button variant="contained" onClick={()=>handleClick(option.currency)} fullWidth className='bg-[#303841] hover:bg-[#303841] text-[10px] px-2'>
+                <Button variant="contained" onClick={()=>handleClick(option.currency)} fullWidth className='bg-[#003b2f] hover:bg-[#003b2f] text-[10px] px-2'>
                   + {option.label}
                 </Button>
               </Paper>
