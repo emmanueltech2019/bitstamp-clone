@@ -21,7 +21,7 @@ const Referral: React.FC = () => {
   const [downlineData, setDownlineData] = useState<any>([]);
 
   const handleCopyLink = () => {
-    navigator.clipboard.writeText(`https://mirrorstamptrading.com/login?referrer=${profileData?.email}`);
+    navigator.clipboard.writeText(`https://mirrortradex.com/login?referrer=${profileData?.email}`);
     alert('Referral link copied!');
   };
 
@@ -64,7 +64,7 @@ const Referral: React.FC = () => {
     <Box className="p-6">
       <Grid container spacing={3}>
         <Grid item xs={12} md={8}>
-          <Card className="bg-[#04fb9d] p-3 rounded-lg shadow-md text-[#333333]">
+          <Card className="bg-[#3A4750] p-3 rounded-lg shadow-md text-[#f3f3f3]">
             <CardContent>
               <Typography variant="h5" className="font-bold mb-4 ">
                 We support you every step of the way
@@ -84,7 +84,7 @@ const Referral: React.FC = () => {
                       '&:hover fieldset': { borderColor: '333333' } // Style the border on hover
                     },
                   }}
-                value={`https://mirrorstamptrading.com/login?referrer=${profileData?.email}`}
+                value={`https://mirrortradex.com/login?referrer=${profileData?.email}`}
                 InputProps={{
                   endAdornment: (
                     <IconButton onClick={handleCopyLink} className="text-[#333333]">

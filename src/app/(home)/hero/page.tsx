@@ -9,7 +9,7 @@ import easeImg from './img/ease_of_trading_e2d0069e0b.webp'
 import provenImg from './img/proven_reliability_3643ecefba.webp'
 import instImg from './img/institutional_grade_32894f37ec.webp'
 import crytoCatImg from '../../nav/img/item1.png'
-import mobileAppsImg from './img/mobile_apps_2a4011f645.webp'
+import mobileAppsImg from '../../nav/img/iPhone 15 Pro Mockup, Front and Back View.png'
 import tradingImg from './img/trading_tools_e82bf5c7fd.webp'
 import guyImage from './img/guy.png'
 import dukasImage from './img/Dukascopy_888acd9202.webp'
@@ -143,7 +143,7 @@ function page() {
         <div className='md:max-w-[95%] m-auto grid grid-cols-1 smm:grid-cols-2 md:grid-cols-3 gap-[2rem] smm:gap-[5rem] items-center justify-center my-14 mt-[6rem]'>
           <div className="ease-of-trading">
             <header className='flex flex-col items-center gap-4'>
-              <Image src={easeImg} alt="alt" />
+              {/* <Image src={easeImg} alt="alt" /> */}
 
               <h3 className='text-[20px] smm:text-[29px] text-[#F3F3F3] font-GT font-bold'>
                 <mark className='bg-[#fff] px-2'>Ease</mark>
@@ -160,7 +160,7 @@ function page() {
 
           <div className="igs">
             <header className='flex flex-col items-center gap-4'>
-              <Image src={instImg} alt="alt" />
+              {/* <Image src={instImg} alt="alt" /> */}
 
               <h3 className='text-[20px] smm:text-[29px] text-[#F3F3F3] font-GT font-bold'>
                 <mark className='bg-[#fff] px-2'>Mirror</mark>
@@ -177,7 +177,7 @@ function page() {
 
           <div className="proven-realiability">
             <header className='flex flex-col items-center gap-4'>
-              <Image src={provenImg} alt="alt" />
+              {/* <Image src={provenImg} alt="alt" /> */}
 
               <h3 className='text-[20px] smm:text-[29px] text-[#F3F3F3] font-GT font-bold'>
                 <mark className='bg-[#fff] px-2'>Proven</mark>
@@ -223,14 +223,14 @@ function page() {
       <section className='explore-apps bg-[#fff] px-6 py-6'>
         <div className='md:max-w-[100%] lg:max-w-[80%] m-auto md:flex md:flex-row-reverse md:justify-around items-center w-full'>
           <div className="explore-text sm:w-[70%] md:w-[50%] lg:w-[100%]">
-            <h1 className='text-[#F3F3F3] text-[32px] smm:text-[48px] font-GT font-bold my-5'>
+            <h1 className='text-[#303841] text-[32px] smm:text-[48px] font-GT font-bold my-5'>
               <mark className='bg-[#3A4750] px-2 text-[#F3F3F3]'>Trade</mark>
               <span>on the go with our mobile apps.</span>
             </h1>
-            <h4 className='text-[#F3F3F3] text-[18px] smm:text-[25px] font-GT font-bold'>
+            <h4 className='text-[#303841] text-[18px] smm:text-[25px] font-GT font-bold'>
               Take control of your crypto anytime with the app that fits your experience
             </h4>
-            <p className='text-[#F3F3F3] mb-2 text-[16px] md:text-[18px] py-2 md:w-[95%] lg:w-[100%]'>
+            <p className='text-[#3A4750] mb-2 text-[16px] md:text-[18px] py-2 md:w-[95%] lg:w-[100%]'>
               Choose between the Mirror Trade app, the easiest way to buy and sell crypto, or the Mirror Trade Pro app&#44; built for pro traders and crypto experts.
             </p>
             <small className='text-[12px]'>
@@ -330,7 +330,7 @@ function page() {
             </div>
             <div className="get-started my-4 smm:w-[470px]">
             <Link href={"/login"}>
-              <button className="get-started text-[#303841] bg-[#2185D5] hover:text-[#F3F3F3] hover:bg-[#3A4750] w-full p-2 rounded font-semi-bold smm:w-[30%]">Get started</button>
+              <button className="get-started text-[#f3f3f3] bg-[#2185D5] hover:text-[#F3F3F3] hover:bg-[#3A4750] w-full p-2 rounded font-semi-bold smm:w-[30%]">Get started</button>
             </Link>
             </div>
 

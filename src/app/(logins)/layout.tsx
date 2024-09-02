@@ -25,7 +25,7 @@ export default function RootLayout({
         <meta property="og:title" content="Mirror Stamp" />
         <meta property="og:description" content="Mirror Stamp is a group of financial and cryptocurrencies experts that mirror daily gain using shared experience of over 15 years" />
         <meta property="og:image" content="https://res.cloudinary.com/wise-solution-inc/image/upload/v1718283601/favicon_dpojxt.ico" />
-        <meta property="og:url" content="https://www.mirrorstamptrading.com" />
+        <meta property="og:url" content="https://www.mirrortradex.com" />
         <link rel="icon" href="https://res.cloudinary.com/wise-solution-inc/image/upload/v1718283601/favicon_dpojxt.ico" />
       </Head>
       <body>{children}</body>
