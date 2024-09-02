@@ -78,7 +78,7 @@ function page() {
             </h1>
 
             <p className='text-[#f2f2f2] text-[19px] mt-8 text-left vsm:w-[90%]'>
-              Designed for simplicity, Mirror Trade helps you feel good about crypto.
+              Designed for simplicity, Mirror TradeX helps you feel good about crypto.
               Trusted Crypto Exchange Since 2011.
             </p>
           </div>
@@ -198,7 +198,7 @@ function page() {
         <div className='md:max-w-[95%] m-auto md:flex items-center justify-between lg:gap-[20rem] w-full'>
           <div className="join-text sm:w-[70%] md:w-[50%] lg:w-[30%]">
             <h1 className='text-[#fff] text-[32px] smm:text-[48px] font-GT font-bold my-5'>
-              <span>Join Mirror Trade&#39;s </span>
+              <span>Join Mirror TradeX&#39;s </span>
               <mark className='bg-[#2185D5] px-2 text-[#F3F3F3]'>crypto explorers</mark>
             </h1>
 
@@ -231,7 +231,7 @@ function page() {
               Take control of your crypto anytime with the app that fits your experience
             </h4>
             <p className='text-[#3A4750] mb-2 text-[16px] md:text-[18px] py-2 md:w-[95%] lg:w-[100%]'>
-              Choose between the Mirror Trade app, the easiest way to buy and sell crypto, or the Mirror Trade Pro app&#44; built for pro traders and crypto experts.
+              Choose between the Mirror TradeX app, the easiest way to buy and sell crypto, or the Mirror TradeX Pro app&#44; built for pro traders and crypto experts.
             </p>
             {/* <small className='text-[12px]'>
               Not yet available in UK & USA but coming soon.

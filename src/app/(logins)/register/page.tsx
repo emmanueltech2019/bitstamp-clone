@@ -2,7 +2,7 @@
 // import React, { useState, FormEvent, useEffect, Suspense } from 'react'
 // import './bg.css'
 // import Image from 'next/image'
-// import logo from '../img/Mirror Trade_logo-removebg-preview.png'
+// import logo from '../img/Mirror TradeX_logo-removebg-preview.png'
 // import Link from 'next/link'
 // import axios from '../../../utils/axios';
 // import { useSearchParams } from 'next/navigation'
@@ -83,7 +83,7 @@
 
 //             <section className='login-form mt-[3rem] w-full'>
 //                 <header className='text-center'>
-//                     <h3 className='text-[28px] text-[#003b2f] my-1 font-GT'>Welcome to Mirror Trade</h3>
+//                     <h3 className='text-[28px] text-[#003b2f] my-1 font-GT'>Welcome to Mirror TradeX</h3>
 //                     <p className='text-[#6d6e71]'>To begin, create your account</p>
 //                 </header>
 
@@ -277,7 +277,7 @@ function RegisterContent() {
             </header>
             <section className='login-form mt-[3rem] w-full'>
                 <header className='text-center'>
-                    <h3 className='text-[28px] text-[#003b2f] my-1 font-GT'>Welcome to Mirror Trade</h3>
+                    <h3 className='text-[28px] text-[#003b2f] my-1 font-GT'>Welcome to Mirror TradeX</h3>
                     <p className='text-[#6d6e71]'>To begin, create your account</p>
                 </header>
                 <div className='flex justify-center text-center my-[3rem] w-full'>
