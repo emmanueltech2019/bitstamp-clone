@@ -1,6 +1,6 @@
 import React from 'react'
 import NavBar from '@/app/nav/NavBar'
-import stakeImg from './img/staking_hero_43bbdf9e92.webp'
+import stakeImg from '../../../nav/img/9241380.png'
 // import './bg.css'
 import Image from 'next/image'
 import Footer from '@/app/footer/Footer'
@@ -13,9 +13,9 @@ function page() {
             <section className='md:max-w-[95%] m-auto sm:flex sm:items-center'>
                 <div className='px-6 pt-24 md:pt-60 overflow-x-hidden'>
                     <div className="head-text sm:w-[90%] md:w-[83%] lg:w-[70%]">
-                        <h1 className='hero-text text-[#003b2f] font-bold text-[48px] vsm:text-[50px] lg:text-[65px] text-pretty leading-[15mm] vsm:leading-[18mm] lg:leading-[22mm]'>
+                        <h1 className='hero-text text-[#303841] font-bold text-[48px] vsm:text-[50px] lg:text-[65px] text-pretty leading-[15mm] vsm:leading-[18mm] lg:leading-[22mm]'>
                             <span>Mirror Trade</span>
-                            <mark className='bg-[#03fc9d] px-4 text-[#003b2f]'>Earn</mark>
+                            <mark className='bg-[#2185D5] px-4 text-[#f3f3f3]'>Earn</mark>
                             <span>&#45; Crypto Staking</span>
                         </h1>
 
@@ -126,8 +126,8 @@ function page() {
 
             <section className='bg-[#fff]'>
                 <div className='px-6 sm:max-w-[716px] m-auto py-[3rem] md:py-[6rem]'>
-                    <h2 className='text-[#003b2f] text-[30px] sm:text-[48px] font-GT font-bold mb-[2rem]'>
-                        <mark className='bg-[#03fc9d] px-4 text-[#003b2f]'>Learn about</mark>
+                    <h2 className='text-[#303841] text-[30px] sm:text-[48px] font-GT font-bold mb-[2rem]'>
+                        <mark className='bg-[#2185D5] px-4 text-[#f3f3f3]'>Learn about</mark>
                         <span>Staking with Mirror Trade Earn</span>
                     </h2>
 
@@ -161,7 +161,7 @@ function page() {
 
             <section className='bg-[#f2f2f2]'>
                 <div className='sm:max-w-[726px] m-auto text-center p-6 sm:p-[6rem]'>
-                    <h2 className='text-[#003b2f] text-[30px] smm:text-[48px] font-GT font-bold mb-[2rem]'>
+                    <h2 className='text-[#303841] text-[30px] smm:text-[48px] font-GT font-bold mb-[2rem]'>
                         Get started
                     </h2>
 

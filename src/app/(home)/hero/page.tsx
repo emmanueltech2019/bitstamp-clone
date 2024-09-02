@@ -233,9 +233,9 @@ function page() {
             <p className='text-[#3A4750] mb-2 text-[16px] md:text-[18px] py-2 md:w-[95%] lg:w-[100%]'>
               Choose between the Mirror Trade app, the easiest way to buy and sell crypto, or the Mirror Trade Pro app&#44; built for pro traders and crypto experts.
             </p>
-            <small className='text-[12px]'>
+            {/* <small className='text-[12px]'>
               Not yet available in UK & USA but coming soon.
-            </small>
+            </small> */}
 
             <div className="start-exploring my-4 smm:w-[470px]">
               <button className="get-started bg-[#3A4750] text-[#F3F3F3] hover:bg-[#2185D5] hover:text-[#F3F3F3] w-full p-2 rounded font-semi-bold smm:w-[30%]">Explore the Apps</button>

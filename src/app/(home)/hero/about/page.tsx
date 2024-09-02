@@ -23,18 +23,18 @@ function page() {
                         <div className='lg:w-[70%]'>
                             <div className="head-text sm:w-[90%] md:w-[83%] lg:w-[70%] mt-24 md:mt-60">
                                 <h1 className='hero-text text-white font-bold text-[48px] vsm:text-[50px] lg:text-[65px] text-pretty leading-[15mm] vsm:leading-[18mm] lg:leading-[22mm]'>
-                                    <mark className='bg-[#03fc9d] px-4 text-[#003b2f]'>Who we are</mark>
+                                    <mark className='bg-[#2185D5] px-4 text-[#f3f3f3]'>Who we are</mark>
                                 </h1>
 
-                                <p className='text-[#003b2f] text-[18px] smm:text-[24px] font-GT font-bold my-[2rem] smm:w-[80%] lg:w-[59%]'>Security. Transparency. Regulation. The Mirror Trade Way since 2011.</p>
+                                <p className='text-[#303841] text-[18px] smm:text-[24px] font-GT font-bold my-[2rem] smm:w-[80%] lg:w-[59%]'>Security. Transparency. Regulation. The Mirror Trade Way since 2011.</p>
                             </div>
 
                             <div className='whoWeAre grid smm:grid-cols-2 md:grid-cols-3 gap-4 smm:gap-[4rem]'>
                                 <div className="security my-5">
-                                    <Image src={securityImg} alt="alt" />
+                                    {/* <Image src={securityImg} alt="alt" /> */}
 
                                     <div className="securityText">
-                                        <p className='text-[#003b2f] text-[17px]'>
+                                        <p className='text-[#303841] text-[17px]'>
                                             Security, transparency and regulation
                                             are the pillars on which we have made
                                             crypto securely accessible to everyone,
@@ -48,20 +48,20 @@ function page() {
                                 </div>
 
                                 <div className="security my-5">
-                                    <Image src={dedicationImg} alt="alt" />
+                                    {/* <Image src={dedicationImg} alt="alt" /> */}
 
                                     <div className="securityText">
-                                        <p className='text-[#003b2f] text-[17px]'>
+                                        <p className='text-[#303841] text-[17px]'>
                                             Our dedication to the secure evolution of the financial system is reflected by our AA rating as the world’s top-rated crypto exchange in CryptoCompare’s Exchange Benchmark report. We live by the mantra ‘Your crypto is always yours’ - all your assets are always available to you.
                                         </p>
                                     </div>
                                 </div>
 
                                 <div className="security my-5">
-                                    <Image src={globalImg} alt="alt" />
+                                    {/* <Image src={globalImg} alt="alt" /> */}
 
                                     <div className="securityText">
-                                        <p className='text-[#003b2f] text-[17px]'>
+                                        <p className='text-[#303841] text-[17px]'>
                                             Our global presence has allowed us to become one of the most regulated crypto exchanges in the world supported by around 500 people. We have offices in Luxembourg, Singapore, Slovenia, the UK and the USA and take pride in our live customer support.
                                         </p>
                                     </div>
@@ -70,7 +70,7 @@ function page() {
                         </div>
 
                         <div className="hidden lg:block userimg absolute right-[-580px]">
-                            <Image src={userImg} alt="alt" />
+                            {/* <Image src={userImg} alt="alt" /> */}
                         </div>
                     </div>
                 </div>
@@ -79,8 +79,8 @@ function page() {
             <section className='our-mission bg-[#fff]'>
                 <div className='md:max-w-[95%] m-auto p-7 md:flex md:justify-between md:gap-[3rem] py-[7rem]'>
                     <header className='md:w-[340px]'>
-                        <h2 className='text-[#003b2f] text-[30px] smm:text-[48px] font-GT font-bold mb-[2rem]'>
-                            Our <mark className='bg-[#03fc9d] px-4'>mission</mark>
+                        <h2 className='text-[#303841] text-[30px] smm:text-[48px] font-GT font-bold mb-[2rem]'>
+                            Our <mark className='bg-[#2185D5] text-[#f3f3f3] px-4'>mission</mark>
                         </h2>
                         <h4 className='font-GT text-[#003b2f] text-[18px] smm:text-[24px] font-bold'>
                             Shaping the new world of finance for the benefit of all.
@@ -131,7 +131,7 @@ function page() {
                 </div>
             </section>
 
-            <section className='our-team bg-[#303841]'>
+            {/* <section className='our-team bg-[#303841]'>
                 <div className='md:max-w-[93%] m-auto p-7 border-b-2 border-[#03fc9d1d] pb-[6rem]'>
                     <header className='mb-[6rem] mt-[2rem]'>
                         <h2 className='text-[#fff] text-[30px] smm:text-[48px] font-GT font-bold mb-[2rem]'>
@@ -254,7 +254,7 @@ function page() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             <section className='bg-[#303841]'>
                 <div className='md:max-w-[97%] m-auto p-7 pb-[5rem]'>
@@ -302,14 +302,14 @@ function page() {
                 </div>
             </section>
 
-            <section className='bg-[#03fc9d]'>
+            <section className='bg-[#2185D5]'>
                 <div className='md:max-w-[47%] m-auto p-7 pb-[3rem] lg:py-[8rem]'>
-                    <h2 className='text-[#003b2f] text-[30px] smm:text-[48px] font-GT font-bold mb-[2rem] text-center'>
+                    <h2 className='text-[#f3f3f3] text-[30px] smm:text-[48px] font-GT font-bold mb-[2rem] text-center'>
                         <mark className='bg-[#fff] px-[.7rem]'>Are you</mark>
                         <span> a believer?</span>
                     </h2>
 
-                    <p className='text-[17px] text-[#003b2f] my-[2rem] text-center'>
+                    <p className='text-[17px] text-[#f3f3f3] my-[2rem] text-center'>
                     We believe that opening the world of finance opens opportunities for everyone. That’s why we provide easy access to the world of crypto to empower everyone to benefit from the next generation of finance. If this strikes a chord with you – then come and join the Mirror Trade team.
                     </p>
 
