@@ -19,7 +19,6 @@ function MobileBottomNavBar() {
       className="sm:hidden text-[#003b2f] !important" // Only show on small screens (mobile)
     >
       <BottomNavigation
-        showLabels
         value={value}
         onChange={(event, newValue) => {
           setValue(newValue);

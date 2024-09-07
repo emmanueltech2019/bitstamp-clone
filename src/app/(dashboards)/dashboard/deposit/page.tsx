@@ -183,21 +183,56 @@ function Deposit() {
   };
 
   
+  // useEffect(() => {
+  //   const fetchDeposits = async () => { 
+  //     try {
+  //       const response = await axios2.get(`/user/deposits`, {
+  //         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+  //       });
+  //       console.log(response)
+  //       if (response.data && response.data.length > 0) { // Assuming response.data is an array
+  //         const newTotalAmount = response.data.reduce(
+  //           (sum: number, item: { amount: number }) => sum + item.amount, 
+  //           0
+  //       );          
+  //       setTotalAmount(newTotalAmount)
+
+
+  //       } else {
+  //         console.log("No deposits found."); 
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching deposits:", error);
+  //     }
+  //   };
+  
+  //   fetchDeposits();
+  
+  //   return () => {
+  //     // Cleanup logic (if needed)
+  //   };
+  // }, [totalAmount]); // Empty dependency array means this runs once after initial render
+
   useEffect(() => {
     const fetchDeposits = async () => { 
       try {
         const response = await axios2.get(`/user/deposits`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         });
-  
-        if (response.data && response.data.length > 0) { // Assuming response.data is an array
-          const newTotalAmount = response.data.reduce(
+        console.log(response);
+        
+        if (response.data && response.data.length > 0) { 
+          // Filter the deposits to include only approved ones
+          const approvedDeposits = response.data.filter(
+            (item: { status: string }) => item.status === "approved"
+          );
+          
+          // Calculate the total amount for only approved deposits
+          const newTotalAmount = approvedDeposits.reduce(
             (sum: number, item: { amount: number }) => sum + item.amount, 
             0
-        );          
-        setTotalAmount(newTotalAmount)
-
-
+          );          
+          setTotalAmount(newTotalAmount);
         } else {
           console.log("No deposits found."); 
         }
@@ -212,8 +247,7 @@ function Deposit() {
       // Cleanup logic (if needed)
     };
   }, [totalAmount]); // Empty dependency array means this runs once after initial render
-
-
+  
   return (
     <div className='sm:flex space-y-2'>
       
