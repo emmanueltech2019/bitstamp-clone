@@ -1,12 +1,13 @@
-// "use client"
+
+// "use client";
 // import React, { FormEvent, useEffect, useState } from 'react';
 // import { Box, Card, CardContent, Typography, Button, Grid, Alert, AlertTitle } from '@mui/material';
 // import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 // import { useDropzone } from 'react-dropzone';
-// import axios2 from "../../../../../utils/axios"
-
-// import Swal from "sweetalert2"
+// import axios2 from "../../../../../utils/axios";
+// import Swal from "sweetalert2";
 // import Image from 'next/image';
+
 // const Toast = Swal.mixin({
 //   toast: true,
 //   position: "top-end",
@@ -18,37 +19,44 @@
 //     toast.onmouseleave = Swal.resumeTimer;
 //   }
 // });
+
 // const TierTwoVerification: React.FC = () => {
 //   const [frontImage, setFrontImage] = useState<File | null | string>(null);
 //   const [backImage, setBackImage] = useState<File | null | string>(null);
 //   const [hide, setHide] = useState<boolean>(false);
 //   const [frontImageDims, setFrontImageDims] = useState({ width: 200, height: 200 });
 //   const [backImageDims, setBackImageDims] = useState({ width: 200, height: 200 });
+//   const [loading, setLoading] = useState<boolean>(false);
 
-//   // const onDropFront = (acceptedFiles: File[]) => {
-//   //   setFrontImage(acceptedFiles[0]);
-//   // };
+//   interface HTMLImageElement {
+//     // ... existing properties and methods ...
+//     decode(): Promise<void>;
+//   }
 
-//   // const onDropBack = (acceptedFiles: File[]) => {
-//   //   setBackImage(acceptedFiles[0]);
-//   // };
 //   const onDropFront = (acceptedFiles: File[]) => {
+//     if (acceptedFiles.length === 0) return;
+
 //     setFrontImage(acceptedFiles[0]);
-//     const img = new Image();
-//     img.src = URL.createObjectURL(acceptedFiles[0]);
-//     img.onload = () => {
-//       setFrontImageDims({ width: img.width, height: img.height });
+//     const imgElement = new window.Image();
+//     imgElement.src = URL.createObjectURL(acceptedFiles[0]);
+//     imgElement.onload = () => {
+//       setFrontImageDims({ width: imgElement.width, height: imgElement.height });
+//       URL.revokeObjectURL(imgElement.src);
 //     };
 //   };
 
 //   const onDropBack = (acceptedFiles: File[]) => {
+//     if (acceptedFiles.length === 0) return;
+
 //     setBackImage(acceptedFiles[0]);
-//     const img = new Image();
-//     img.src = URL.createObjectURL(acceptedFiles[0]);
-//     img.onload = () => {
-//       setBackImageDims({ width: img.width, height: img.height });
+//     const imgElement = new window.Image();
+//     imgElement.src = URL.createObjectURL(acceptedFiles[0]);
+//     imgElement.onload = () => {
+//       setBackImageDims({ width: imgElement.width, height: imgElement.height });
+//       URL.revokeObjectURL(imgElement.src);
 //     };
 //   };
+
 //   const { getRootProps: getFrontRootProps, getInputProps: getFrontInputProps } = useDropzone({
 //     onDrop: onDropFront,
 //     accept: { 'image/*': [] },
@@ -67,53 +75,48 @@
 //       alert('Please upload the front view of your ID.');
 //       return;
 //     }
-
+//     setLoading(true);
 //     const formData = new FormData();
 //     formData.append('frontImage', frontImage);
 //     if (backImage) {
 //       formData.append('backImage', backImage);
 //     }
 //     console.log(formData);
-//     // alert("coool")
 
 //     try {
-//       // Replace with your actual API endpoint
-//       const response = await axios2.post('/user/verify-submit',
-//         formData,
-//         {
-//           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
-//         });
-//       console.log(response)
+//       const response = await axios2.post('/user/verify-submit', formData, {
+//         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+//       });
+//       console.log(response);
 //       if (response.status === 200) {
 //         Toast.fire({
 //           icon: "success",
 //           text: "Please await verification"
-//         }).then((response) => window.location.reload())
+//         }).then(() => window.location.reload());
 //       }
-//       // Handle the API response (success/error)
 //     } catch (error) {
 //       console.error('Error uploading images:', error);
 //     }
 //   };
+
 //   useEffect(() => {
 //     const fetchProfileData = async () => {
 //       try {
-//         const token = localStorage.getItem("token");
 //         const response = await axios2.get('/user/profile', {
 //           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
 //         });
 //         if (response.data.kycVerification.frontImageUrl) {
-//           setHide(true)
+//           setHide(true);
 //         }
 //         setFrontImage(response.data.kycVerification.frontImageUrl);
 //         setBackImage(response.data.kycVerification.backImageUrl);
 //       } catch (error: any) {
-//       } finally {
+//         console.error('Error fetching profile data:', error);
 //       }
 //     };
 
 //     fetchProfileData();
-//   }, []); // Empty dependency array ensures this runs only once on mount
+//   }, []);
 
 //   return (
 //     <Box className="p-6">
@@ -138,18 +141,15 @@
 //             </Typography>
 //             <Grid container spacing={3} justifyContent="center">
 //               <Grid item xs={12} md={5}>
-//                 <div {...getFrontRootProps()} className="border-dashed border-2 border-gray-300 rounded-lg p-6 text-center cursor-pointer"> {/* Use getRootProps here */}
-//                   <input {...getFrontInputProps()} /> {/* Don't forget this! */}
+//                 <div {...getFrontRootProps()} className="border-dashed border-2 border-gray-300 rounded-lg p-6 text-center cursor-pointer">
+//                   <input {...getFrontInputProps()} />
 //                   {frontImage ? (
-//                     // Display image if frontImage is a File
 //                     typeof frontImage === 'object' ? (
-//                       <Image src={URL.createObjectURL(frontImage)} width={frontImageDims.width} height={frontImageDims.height}  alt="Front ID" className="w-full h-auto" />
+//                       <Image src={URL.createObjectURL(frontImage)} width={frontImageDims.width} height={frontImageDims.height} alt="Front ID" className="w-full h-auto" />
 //                     ) : (
-//                       // Display image directly if frontImage is a URL
-//                       <Image src={frontImage} alt="Front ID" width={frontImageDims.width} height={frontImageDims.height}  className="w-full h-auto" />
+//                       <Image src={frontImage} alt="Front ID" width={frontImageDims.width} height={frontImageDims.height} className="w-full h-auto" />
 //                     )
 //                   ) : (
-//                     // Display the upload prompt if no image
 //                     <>
 //                       <CloudUploadIcon fontSize="large" className="text-gray-400" />
 //                       <Typography variant="body1" className="mt-2 text-gray-600">
@@ -160,18 +160,15 @@
 //                 </div>
 //               </Grid>
 //               <Grid item xs={12} md={5}>
-//                 <div {...getBackRootProps()} className="border-dashed border-2 border-gray-300 rounded-lg p-6 text-center cursor-pointer"> {/* Use getRootProps here */}
-//                   <input {...getBackInputProps()} /> {/* Don't forget this! */}
+//                 <div {...getBackRootProps()} className="border-dashed border-2 border-gray-300 rounded-lg p-6 text-center cursor-pointer">
+//                   <input {...getBackInputProps()} />
 //                   {backImage ? (
-//                     // Display image if backImage is a File
 //                     typeof backImage === 'object' ? (
-//                       <Image src={URL.createObjectURL(backImage)} width={backImageDims.width} height={backImageDims.height} alt="Front ID" className="w-full h-auto" />
+//                       <Image src={URL.createObjectURL(backImage)} width={backImageDims.width} height={backImageDims.height} alt="Back ID" className="w-full h-auto" />
 //                     ) : (
-//                       // Display image directly if backImage is a URL
 //                       <Image src={backImage} alt="Back ID" width={backImageDims.width} height={backImageDims.height} className="w-full h-auto" />
 //                     )
 //                   ) : (
-//                     // Display the upload prompt if no image
 //                     <>
 //                       <CloudUploadIcon fontSize="large" className="text-gray-400" />
 //                       <Typography variant="body1" className="mt-2 text-gray-600">
@@ -183,14 +180,12 @@
 //               </Grid>
 //             </Grid>
 //             <Box className="text-center mt-6">
-//               {
-//                 hide ? "" : <Button variant="contained" color="primary" type='submit' className="px-8 bg-[#003b2f] hover:bg-[#003b2f]">
-//                   Send
+//               {!hide && (
+//                 <Button variant="contained" color="primary" type='submit' className="px-8 bg-[#003b2f] hover:bg-[#003b2f]">
+//                   {loading?"Loading...":"Send"}
 //                 </Button>
-//               }
-
+//               )}
 //             </Box>
-
 //           </form>
 //         </CardContent>
 //       </Card>
@@ -199,7 +194,6 @@
 // };
 
 // export default TierTwoVerification;
-
 
 
 "use client";
@@ -223,6 +217,26 @@ const Toast = Swal.mixin({
   }
 });
 
+// Loader component
+const FullScreenLoader: React.FC = () => (
+  <Box
+    sx={{
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      zIndex: 9999,
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    }}
+  >
+    <Typography variant="h4" color="white">Loading...</Typography>
+  </Box>
+);
+
 const TierTwoVerification: React.FC = () => {
   const [frontImage, setFrontImage] = useState<File | null | string>(null);
   const [backImage, setBackImage] = useState<File | null | string>(null);
@@ -230,11 +244,6 @@ const TierTwoVerification: React.FC = () => {
   const [frontImageDims, setFrontImageDims] = useState({ width: 200, height: 200 });
   const [backImageDims, setBackImageDims] = useState({ width: 200, height: 200 });
   const [loading, setLoading] = useState<boolean>(false);
-
-  interface HTMLImageElement {
-    // ... existing properties and methods ...
-    decode(): Promise<void>;
-  }
 
   const onDropFront = (acceptedFiles: File[]) => {
     if (acceptedFiles.length === 0) return;
@@ -299,6 +308,8 @@ const TierTwoVerification: React.FC = () => {
       }
     } catch (error) {
       console.error('Error uploading images:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -323,6 +334,7 @@ const TierTwoVerification: React.FC = () => {
 
   return (
     <Box className="p-6">
+      {loading && <FullScreenLoader />}
       <Typography variant="h4" className="font-bold mb-4">
         TIER TWO VERIFICATION
       </Typography>
@@ -342,6 +354,7 @@ const TierTwoVerification: React.FC = () => {
                 Note: This can be rejected upon submission due to unclear format or wrong input
               </span>
             </Typography>
+            {!hide ? (
             <Grid container spacing={3} justifyContent="center">
               <Grid item xs={12} md={5}>
                 <div {...getFrontRootProps()} className="border-dashed border-2 border-gray-300 rounded-lg p-6 text-center cursor-pointer">
@@ -382,6 +395,10 @@ const TierTwoVerification: React.FC = () => {
                 </div>
               </Grid>
             </Grid>
+            ):<>
+            <Alert severity="warning" className="mb-4">
+        <AlertTitle>{hide ? "You details is currently been proccessed by the admin." : ""}</AlertTitle>
+      </Alert></>}
             <Box className="text-center mt-6">
               {!hide && (
                 <Button variant="contained" color="primary" type='submit' className="px-8 bg-[#003b2f] hover:bg-[#003b2f]">

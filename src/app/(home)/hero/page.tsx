@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react'
 import Image from 'next/image'
 import Video from 'next-video'
-import vidFrame from '../../(home)/hero/img/iPhone 15 Pro Max Mockup, Front View.png'
+import vidFrame from '../../(home)/hero/img/mockup-app.png'
 import heroVid from '../../videos/simple_app_798e07c086.mp4'
 import newImg from '../../nav/img/recurring.png'
 import easeImg from './img/ease_of_trading_e2d0069e0b.webp'
