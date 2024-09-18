@@ -63,7 +63,14 @@ function WithdrawalOptions() {
           window.location.href = "/dashboard/kyc/"
         })
       }else{
-        handleMethod(method)
+        if(response.data?.withdrawStatus==false){
+          Toast.fire({
+            icon: "warning",
+            title:"Ongoing trading session"
+          })
+        }else{
+          handleMethod(method)
+        }
       }
       console.log(response.data.verified);
     } catch (error: any) {
