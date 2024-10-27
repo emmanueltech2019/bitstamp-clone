@@ -62,7 +62,7 @@ export default function Transactions() {
     if (newAlignment === 'deposit') {
       setRows(deposits);
     } else if (newAlignment === 'withdrawal') {
-      alert("Please")
+      // alert("Please")
       console.log(withdrawals)
       setRows(withdrawals);
     }

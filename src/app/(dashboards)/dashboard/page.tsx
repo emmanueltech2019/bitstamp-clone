@@ -91,19 +91,33 @@ const [profileData, setProfileData] = useState<ProfileData | null>(null);
 
     fetctDownlines();
 
-    const fetchWithdrawals = async () => {
-      const response = await axios.get(`/user/withdrawals`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
-      });
+  //   const fetchWithdrawals = async () => {
+  //     const response = await axios.get(`/user/withdrawals`, {
+  //       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+  //     });
 
-      if (response.data && response.data.length > 0) { // Assuming response.data is an array
-        const newTotalAmount = response.data.reduce(
-          (sum: number, item: { amount: number }) => sum + item.amount, 
-          0
-      );          
-      setTotalAmount(newTotalAmount)
+  //     if (response.data && response.data.length > 0) { // Assuming response.data is an array
+  //       const newTotalAmount = response.data.reduce(
+  //         (sum: number, item: { amount: number }) => sum + item.amount, 
+  //         0
+  //     );          
+  //     setTotalAmount(newTotalAmount)
+  //   }
+  // }
+
+  const fetchWithdrawals = async () => {
+    const response = await axios.get(`/user/withdrawals`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+    });
+  
+    if (response.data && response.data.length > 0) { // Assuming response.data is an array
+      const newTotalAmount = response.data
+        .filter((item: { status: string }) => item.status !== "pending") // Exclude pending items
+        .reduce((sum: number, item: { amount: number }) => sum + item.amount, 0);
+        
+      setTotalAmount(newTotalAmount);
     }
-  }
+  };
     fetchWithdrawals()
   }, [profileData]); // Empty dependency array ensures this runs only once on mount
 
