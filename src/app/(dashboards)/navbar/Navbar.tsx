@@ -197,11 +197,11 @@ useEffect(() => {
                       <PersonPinOutlinedIcon /> <p>Kyc Verification</p>
                     </MenuItem>
                     </Link>
-                    <Link href={"/dashboard/wallets"}>
+                    {/* <Link href={"/dashboard/wallets"}>
                       <MenuItem onClick={handleClose} className="flex space-x-2 text-[13px]">
                         <WalletOutlinedIcon /> <p>Your Wallet Address </p>
                       </MenuItem>
-                    </Link>
+                    </Link> */}
                     <hr />
                     <MenuItem onClick={handleLogout} className="flex space-x-2 text-red-600 text-[13px]">
                       <LogoutOutlinedIcon /> <p>Logout</p>
