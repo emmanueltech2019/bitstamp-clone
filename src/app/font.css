@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'GTSectraFine';
+    src: url('./fonts/GT\ SECTRA\ FINE\ REGULAR.TTF') format('truetype');
+    /* Add additional formats if you have them */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'GTSectraFine';
+    src: url('./fonts/GT\ SECTRA\ FINE\ BLACK.TTF') format('truetype');
+    /* Add additional formats if you have them */
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'GTSectraFine';
+    src: url('./fonts/GT\ SECTRA\ FINE\ BOLD.TTF') format('truetype');
+    /* Add additional formats if you have them */
+    font-weight: bold;
+    font-style: normal;
+  }
+/* 
+  @font-face {
+    font-family: 'GT Sectra Fine';
+    src: url('../fonts/GT SECTRA FINE BOOK.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  } */
+
+  @font-face {
+    font-family: 'GTSectraFine';
+    src: url('./fonts/GT\ SECTRA\ FINE\ MEDIUM.TTF') format('truetype');
+    /* Add additional formats if you have them */
+    font-weight: meduim;
+    font-style: normal;
+  }

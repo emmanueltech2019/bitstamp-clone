@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url(./font.css);
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+.hero-text{
+  font-family: "GTSectraFine";
+}
+.new-text h1{
+  font-family: "GTSectraFine";
+}
+
+body { 
+  position: "static";
+  top: "0px !important"; 
+}
+iframe.skiptranslate { display: "none !important"; }
+
+.goog-te-combo{
+  font-size:10px!important; width:130px; height:38px; text-align: center; align-items: center;
+}
+/* Initial state (like a placeholder) */
+label {
+  font-size: 12px;
+  color: #6d6e71;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Allow clicking through the label to the input */
+}
+
+/* Focused/filled state */
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label {
+  font-size: 14px; /* or whatever size you want */
+  color: #000;
+  top: -10px; /* Adjust as needed */
+}
