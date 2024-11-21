@@ -127,7 +127,7 @@ function WithdrawalOptions() {
       case "BTC":
         setNetwork("BITCOIN")
         setAddress(response.data.wallets[0].wallet)
-        if(response.data.wallets[0].wallet=="xxxxxxxxxxxxxxxx"){
+        if(response.data.wallets[0].wallet=="" || response.data.wallets[0].wallet=="xxxxxxxxxxxxxxxx"){
           setOpen(false);
           Toast.fire({
             icon: "error",
@@ -140,7 +140,7 @@ function WithdrawalOptions() {
       case "ETH":
         setNetwork("ERC 20")
         setAddress(response.data.wallets[1].wallet)
-        if(response.data.wallets[1].wallet=="xxxxxxxxxxxxxxxx"){
+        if(response.data.wallets[1].wallet=="" || response.data.wallets[1].wallet=="xxxxxxxxxxxxxxxx"){
           setOpen(false);
           Toast.fire({
             icon: "error",
@@ -153,7 +153,7 @@ function WithdrawalOptions() {
       case "USDT":
         setNetwork("TRC20")
         setAddress(response.data.wallets[2].wallet)
-        if(response.data.wallets[2].wallet=="xxxxxxxxxxxxxxxx"){
+        if(response.data.wallets[2].wallet=="" || response.data.wallets[2].wallet=="xxxxxxxxxxxxxxxx"){
           setOpen(false);
           Toast.fire({
             icon: "error",
@@ -166,7 +166,7 @@ function WithdrawalOptions() {
       case "LTC":
         setNetwork("LTC")
         setAddress(response.data.wallets[3].wallet)
-        if(response.data.wallets[3].wallet=="xxxxxxxxxxxxxxxx"){
+        if(response.data.wallets[3].wallet=="" || response.data.wallets[3].wallet=="xxxxxxxxxxxxxxxx"){
           setOpen(false);
           Toast.fire({
             icon: "error",
@@ -346,8 +346,6 @@ function WithdrawalOptions() {
             </Grid>
           ))}
         </Grid>
-
-        
       </Box>
     </>
   );
