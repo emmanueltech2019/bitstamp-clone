@@ -108,7 +108,7 @@ const SupportForm: React.FC = () => {
   const ScriptLiveCHat = () =>{
      // Create a script element
      const script = document.createElement('script');
-     script.src = 'https://embed.tawk.to/673df7924304e3196ae5b5bc/1id50u5em';
+     script.src = 'https://embed.tawk.to/67850ff0af5bfec1dbeacca4/1ihfschcs';
     script.async = true;
     script.charset = 'UTF-8';
     script.setAttribute('crossorigin', '*');
