@@ -6,6 +6,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import SendIcon from "@mui/icons-material/Send"; // Import Send icon
 import MessageOutlinedIcon from '@mui/icons-material/MessageOutlined';
 import Swal from "sweetalert2"
+
 const Toast = Swal.mixin({
   toast: true,
   position: "top-end",
@@ -108,7 +109,7 @@ const SupportForm: React.FC = () => {
   const ScriptLiveCHat = () =>{
      // Create a script element
      const script = document.createElement('script');
-     script.src = 'https://embed.tawk.to/67850ff0af5bfec1dbeacca4/1ihfschcs';
+     script.src = 'https://embed.tawk.to/6793b086825083258e0abe39/1iicej3ns';
     script.async = true;
     script.charset = 'UTF-8';
     script.setAttribute('crossorigin', '*');
