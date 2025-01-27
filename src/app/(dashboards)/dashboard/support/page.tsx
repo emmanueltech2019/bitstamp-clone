@@ -106,27 +106,47 @@ const SupportForm: React.FC = () => {
       console.error("Error fetching messages:", error);
     }
   };
-  const ScriptLiveCHat = () =>{
-     // Create a script element
-     const script = document.createElement('script');
-     script.src = 'https://embed.tawk.to/6793b086825083258e0abe39/1iicej3ns';
-    script.async = true;
-    script.charset = 'UTF-8';
-    script.setAttribute('crossorigin', '*');
+  // const ScriptLiveCHat = () =>{
+  //    const script = document.createElement('script');
+  //    script.src = 'https://embed.tawk.to/6793b086825083258e0abe39/1iicej3ns';
+  //   script.async = true;
+  //   script.charset = 'UTF-8';
+  //   script.setAttribute('crossorigin', '*');
      
-     // Append the script to the body
-     document.body.appendChild(script);
+  //    document.body.appendChild(script);
  
-     // Cleanup the script when the component unmounts
-     return () => {
-       document.body.removeChild(script);
-     };
-  }
+  //    return () => {
+  //      document.body.removeChild(script);
+  //    };
+  // }
+
+  const ScriptLiveChatSmartsupp = () => {
+    const script = document.createElement("script");
+    script.src = "https://www.smartsuppchat.com/loader.js";
+    script.async = true;
+    script.charset = "UTF-8";
+
+    script.onload = () => {
+      window._smartsupp = window._smartsupp || {};
+      window._smartsupp.key = "726b4a2c88261b1ae44ccd2b655020d1fec149a2";
+      window.smartsupp = window.smartsupp || function () {
+        (window.smartsupp._ = window.smartsupp._ || []).push(arguments);
+      };
+    };
+
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  };
   
-    // Fetch messages on initial load and after adding a reply
     useEffect(() => {
       fetchMessages();
-      ScriptLiveCHat()
+      if (typeof window !== "undefined") {
+        ScriptLiveChatSmartsupp();
+      }
+      // ScriptLiveCHat()
     }, []); 
   
     const handleReply = async (messageId: number) => {
@@ -142,7 +162,6 @@ const SupportForm: React.FC = () => {
         );
   
         setReplyText("");
-        // Re-fetch messages after adding a reply
         await fetchMessages(); 
       } catch (error) {
         console.error("Error sending reply:", error);
