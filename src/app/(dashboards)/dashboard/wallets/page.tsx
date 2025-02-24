@@ -201,6 +201,7 @@ const WalletManagement: React.FC = () => {
     { coin: "Ethereum", symbol: "ETH", icon: <CurrencyBitcoinOutlinedIcon />, address: "", isEditing: false },
     { coin: "Tether", symbol: "USDT", icon: <CurrencyBitcoinOutlinedIcon />, address: "", isEditing: false },
     { coin: "Litecoin", symbol: "LTC", icon: <CurrencyBitcoinOutlinedIcon />, address: "", isEditing: false },
+    { coin: "4-Way Mirror Money", symbol: "4WMM", icon: <CurrencyBitcoinOutlinedIcon />, address: "", isEditing: false },
   ]);
 
   useEffect(() => {

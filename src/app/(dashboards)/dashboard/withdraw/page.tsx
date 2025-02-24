@@ -5,7 +5,8 @@ import BankIcon from '../../../nav/img/bank.jpeg';
 import BitcoinIcon from '../../../nav/img/bitcoin.png';
 import EthereumIcon from '../../../nav/img/ethereum.png';
 import TetherIcon from '../../../nav/img/tether.png';
-import LitecoinIcon from '../../../nav/img/digital.png'; // Custom icon component (MUI's SvgIcon can be used)
+import LitecoinIcon from '../../../nav/img/digital.png'; 
+import FourWaysIcon from '../../../nav/img/4way2.png'; // Custom icon component (MUI's SvgIcon can be used)
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import Image from 'next/image';
@@ -46,6 +47,7 @@ function WithdrawalOptions() {
     { label: 'Withdraw via Ethereum',currency:"ETH", Icon: EthereumIcon },
     { label: 'Withdraw via USDT (TRC20)',currency:"USDT", Icon: TetherIcon },
     { label: 'Withdraw via Litecoin',currency:"LTC", Icon: LitecoinIcon },
+    { label: 'Withdraw via 4-Way Mirror Money',currency:"4WMM", Icon: FourWaysIcon },
   ];
   
 
@@ -171,6 +173,19 @@ function WithdrawalOptions() {
           Toast.fire({
             icon: "error",
             title:"Please add your LTC wallet"
+          }).then(()=>{
+            window.location.href = "/dashboard/wallets"
+          })
+        }
+        break;
+        case "4WMM":
+        setNetwork("4WMM")
+        setAddress(response.data.wallets[4].wallet)
+        if(response.data.wallets[4].wallet=="" || response.data.wallets[4].wallet=="xxxxxxxxxxxxxxxx"){
+          setOpen(false);
+          Toast.fire({
+            icon: "error",
+            title:"Please add your 4WMM wallet"
           }).then(()=>{
             window.location.href = "/dashboard/wallets"
           })
@@ -333,7 +348,7 @@ function WithdrawalOptions() {
             </Link>
           </Grid>
           {options.map((option) => (
-            <Grid item xs={12} sm={6} md={2.4} key={option.label}>
+            <Grid item xs={12} sm={6} md={4} key={option.label}>
               <Paper elevation={3} className="p-4 rounded-lg flex flex-col items-center justify-center h-full">
                 <Image src={option.Icon} className="text-4xl mb-2 h-30" alt=""/> {/* Make icon larger */}
                 <Typography variant="body1" align="center" className="mb-2 text-[12px] px-2">
