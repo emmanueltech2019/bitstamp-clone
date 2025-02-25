@@ -6,7 +6,7 @@ import BitcoinIcon from '../../../nav/img/bitcoin.png';
 import EthereumIcon from '../../../nav/img/ethereum.png';
 import TetherIcon from '../../../nav/img/tether.png';
 import LitecoinIcon from '../../../nav/img/digital.png'; 
-import FourWaysIcon from '../../../nav/img/4way2.png'; // Custom icon component (MUI's SvgIcon can be used)
+import FourWaysIcon from '../../../nav/img/4way4.png';
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import Image from 'next/image';
@@ -350,7 +350,7 @@ function WithdrawalOptions() {
           {options.map((option) => (
             <Grid item xs={12} sm={6} md={4} key={option.label}>
               <Paper elevation={3} className="p-4 rounded-lg flex flex-col items-center justify-center h-full">
-                <Image src={option.Icon} className="text-4xl mb-2 h-30" alt=""/> {/* Make icon larger */}
+                <Image src={option.Icon} className="text-4xl mb-2 h-[150px] w-[150px]" alt=""/> {/* Make icon larger */}
                 <Typography variant="body1" align="center" className="mb-2 text-[12px] px-2">
                   {option.label}
                 </Typography>
