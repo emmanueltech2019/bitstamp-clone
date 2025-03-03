@@ -112,7 +112,7 @@ const [profileData, setProfileData] = useState<ProfileData | null>(null);
   
     if (response.data && response.data.length > 0) { // Assuming response.data is an array
       const newTotalAmount = response.data
-        .filter((item: { status: string }) => item.status !== "pending") // Exclude pending items
+        .filter((item: { status: string }) => item.status !== "pending") 
         .reduce((sum: number, item: { amount: number }) => sum + item.amount, 0);
         
       setTotalAmount(newTotalAmount);

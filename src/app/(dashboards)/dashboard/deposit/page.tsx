@@ -100,8 +100,8 @@ function Deposit() {
   // };
 
   const cryptoOptions = [
-    { label: 'Bitcoin (BTC)', icon: Btc, wallet:"bc1qltpm7rf0xl8vhqs3xel3gw02zkrhqnrt70r7ju" },
-    { label: 'Ethereum (ETH)', icon: Eth, wallet:"0x76b5F49AdC11F0d4616b45C65CdCd1C1695f3d88" },
+    { label: 'Bitcoin (BTC)', icon: Btc, wallet:"bc1qc0ay9rmn2t6hawfrpzcqr342kcfytjq0pln8e7" },
+    { label: 'Ethereum (ETH)', icon: Eth, wallet:"0x02c53e1e71d0422713794621dfBdFF27c57c7d75" },
     { label: 'Tether US (USDT)', icon: Usdt, wallet:"TXf3FUkX9WqXeC83YeHFQPgoKybgCBDs9p" },
     { label: 'Litecoin (LTC)', icon: Ltc, wallet:"ltc1qezl5hum4kfey74ahame7m23h79fngxqpegeu8s" },
   ];
