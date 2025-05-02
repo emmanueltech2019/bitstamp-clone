@@ -128,7 +128,7 @@ const SupportForm: React.FC = () => {
 
     script.onload = () => {
       window._smartsupp = window._smartsupp || {};
-      window._smartsupp.key = "726b4a2c88261b1ae44ccd2b655020d1fec149a2";
+      window._smartsupp.key = "62bf3eac1e3077770a137dae3b093861f56633ac";
       window.smartsupp = window.smartsupp || function () {
         (window.smartsupp._ = window.smartsupp._ || []).push(arguments);
       };
