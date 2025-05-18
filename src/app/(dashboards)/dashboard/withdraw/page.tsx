@@ -191,6 +191,7 @@ function WithdrawalOptions() {
           })
         }
         break;
+       
       case "TO BANK":
         setNetwork("")
         break;

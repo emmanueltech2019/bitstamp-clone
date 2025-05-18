@@ -19,7 +19,7 @@ import {
 import Btc from "../../../nav/img/bitcoin.png";
 import Eth from "../../../nav/img/ethereum.png";
 import Usdt from "../../../nav/img/tether.png";
-import Ltc from "../../../nav/img/digital.png";
+import XRP from "../../../nav/img/xrp-xrp-logo.png";
 import Image from 'next/image';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
@@ -100,10 +100,10 @@ function Deposit() {
   // };
 
   const cryptoOptions = [
-    { label: 'Bitcoin (BTC)', icon: Btc, wallet:"bc1qc0ay9rmn2t6hawfrpzcqr342kcfytjq0pln8e7" },
-    { label: 'Ethereum (ETH)', icon: Eth, wallet:"0x02c53e1e71d0422713794621dfBdFF27c57c7d75" },
-    { label: 'Tether US (USDT)', icon: Usdt, wallet:"TXf3FUkX9WqXeC83YeHFQPgoKybgCBDs9p" },
-    { label: 'Litecoin (LTC)', icon: Ltc, wallet:"ltc1qezl5hum4kfey74ahame7m23h79fngxqpegeu8s" },
+    { label: 'Bitcoin (BTC)', icon: Btc, wallet:"1FzXG2xF8ccNQMo3cMPxKN6LwbzMoDcRmR" },
+    { label: 'Ethereum (ETH)', icon: Eth, wallet:"0x454a54744580E6D8Ab144BB51DCcea7b1CCfB411" },
+    { label: 'USDT (TRC20)', icon: Usdt, wallet:"TRBHMwf1tsudGqkoiiGF3TAgVSkMYtT7XF" },
+    { label: 'Ripple (XRP)', icon: XRP, wallet:"rD2jqVsn2QkFRdULup1MtYUKutMFvHSVJH" },
   ];
 
 
@@ -131,7 +131,7 @@ function Deposit() {
             if(selectedCryptos=="Ethereum (ETH)"){
               setCrptoEquivalent(response.data.ethereum.usd)
             }
-            if(selectedCryptos=="Litecoin (LTC)"){
+            if(selectedCryptos=="Ripple (XRP)"){
               setCrptoEquivalent(response.data.litecoin.usd)
             }
             if(selectedCryptos=="Tether (USDT)"){

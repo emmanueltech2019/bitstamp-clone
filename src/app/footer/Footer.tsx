@@ -57,7 +57,7 @@ function Footer() {
                         <ul className="text-[12px] text-[#b1b4b6] md:w-20 flex flex-col gap-[.6em]">
                             <li>3433 Adamsville Road</li>
                             <li>Laredo, TX</li>
-                            <li>United Kingdom</li>
+                            <li>USA</li>
                         </ul>
                     </div>
                     <div className='contact'>
