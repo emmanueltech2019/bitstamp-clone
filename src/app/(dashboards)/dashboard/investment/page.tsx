@@ -69,7 +69,6 @@ const [investments, setInvestments] = useState<Investments[]>([]);
             <Typography variant="h5" className="font-semibold my-1 text-[#3bb758] uppercase">{investment.status}</Typography>
           </CardContent>
         </Card>
-        
       ))}
       <Link href={'/dashboard/investment/plan'}>
         <Button variant="contained" color="primary" className="px-8 my-10 py-2 rounded-md text-white font-medium bg-[#003b2f] hover:bg-[#003b2f]">
