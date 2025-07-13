@@ -103,7 +103,7 @@ function Deposit() {
     { label: 'Bitcoin (BTC)', icon: Btc, wallet:"14nKNwwR5QbVi1hu9FREiDkNU7FEPMe4p4" },
     { label: 'Ethereum (ETH)', icon: Eth, wallet:"0x454a54744580E6D8Ab144BB51DCcea7b1CCfB411" },
     { label: 'USDT (TRC20)', icon: Usdt, wallet:"TRBHMwf1tsudGqkoiiGF3TAgVSkMYtT7XF" },
-    { label: 'Ripple (XRP)', icon: XRP, wallet:"rD2jqVsn2QkFRdULup1MtYUKutMFvHSVJH" },
+    { label: 'Ripple (XRP)', icon: XRP, wallet:"rJR91GkdSY3H1fz3Dt73VRHWj7eyctJ4DT" },
   ];
 
 
@@ -561,6 +561,9 @@ function Deposit() {
 }
 
 export default Deposit;
+
+
+
 
 
 
