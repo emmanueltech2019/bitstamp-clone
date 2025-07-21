@@ -132,7 +132,7 @@ function Footer() {
                         </p>
 
                         <p className='text-[#b1b4b6] text-[12px] my-2'>
-                            All rights reserved © 2024 MirrorTradeX.
+                            All rights reserved © 2025 MirrorTradeX.
                             <a className=' transition-all duration-5000 hover:underline' href="https://www.nmlsconsumeraccess.org/EntityDetails.aspx/COMPANY/1905429" target="_blank" rel="noopener noreferrer nofollow">NMLS #1905429</a>
                         </p>
                     </div>
