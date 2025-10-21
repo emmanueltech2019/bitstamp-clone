@@ -64,7 +64,7 @@ const Referral: React.FC = () => {
     <Box className="p-6">
       <Grid container spacing={3}>
         <Grid item xs={12} md={8}>
-          <Card className="bg-[#03fc9d] p-3 rounded-lg shadow-md text-[#f3f3f3]">
+          <Card className="bg-[#003b2f] p-3 rounded-lg shadow-md text-[#f3f3f3]">
             <CardContent>
               <Typography variant="h5" className="font-bold mb-4 ">
                 We support you every step of the way

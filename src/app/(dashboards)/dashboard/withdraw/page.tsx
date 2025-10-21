@@ -6,7 +6,7 @@ import BitcoinIcon from '../../../nav/img/bitcoin.png';
 import EthereumIcon from '../../../nav/img/ethereum.png';
 import TetherIcon from '../../../nav/img/tether.png';
 import LitecoinIcon from '../../../nav/img/digital.png'; 
-import FourWaysIcon from '../../../nav/img/4way4.png';
+import FourWaysIcon from '../../../nav/img/metis.png';
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import Image from 'next/image';
@@ -47,7 +47,7 @@ function WithdrawalOptions() {
     { label: 'Withdraw via Ethereum',currency:"ETH", Icon: EthereumIcon },
     { label: 'Withdraw via USDT (TRC20)',currency:"USDT", Icon: TetherIcon },
     { label: 'Withdraw via Litecoin',currency:"LTC", Icon: LitecoinIcon },
-    { label: 'Withdraw via 4-Way Mirror Money',currency:"4WMM", Icon: FourWaysIcon },
+    { label: 'Withdraw via Metis',currency:"METIS", Icon: FourWaysIcon },
   ];
   
 
@@ -178,14 +178,14 @@ function WithdrawalOptions() {
           })
         }
         break;
-        case "4WMM":
-        setNetwork("4WMM")
+        case "METIS":
+        setNetwork("METIS")
         setAddress(response.data.wallets[4].wallet)
         if(response.data.wallets[4].wallet=="" || response.data.wallets[4].wallet=="xxxxxxxxxxxxxxxx"){
           setOpen(false);
           Toast.fire({
             icon: "error",
-            title:"Please add your 4WMM wallet"
+            title:"Please add your METIS wallet"
           }).then(()=>{
             window.location.href = "/dashboard/wallets"
           })
