@@ -42,7 +42,7 @@ function NavBar() {
                         <li>Tradeview</li>
                         <li>Blog</li>
                         <li>Learn</li> */}
-                        {/* <li className='lg:hidden'>Get MirrorTradeX app</li> */}
+                        {/* <li className='lg:hidden'>Get MirrorXTrade app</li> */}
                     </ul>
                 </div>
                 {
@@ -58,7 +58,7 @@ function NavBar() {
                             {/* <li>Tradeview</li>
                             <li>Blog</li>
                             <li>Learn</li> */}
-                            {/* <li className='lg:hidden'>Get MirrorTradeX app</li> */}
+                            {/* <li className='lg:hidden'>Get MirrorXTrade app</li> */}
                         </ul>
                     </div> : <div className="navList-mobile absolute right-[-100%] top-[61px] w-full h-[100vh] bg-[#fff] -z-50 p-5 md:w-[45%] transition-all animate__animated animate__bounce animate__delay-4s">
                         <ul className='flex flex-col lg:flex-row gap-4 lg:text-[14px] text-[20px] font-light'>
@@ -75,7 +75,7 @@ function NavBar() {
                             {/* <li>Tradeview</li> */}
                             {/* <li>Blog</li> */}
                             {/* <li>Learn</li> */}
-                            {/* <li className='lg:hidden'>Get MirrorTradeX app</li> */}
+                            {/* <li className='lg:hidden'>Get MirrorXTrade app</li> */}
                         </ul>
                     </div>
                 }

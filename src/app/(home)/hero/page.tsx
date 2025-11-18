@@ -73,19 +73,19 @@ function page() {
         <div>
           <div className="head-text sm:w-[90%] md:w-[83%] lg:w-[70%]">
             <h1 className='hero-text text-white font-bold text-[48px] vsm:text-[50px] lg:text-[65px] text-pretty leading-[15mm] vsm:leading-[18mm] lg:leading-[22mm] animate__animated animate__pulse'>
-              <mark className='bg-[#03fc9d] px-4 text-[#003b2f] '>Trade Beyond Borders</mark>
+              <mark className='bg-[#00C77B] px-4 text-[#003b2f] '>Trade Beyond Borders</mark>
               <span> Unlocking Global Market Potentials</span>
             </h1>
 
             <p className='text-[#f2f2f2] text-[19px] mt-8 text-left vsm:w-[90%]'>
-              Designed for simplicity, MirrorTradeX helps you feel good about crypto.
+              Designed for simplicity, MirrorXTrade helps you feel good about crypto.
               Trusted Crypto Exchange Since 2011.
             </p>
           </div>
 
           <div className="buttons my-7">
             <Link href={"/login"}>
-            <button className="get-started bg-[#03fc9d] text-[#003b2f] hover:bg-[#f2f2f2] w-full p-2 rounded font-semi-bold smm:w-[30%]">Get started</button>
+            <button className="get-started bg-[#00C77B] text-[#003b2f] hover:bg-[#f2f2f2] w-full p-2 rounded font-semi-bold smm:w-[30%]">Get started</button>
             </Link>
 
             <div className='flex gap-3 my-6'>
@@ -108,7 +108,7 @@ function page() {
         <div className='smm:flex md:max-w-[95%] m-auto'>
           <div className="new-text">
             <h1 className='text-[#003b2f] text-[32px] md:text-[48px] font-bold my-5'>
-              <mark className='bg-[#03fc9d] px-4 text-[#003b2f]'>New Offering&#58;</mark>
+              <mark className='bg-[#00C77B] px-4 text-[#003b2f]'>New Offering&#58;</mark>
               <span>Set up Recurring buy or sell!</span>
             </h1>
 
@@ -118,7 +118,7 @@ function page() {
 
             <div className="start-now my-4 hidden smm:block smm:w-[380px]">
             <Link href={"/login"}>
-              <button className="get-started bg-[#03fc9d] text-[#003b2f] w-full p-2 rounded font-semi-bold smm:w-[30%]">Start now</button>
+              <button className="get-started bg-[#00C77B] text-[#003b2f] w-full p-2 rounded font-semi-bold smm:w-[30%]">Start now</button>
             </Link>
             </div>
           </div>
@@ -128,7 +128,7 @@ function page() {
           </div>
 
           <div className="start-now my-4 smm:hidden">
-            <button className="get-started bg-[#03fc9d] text-[#F3F3F3] hover:bg-[#003b2f] hover:text-[#F3F3F3] w-full p-2 rounded font-semi-bold smm:w-[30%]">Start now</button>
+            <button className="get-started bg-[#00C77B] text-[#F3F3F3] hover:bg-[#003b2f] hover:text-[#F3F3F3] w-full p-2 rounded font-semi-bold smm:w-[30%]">Start now</button>
           </div>
         </div>
       </section>
@@ -139,7 +139,7 @@ function page() {
         </div>
       </section>
 
-      <section className="bg-[#03fc9d] px-6 py-6">
+      <section className="bg-[#00C77B] px-6 py-6">
         <div className='md:max-w-[95%] m-auto grid grid-cols-1 smm:grid-cols-2 md:grid-cols-3 gap-[2rem] smm:gap-[5rem] items-center justify-center my-14 mt-[6rem]'>
           <div className="ease-of-trading">
             <header className='flex flex-col items-center gap-4'>
@@ -198,7 +198,7 @@ function page() {
         <div className='md:max-w-[95%] m-auto md:flex items-center justify-between lg:gap-[20rem] w-full'>
           <div className="join-text sm:w-[70%] md:w-[50%] lg:w-[30%]">
             <h1 className='text-[#fff] text-[32px] smm:text-[48px] font-GT font-bold my-5'>
-              <span>Join MirrorTradeX&#39;s </span>
+              <span>Join MirrorXTrade&#39;s </span>
               <mark className='bg-[#003b2f] px-2 text-[#F3F3F3]'>crypto explorers</mark>
             </h1>
 
@@ -209,7 +209,7 @@ function page() {
 
             <div className="start-exploring my-4 smm:w-[470px]">
             <Link href={"/login"}>
-              <button className="get-started bg-[#03fc9d] text-[#003b2f] hover:bg-[#003b2f] w-full p-2 rounded font-semi-bold smm:w-[30%]">Start exploring</button>
+              <button className="get-started bg-[#00C77B] text-[#003b2f] hover:bg-[#003b2f] w-full p-2 rounded font-semi-bold smm:w-[30%]">Start exploring</button>
             </Link>
             </div>
           </div>
@@ -224,7 +224,7 @@ function page() {
         <div className='md:max-w-[100%] lg:max-w-[80%] m-auto md:flex md:flex-row-reverse md:justify-around items-center w-full'>
           <div className="explore-text sm:w-[70%] md:w-[50%] lg:w-[100%]">
             <h1 className='text-[#003b2f] text-[32px] smm:text-[48px] font-GT font-bold my-5'>
-              <mark className='bg-[#03fc9d] px-2 text-[#F3F3F3]'>COMING SOON!!! </mark>
+              <mark className='bg-[#00C77B] px-2 text-[#F3F3F3]'>COMING SOON!!! </mark>
               <span>  Trade on the go with our mobile apps.</span>
             </h1>
             <h4 className='text-[#000] text-[18px] smm:text-[25px] font-GT font-bold'>
@@ -237,7 +237,7 @@ Coming soon....            </p>
             </small> */}
 
             <div className="start-exploring my-4 smm:w-[470px]">
-              {/* <button className="get-started bg-[#03fc9d] text-[#003b2f] hover:bg-[#003b2f] hover:text-[#003b2f] w-full p-2 rounded font-semi-bold smm:w-[30%]">Explore the Apps</button> */}
+              {/* <button className="get-started bg-[#00C77B] text-[#003b2f] hover:bg-[#003b2f] hover:text-[#003b2f] w-full p-2 rounded font-semi-bold smm:w-[30%]">Explore the Apps</button> */}
             </div>
           </div>
 
@@ -251,7 +251,7 @@ Coming soon....            </p>
         <div className='md:max-w-[95%] m-auto sm:flex lg:justify-between w-full lg:gap-[6rem]'>
           <div className="advanced-text sm:w-[48%] lg:w-full">
             <h1 className='text-[#fff] text-[32px] smm:text-[48px] font-GT font-bold my-5'>
-              <mark className='bg-[#03fc9d] px-2 text-[#003b2f]'>Advanced</mark>
+              <mark className='bg-[#00C77B] px-2 text-[#003b2f]'>Advanced</mark>
               <span>trading tools</span>
             </h1>
 
@@ -289,7 +289,7 @@ Coming soon....            </p>
               <button className="get-started bg-[#fff] text-[#F3F3F3] w-full p-2 rounded font-semi-bold smm:w-[40%]">Register</button>
             </Link>
               <Link href={"/login"}>
-              <button className="get-started bg-[#03fc9d] text-[#F3F3F3] hover:bg-[#f2f2f2] w-full p-2 rounded font-semi-bold smm:w-[30%]">Get started</button>
+              <button className="get-started bg-[#00C77B] text-[#F3F3F3] hover:bg-[#f2f2f2] w-full p-2 rounded font-semi-bold smm:w-[30%]">Get started</button>
               </Link> */}
             </div>
           </div>
@@ -305,7 +305,7 @@ Coming soon....            </p>
           <div className='py-6 md:my-[6rem]'>
             <h1 className='text-[#F3F3F3] text-[32px] smm:text-[48px] font-GT font-bold my-5'>
               <span className='text-[#003b2f]'>Buy crypto</span>
-              <mark className='bg-[#03fc9d] px-2 text-[#003b2f]'>instantly</mark>
+              <mark className='bg-[#00C77B] px-2 text-[#003b2f]'>instantly</mark>
             </h1>
 
             <div className='grid smm:grid-cols-2 md:grid-cols-2 md:gap-[3rem] gap-2 smm:gap-x-8 mt-[4rem]'>
@@ -329,7 +329,7 @@ Coming soon....            </p>
             </div>
             <div className="get-started my-4 smm:w-[470px]">
             <Link href={"/login"}>
-              <button className="get-started text-[#f3f3f3] bg-[#003b2f] hover:text-[#F3F3F3] hover:bg-[#03fc9d] w-full p-2 rounded font-semi-bold smm:w-[30%]">Get started</button>
+              <button className="get-started text-[#f3f3f3] bg-[#003b2f] hover:text-[#F3F3F3] hover:bg-[#00C77B] w-full p-2 rounded font-semi-bold smm:w-[30%]">Get started</button>
             </Link>
             </div>
 
@@ -344,7 +344,7 @@ Coming soon....            </p>
       {/* <section className="bg-white py-5 px-5">
         <div className='md:max-w-[80%] lg:max-w-[50%] m-auto my-[6.5rem]'>
           <h4 className='text-[#F3F3F3] text-[20px] smm:text-[28px] text-center font-GT font-bold my-[11px] md:w-[50%] md:m-auto'>
-            <mark className='bg-[#03fc9d] px-2 text-[#F3F3F3]'>Reliable</mark>
+            <mark className='bg-[#00C77B] px-2 text-[#F3F3F3]'>Reliable</mark>
             <span> institutional access to crypto</span>
           </h4>
 
@@ -364,12 +364,12 @@ Coming soon....            </p>
         <div className='md:max-w-[95%] m-auto md:flex md:items-center'>
           <div className='md:w-[40%] lg:w-full'>
             <h2 className='text-[#003b2f] text-[30px] smm:text-[47px] font-GT font-bold my-8 '>
-              <mark className='bg-[#03fc9d] px-2 text-[#003b2f]'>3 steps</mark>
+              <mark className='bg-[#00C77B] px-2 text-[#003b2f]'>3 steps</mark>
               <span> to start trading</span>
             </h2>
 
             <div className="get-started my-[3rem] text-center smm:text-left">
-              <button className="get-started bg-[#03fc9d] text-[#003b2f] hover:bg-[#003b2f] hover:text-[#fff] w-[95%] smm:w-[30%] md:w-[130px] p-2 rounded font-semi-bold ">Get started</button>
+              <button className="get-started bg-[#00C77B] text-[#003b2f] hover:bg-[#003b2f] hover:text-[#fff] w-[95%] smm:w-[30%] md:w-[130px] p-2 rounded font-semi-bold ">Get started</button>
             </div>
           </div>
 

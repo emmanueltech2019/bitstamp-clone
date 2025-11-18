@@ -14,7 +14,7 @@ function page() {
                 <div className='px-6 pt-24 md:pt-60 overflow-x-hidden'>
                     <div className="head-text sm:w-[90%] md:w-[83%] lg:w-[70%]">
                         <h1 className='hero-text text-[#003b2f] font-bold text-[48px] vsm:text-[50px] lg:text-[65px] text-pretty leading-[15mm] vsm:leading-[18mm] lg:leading-[22mm]'>
-                            <span>MirrorTradeX</span>
+                            <span>MirrorXTrade</span>
                             <mark className='bg-[#003b2f] px-4 text-[#f3f3f3]'>Earn</mark>
                             <span>&#45; Crypto Staking</span>
                         </h1>
@@ -29,11 +29,11 @@ function page() {
                     </div>
 
                     <div className="start-staking my-4 smm:w-[470px]">
-                        <button className="get-started text-[#F3F3F3] bg-[#003b2f] hover:bg-[#03fc9d] hover:text-[#003b2f] w-full p-2 rounded font-semi-bold smm:w-[30%]">Start staking</button>
+                        <button className="get-started text-[#F3F3F3] bg-[#003b2f] hover:bg-[#00C77B] hover:text-[#003b2f] w-full p-2 rounded font-semi-bold smm:w-[30%]">Start staking</button>
                     </div>
 
                     <div>
-                        <small className='text-[#003b2f]'>MirrorTradeX Earn Staking is not available to customers in the UK, US, Singapore, Japan and Canada.</small>
+                        <small className='text-[#003b2f]'>MirrorXTrade Earn Staking is not available to customers in the UK, US, Singapore, Japan and Canada.</small>
                     </div>
                 </div>
 
@@ -61,21 +61,21 @@ function page() {
                                     <td className='w-[280px] p-4'>3.10%</td>
                                     <td className='w-[280px] p-4'>Flexible</td>
                                     <td className='w-[280px] p-4'>Monthly</td>
-                                    <td className='w-[280px] p-4'><button className="get-started text-[#F3F3F3] bg-[#003b2f] hover:bg-[#03fc9d] hover:text-[#003b2f] w-[50%] p-2 rounded font-semi-bold">Stake</button></td>
+                                    <td className='w-[280px] p-4'><button className="get-started text-[#F3F3F3] bg-[#003b2f] hover:bg-[#00C77B] hover:text-[#003b2f] w-[50%] p-2 rounded font-semi-bold">Stake</button></td>
                                 </tr>
                                 <tr className='text-center border-b'>
                                     <td className='w-[280px] text-left p-4'>Algorand</td>
                                     <td className='w-[280px] p-4'>1.60%</td>
                                     <td className='w-[280px] p-4'>Flexible</td>
                                     <td className='w-[280px] p-4'>Quaterly</td>
-                                    <td className='w-[280px] p-4'><button className="get-started text-[#F3F3F3] bg-[#003b2f] hover:bg-[#03fc9d] hover:text-[#003b2f] w-[50%] p-2 rounded font-semi-bold">Stake</button></td>
+                                    <td className='w-[280px] p-4'><button className="get-started text-[#F3F3F3] bg-[#003b2f] hover:bg-[#00C77B] hover:text-[#003b2f] w-[50%] p-2 rounded font-semi-bold">Stake</button></td>
                                 </tr>
                                 <tr className='text-center border-b'>
                                     <td className='w-[280px] text-left p-4'>Cardano</td>
                                     <td className='w-[280px] p-4'>2.20%</td>
                                     <td className='w-[280px] p-4'>Flexible</td>
                                     <td className='w-[280px] p-4'>Weekly</td>
-                                    <td className='w-[280px] p-4'><button className="get-started text-[#F3F3F3] bg-[#003b2f] hover:bg-[#03fc9d] hover:text-[#003b2f] w-[50%] p-2 rounded font-semi-bold">Stake</button></td>
+                                    <td className='w-[280px] p-4'><button className="get-started text-[#F3F3F3] bg-[#003b2f] hover:bg-[#00C77B] hover:text-[#003b2f] w-[50%] p-2 rounded font-semi-bold">Stake</button></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -128,7 +128,7 @@ function page() {
                 <div className='px-6 sm:max-w-[716px] m-auto py-[3rem] md:py-[6rem]'>
                     <h2 className='text-[#003b2f] text-[30px] sm:text-[48px] font-GT font-bold mb-[2rem]'>
                         <mark className='bg-[#003b2f] px-4 text-[#f3f3f3]'>Learn about</mark>
-                        <span>Staking with MirrorTradeX Earn</span>
+                        <span>Staking with MirrorXTrade Earn</span>
                     </h2>
 
                     <p className='text-[#003b2f] text-[17px]'>
@@ -142,12 +142,12 @@ function page() {
                         can change over time.
                     </p>
                     <p className='text-[#003b2f] text-[17px] my-4'>
-                        When staking with MirrorTradeX Earn, you maintain full
-                        ownership of your crypto assets. MirrorTradeX does not
+                        When staking with MirrorXTrade Earn, you maintain full
+                        ownership of your crypto assets. MirrorXTrade does not
                         impose any lock-up periods or conditions for staking
                         independently from the protocol, but lock-up periods
                         and conditions may apply and vary depending on the PoS
-                        network. MirrorTradeX acts as a service provider and charges
+                        network. MirrorXTrade acts as a service provider and charges
                         a transparent commission of 15% on all rewards received
                         from the underlying protocol. The estimated rewards rate
                         reflects this commission.
@@ -166,7 +166,7 @@ function page() {
                     </h2>
 
                     <button type='submit' className='bg-[#003b2f] text-[#F3F3F3] p-2 rounded w-full smm:w-[200px] m-auto my-[1rem]'>Start staking now</button>
-                    <p className='text-[#003b2f] text-[17px] my-4 w-full'>To find out more about MirrorTradeX Staking <strong className='underline'>click here to read our FAQ</strong></p>
+                    <p className='text-[#003b2f] text-[17px] my-4 w-full'>To find out more about MirrorXTrade Staking <strong className='underline'>click here to read our FAQ</strong></p>
                 </div>
             </section>
             

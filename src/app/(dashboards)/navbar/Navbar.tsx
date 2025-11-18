@@ -232,7 +232,7 @@ useEffect(() => {
                     { href: '/dashboard/support', icon: <QuestionMarkOutlinedIcon />, label: 'Help' }
                   ].map((item, index) => (
                     <Link href={item.href} legacyBehavior key={index}>
-                      <a className={`text-gray-300 hover:bg-[#03fc9d] hover:text-[#F3F3F3] py-3 rounded-full px-3 text-sm font-medium flex space-x-3 items-center justify-center lg:justify-start`}>
+                      <a className={`text-gray-300 hover:bg-[#00C77B] hover:text-[#F3F3F3] py-3 rounded-full px-3 text-sm font-medium flex space-x-3 items-center justify-center lg:justify-start`}>
                         <span>{item.icon}</span>
                         {/* <p>{isCollapsed?"tru":"fal"}</p> */}
                         <span className={`hidden lg:block ${isCollapsed ? 'lg:hidden' : 'lg:block'}`}>{item.label}</span>

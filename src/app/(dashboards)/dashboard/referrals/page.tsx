@@ -21,7 +21,7 @@ const Referral: React.FC = () => {
   const [downlineData, setDownlineData] = useState<any>([]);
 
   const handleCopyLink = () => {
-    navigator.clipboard.writeText(`https://mirrortradex.com/login?referrer=${profileData?.email}`);
+    navigator.clipboard.writeText(`https://MirrorXTrade.com/login?referrer=${profileData?.email}`);
     alert('Referral link copied!');
   };
 
@@ -70,7 +70,7 @@ const Referral: React.FC = () => {
                 We support you every step of the way
               </Typography>
               <Typography variant="body1" className="mb-6 text-[12px]">
-                As an affiliate, you&lsquo;ll receive free access to a range of marketing tools and resources designed to help you promote our site and drive sales. We offer top commissions for every successful referral you make, so you can earn money while helping others discover the benefits of MirrorTradeX. To get started, simply copy your unique referral link below and share it with your family and friends. If you have any questions or need assistance, please don&lsquo;t hesitate to contact our support team.
+                As an affiliate, you&lsquo;ll receive free access to a range of marketing tools and resources designed to help you promote our site and drive sales. We offer top commissions for every successful referral you make, so you can earn money while helping others discover the benefits of MirrorXTrade. To get started, simply copy your unique referral link below and share it with your family and friends. If you have any questions or need assistance, please don&lsquo;t hesitate to contact our support team.
               </Typography>
               <TextField
                 fullWidth
@@ -84,7 +84,7 @@ const Referral: React.FC = () => {
                       '&:hover fieldset': { borderColor: '333333' } // Style the border on hover
                     },
                   }}
-                value={`https://mirrortradex.com/login?referrer=${profileData?.email}`}
+                value={`https://MirrorXTrade.com/login?referrer=${profileData?.email}`}
                 InputProps={{
                   endAdornment: (
                     <IconButton onClick={handleCopyLink} className="text-[#333333]">

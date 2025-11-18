@@ -126,7 +126,7 @@ function RegisterContent() {
             </header>
             <section className='login-form mt-[3rem] w-full'>
                 <header className='text-center'>
-                    <h3 className='text-[28px] text-[#003b2f] my-1 font-GT'>Welcome to MirrorTradeX</h3>
+                    <h3 className='text-[28px] text-[#003b2f] my-1 font-GT'>Welcome to MirrorXTrade</h3>
                     <p className='text-[#6d6e71]'>To begin, create your account</p>
                 </header>
                 <div className='flex justify-center text-center my-[3rem] w-full'>

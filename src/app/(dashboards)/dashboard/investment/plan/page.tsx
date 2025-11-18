@@ -78,7 +78,7 @@ function InvestmentComponent() {
         Get started with your investment.
       </Typography>
       <Typography variant="body1" className="mb-6">
-        An investment has never been easy but with MirrorTradeX Trade, we have made it simple with mega returns
+        An investment has never been easy but with MirrorXTrade Trade, we have made it simple with mega returns
       </Typography>
     <form onSubmit={handleSubmit}>
       <Box className="grid grid-cols-1 md:grid-cols-2 gap-4">
