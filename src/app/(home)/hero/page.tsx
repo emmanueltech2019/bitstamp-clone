@@ -73,13 +73,12 @@ function page() {
         <div>
           <div className="head-text sm:w-[90%] md:w-[83%] lg:w-[70%]">
             <h1 className='hero-text text-white font-bold text-[48px] vsm:text-[50px] lg:text-[65px] text-pretty leading-[15mm] vsm:leading-[18mm] lg:leading-[22mm] animate__animated animate__pulse'>
-              <mark className='bg-[#00C77B] px-4 text-[#003b2f] '>Trade Beyond Borders</mark>
-              <span> Unlocking Global Market Potentials</span>
+              <mark className='bg-[#00C77B] px-4 text-[#003b2f] '>Go Beyond Limits.</mark>
+              <span> Access Global Crypto Markets.</span>
             </h1>
 
             <p className='text-[#f2f2f2] text-[19px] mt-8 text-left vsm:w-[90%]'>
-              Designed for simplicity, MirrorXTrade helps you feel good about crypto.
-              Trusted Crypto Exchange Since 2011.
+              With an intuitive design and a decade of trust, MirrorXTrade makes crypto trading straightforward and secure.
             </p>
           </div>
 
