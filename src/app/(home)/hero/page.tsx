@@ -66,7 +66,53 @@ function page() {
       </div>
     );
   };
-  
+  function CoinGeckoListWidget() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://widgets.coingecko.com/gecko-coin-list-widget.js";
+    script.defer = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  return (
+    <gecko-coin-list-widget
+      locale="en"
+      outlined="true"
+      coin-ids="zcash,zcoin,grass,aster-2,numeraire,solana,nillion,starknet,bittensor,ethereum,edel,dymension,tensor,eth6900-2,bitcoin"
+      initial-currency="usd"
+    ></gecko-coin-list-widget>
+  );
+}
+  function LiveCoinWatchWidget() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://www.livecoinwatch.com/static/lcw-widget.js";
+    script.defer = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  return (
+    <div
+      className="livecoinwatch-widget-3"
+      lcw-base="USD"
+      lcw-d-head="true"
+      lcw-d-name="true"
+      lcw-d-code="true"
+      lcw-d-icon="true"
+      lcw-color-tx="#ffffff"
+      lcw-color-bg="#1f2434"
+      lcw-border-w="1"
+    ></div>
+  );
+}
   return (
     <div className='bg-[#003b2f] pt-20 md:pt-36 overflow-x-hidden'>
       <section className='md:flex px-6 md:max-w-[95%] m-auto'>
@@ -134,7 +180,7 @@ function page() {
 
       <section className='assets h-[100vh] bg-[#f2f2f2]'>
         <div className='md:max-w-[95%] m-auto'>
-        <CoinLibWidget/>
+        <CoinGeckoListWidget/>
         </div>
       </section>
 
